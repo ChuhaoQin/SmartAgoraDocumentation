@@ -40,7 +40,7 @@ Why should we even use this and not Markdown language? [here](http://ericholsche
 
 A 20-minutes video tutorial can be found [here](https://www.youtube.com/watch?v=oJsUvBQyHBs&feature=youtu.be).
 
-## PREREQUISITES
+### PREREQUISITES
 
 `Sphinx` is a Python-based tool for generating this kind of documentation. Therefore, take the following steps:
 
