@@ -1,0 +1,599 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Windows Installation Guide &mdash; SmartagoraDocumentation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Ubuntu Installation Guide" href="Ubuntu.html" />
+    <link rel="prev" title="Dashboard Installation Guide" href="../DashboardGuide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> SmartagoraDocumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../smart.agora.html">Smart Agora Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SmartAgoraDescription.html">SmartAgora Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dashboard.html">Dashboard Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../DashboardGuide.html">Dashboard Installation Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Windows Installation Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloning-the-source-code">Cloning the Source Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-hive-server">Installing Hive Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#executing-hive-elasticsearch-locally">Executing Hive &amp; Elasticsearch locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-xampp-server">Installing XAMPP Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-database">Creating the Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-visual-studio">Installing Visual Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-solution-file">Building the Solution File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-dashboard-welcome-screen">The Dashboard Welcome Screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Ubuntu.html">Ubuntu Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Hive.html">Hive</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SmartagoraDocumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../DashboardGuide.html">Dashboard Installation Guide</a> &raquo;</li>
+        
+      <li>Windows Installation Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/sections/DashboardGuide/Windows.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="windows-installation-guide">
+<h1>Windows Installation Guide<a class="headerlink" href="#windows-installation-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Visual Studio – 2018 or higher</p></li>
+<li><p>Elasticsearch (for Hive server) – version 2.4.3 (recommended)</p></li>
+<li><p>Hive Server – version 1.0.2 (latest)</p></li>
+<li><p>XAMPP server for MySQL</p></li>
+</ul>
+</div>
+<div class="section" id="cloning-the-source-code">
+<h2>Cloning the Source Code<a class="headerlink" href="#cloning-the-source-code" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Place the <em>Go_Workspace</em> in C:/Users/username/. It contains the source code for Elasticsearch and scripts to run Hive server locally.</p></li>
+<li><p>Clone the source code of Dashboard by executing the command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/epournaras/SmartAgoraBackend
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-hive-server">
+<h2>Installing Hive Server<a class="headerlink" href="#installing-hive-server" title="Permalink to this headline">¶</a></h2>
+<p>Follow the instruction <a target="_blank" href="https://github.com/nytlabs/hive/blob/master/README.md#setup" target="_blank">here</a> to get details for hive installation and setup. Hive server runs on <a class="reference external" href="http://localhost:8080">http://localhost:8080</a> by default.</p>
+</div>
+<div class="section" id="executing-hive-elasticsearch-locally">
+<h2>Executing Hive &amp; Elasticsearch locally<a class="headerlink" href="#executing-hive-elasticsearch-locally" title="Permalink to this headline">¶</a></h2>
+<p>To run Hive server locally, follow either of the two steps given below:</p>
+<ol class="arabic simple">
+<li><p>Change the working directory to C:/Users/Username/Go_Workspace/bin and execute the following command in the command prompt:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hive-server -index hive -esDomain localhost -esPort<span class="o">=</span><span class="m">9200</span> -port <span class="m">8080</span> <span class="p">&amp;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Manually execute the batch files:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>/Go_Workspace/Elasticsearch-2.4.3/bin/Elasticsearch.bat</p></li>
+<li><p>/Go_Workspace/bin/hive-server.exe</p></li>
+</ul>
+</div></blockquote>
+<p>The following screen appears after successful run of Hive server.</p>
+<div class="figure align-default" id="figure-1">
+<img alt="../../_images/Figure_12.png" src="../../_images/Figure_12.png" />
+</div>
+<p>Visit <a class="reference external" href="http://localhost:8080">http://localhost:8080</a> to check the status. The following screen appears showing successful execution of hive server.</p>
+<div class="figure align-default" id="figure-2">
+<img alt="../../_images/Figure_21.png" src="../../_images/Figure_21.png" />
+</div>
+</div>
+<div class="section" id="installing-xampp-server">
+<h2>Installing XAMPP Server<a class="headerlink" href="#installing-xampp-server" title="Permalink to this headline">¶</a></h2>
+<p>We need XAMPP server to create the database for Dashboard. We can also go for other alternatives such as Apache, Nginx or MySQL Workbench etc.
+XAMPP installation steps are given below:</p>
+<ol class="arabic simple">
+<li><p>Download XAMPP from <a class="reference external" href="https://www.apachefriends.org/index.html">https://www.apachefriends.org/index.html</a>.</p></li>
+<li><p>Open the downloaded file and configure XAMPP.</p></li>
+</ol>
+<div class="figure align-default" id="figure-3">
+<img alt="../../_images/Figure_31.png" src="../../_images/Figure_31.png" />
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Uncheck “Tomcat”, “Perl” and “Fake Sendmail” and click next.</p></li>
+</ol>
+<div class="figure align-default" id="figure-4">
+<img alt="../../_images/Figure_41.png" src="../../_images/Figure_41.png" />
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Keep all the default settings. Click finish to start the XAMPP control panel.</p></li>
+<li><p>Start the Apache and MySQL servers from XAMPP control panel.</p></li>
+</ol>
+<div class="figure align-default" id="figure-5">
+<img alt="../../_images/Figure_51.png" src="../../_images/Figure_51.png" />
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Visit <a class="reference external" href="http://localhost/dashboard/">http://localhost/dashboard/</a> to see the administration module of XAMPP server.</p></li>
+</ol>
+<div class="figure align-default" id="figure-6">
+<img alt="../../_images/Figure_6.png" src="../../_images/Figure_6.png" />
+</div>
+</div>
+<div class="section" id="creating-the-database">
+<h2>Creating the Database<a class="headerlink" href="#creating-the-database" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Visit <a class="reference external" href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> to open admin module for MySQL in XAMPP.</p></li>
+<li><p>Create a database and update the name of database and its credentials in Dashboard/XMLParser/XMLParser/web.config and Dashboard/XMLParser/socialexperiment.sql files.</p></li>
+</ol>
+<div class="figure align-default" id="figure-7">
+<img alt="../../_images/Figure_7.png" src="../../_images/Figure_7.png" />
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Import and execute Dashboard/XMLParser/socialexperiment.sql using phpMyAdmin to create all necessary tables in the Dashboard database.</p></li>
+</ol>
+<div class="figure align-default" id="figure-8">
+<img alt="../../_images/Figure_8.png" src="../../_images/Figure_8.png" />
+</div>
+<ol class="arabic simple" start="4">
+<li><p>You will see the following screen after successful execution of the script:</p></li>
+</ol>
+<div class="figure align-default" id="figure-9">
+<img alt="../../_images/Figure_9.png" src="../../_images/Figure_9.png" />
+</div>
+</div>
+<div class="section" id="installing-visual-studio">
+<h2>Installing Visual Studio<a class="headerlink" href="#installing-visual-studio" title="Permalink to this headline">¶</a></h2>
+<p>Visual Studio can be downloaded <a target="_blank" href="https://www.visualstudio.com/downloads/" target="_blank">here</a>. It is needed to build the solution file for the Dashboard.</p>
+</div>
+<div class="section" id="building-the-solution-file">
+<h2>Building the Solution File<a class="headerlink" href="#building-the-solution-file" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Open Visual Studio and select “Open a project or solution”.</p></li>
+</ol>
+<div class="figure align-default" id="figure-10">
+<img alt="../../_images/Figure_101.png" src="../../_images/Figure_101.png" />
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Select the solution file Dashboard/XMLParser/XMLParser.sln to open the Dashboard project.</p></li>
+<li><p>Open Dashboard/XMLParser/XMLParser/Web.config and add database credentials for MySQL and host and port addresses for Hive server.</p></li>
+<li><p>Build the solution file with CTRL+Shift+B. The solution file namely XMLParser.sln will be built inside the /Dashboard/XMLParser directory.</p></li>
+</ol>
+<div class="figure align-default" id="figure-11">
+<img alt="../../_images/Figure_111.png" src="../../_images/Figure_111.png" />
+</div>
+</div>
+<div class="section" id="the-dashboard-welcome-screen">
+<h2>The Dashboard Welcome Screen<a class="headerlink" href="#the-dashboard-welcome-screen" title="Permalink to this headline">¶</a></h2>
+<p>Visit <a class="reference external" href="http://localhost:44300">http://localhost:44300</a> to reach the Login screen.
+Sign up to explore the functionality of the Dashboard.</p>
+<div class="figure align-default" id="figure-12">
+<img alt="../../_images/Figure_121.png" src="../../_images/Figure_121.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Ubuntu.html" class="btn btn-neutral float-right" title="Ubuntu Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../DashboardGuide.html" class="btn btn-neutral float-left" title="Dashboard Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Renato Kunz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+
+    :root{
+        --pink: rgb(237,225,248);
+        --purple: rgb(94,59,120);
+        --lightpurple: rgb(201, 183, 215);
+      }
+
+
+
+      /*link visited and unvisited color*/
+
+      a {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      a:visited {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      /*footer colors*/
+
+      footer{
+        color:var(--pink)
+      }
+
+      a:hover {
+        color: var(--pink);
+        text-decoration: none;
+        cursor: pointer;
+        text-decoration-color: var(--purple);
+      }
+
+     .wy-nav-side {
+
+        /*background: rgb(30,115,190);*/
+        background: var(--pink);
+        color:/**#eee;*/var(--purple);
+
+
+     }
+
+     .rst-content img{
+       border-radius:3px;
+     }
+
+     .wy-menu-vertical li.toctree-l1.current>a {
+        color: var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l2.current>a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a{
+       color: var(--purple);
+       background: var(--pink);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a:hover{
+       color: var(--pink);
+       background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover{
+         color: var(--pink);
+         background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a:hover{
+           color: var(--pink);
+           background:var(--purple);
+     }
+
+    .wy-side-nav-search {
+
+        background:var(--pink); /*rgb(30,115,190);*/
+
+    }
+
+    .wy-menu-vertical a{
+      color:var(--purple);
+      text-decoration: none;
+    }
+
+    .wy-menu-vertical li.current{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertical li{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertival a:current {
+      color:var(--pink);
+    }
+
+    .wy-menu-vertical a:hover{
+        background-color:var(--purple);
+        color:var(--pink);
+    }
+
+    .fa-home::before, .icon-home::before {
+        content:"";
+    }
+
+    a.icon-home {
+        width: 50%;
+        margin-left: -6px;
+        font-size: 0%;
+        content:url("https://smart-agora.org/wp-content/uploads/2019/09/LastoneLogoPack3.1Updated_File.png");
+    }
+
+    .wy-nav-content{
+        max-width: initial;
+        background:var(--purple);
+        color:var(--pink);
+    }
+
+    /*nav top current directory, delete link underline*/
+    .wy-breadcrumbs li a:first-child{
+      text-decoration: none;
+    }
+
+
+    /*buton colors*/
+    .btn-neutral {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+    .btn-neutral:visited {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+
+    /*codeblock color*/
+    .rst-content div[class^='highlight'] pre{
+      color:black;
+      border-radius:3px; /*rounded corners*/
+    }
+
+    /*make sure tables do no have white backgrounds*/
+    .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+      background-color:var(--purple)
+    }
+
+    /*color of table header*/
+    .rst-content table.docutils thead{
+      color:var(--pink) !important;
+    }
+
+    /*table title thick border*/
+    .rst-content table.docutils thead th{
+      border-bottom: solid 2px;
+      border-top: solid 2px;
+      border-left: solid 2px;
+      border-right: solid 2px;
+    }
+
+    /*code block line numbers*/
+    div.linenodiv pre{
+      color:var(--pink) !important;
+      border-radius:0 !important;
+    }
+
+    /*codeblock pink background*/
+    div.highlight pre{
+      background-color:var(--pink);
+    }
+
+    /*rounded corners on images*/
+    .rst-content .section>img{
+      border-radius:3px;
+    }
+
+    /*rounded corners on codeblocks*/
+    .rst-content div[class^='highlight']{
+        border-radius:3px;
+    }
+
+    /*code boxes outline*/
+    .rst-content dl:not(.docutils) dt{
+      border-top: solid 3px var(--lightpurple);
+      background: var(--pink);
+      border-radius: 3px;
+    }
+
+    /*code boxes text color*/
+    .rst-content dl:not(.docutils) code.descname{
+      color: var(--purple);
+    }
+
+    .rst-content dl:not(.docutils) code {
+      background: var(--pink);
+      font-weight: bold;
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt {
+      border-left: solid 3px var(--lightpurple);
+      background: var(--pink);
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt a{
+      color: var(--purple);
+      margin-right: 3px;
+    }
+
+    .rst-content code.xref{
+      color: var(--purple);
+      border-radius: 3px;
+      background: var(--pink);
+    }
+
+    /*side menu title color*/
+    .wy-menu-vertical p.caption{
+      color: var(--purple)
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils) .property, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .property {
+      display: contents;
+      padding-right: 8px;
+    }
+
+
+  </style>
+
+
+</body>
+</html>

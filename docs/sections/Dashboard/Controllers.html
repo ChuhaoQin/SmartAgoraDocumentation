@@ -1,0 +1,910 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Controllers &mdash; SmartagoraDocumentation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Client" href="Client.html" />
+    <link rel="prev" title="Views" href="Views.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> SmartagoraDocumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../smart.agora.html">Smart Agora Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SmartAgoraDescription.html">SmartAgora Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Dashboard.html">Dashboard Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Modals.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Views.html">Views</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Controllers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#xmlparser">XMLParser</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#xmlparsercontroller">XMLParserController</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#authenticationcontroller">AuthenticationController</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hivecontroller">HiveController</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#homecontroller">HomeController</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xmlcontroller">XMLController</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valuescontroller">ValuesController</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Client.html">Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../DashboardGuide.html">Dashboard Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Hive.html">Hive</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SmartagoraDocumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../Dashboard.html">Dashboard Documentation</a> &raquo;</li>
+        
+      <li>Controllers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/sections/Dashboard/Controllers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="controllers">
+<h1>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xmlparser">
+<h2>XMLParser<a class="headerlink" href="#xmlparser" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="xmlparsercontroller">
+<h3>XMLParserController<a class="headerlink" href="#xmlparsercontroller" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-XMLParser.Controllers.XMLParser.XMLParserController">
+<code class="sig-name descname">class XMLParserController</code><a class="headerlink" href="#class-XMLParser.Controllers.XMLParser.XMLParserController" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is API controller that contains method for communication of the android app and the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server.</p>
+<p>Here are some references to it’s methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.GenerateHiveCall" title="XMLParser.Controllers.XMLParser.XMLParserController.GenerateHiveCall method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GenerateHiveCall</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.GenerateXMLFile" title="XMLParser.Controllers.XMLParser.XMLParserController.GenerateXMLFile method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GenerateXMLFile</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.GetDownloadFile" title="XMLParser.Controllers.XMLParser.XMLParserController.GetDownloadFile method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetDownloadFile</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.DeleteDownloadedFile" title="XMLParser.Controllers.XMLParser.XMLParserController.DeleteDownloadedFile method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">DeleteDownloadedFile</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.GetAllProjects" title="XMLParser.Controllers.XMLParser.XMLParserController.GetAllProjects method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetAllProjects</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.SaveAssignment" title="XMLParser.Controllers.XMLParser.XMLParserController.SaveAssignment method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">SaveAssignment</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.SaveSensorData" title="XMLParser.Controllers.XMLParser.XMLParserController.SaveSensorData method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">SaveSensorData</span></code></a></p></li>
+</ul>
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.XMLParser.XMLParserController.GenerateHiveCall">
+<em>public</em> void <code class="sig-name descname">GenerateHiveCall</code> <span class="sig-paren">(</span>ProjectQuestionModel <em>projectQuestionModel</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.GenerateHiveCall" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for the Asset creation on the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.XMLParser.XMLParserController.GenerateXMLFile">
+<em>public</em> IHttpActionResult <code class="sig-name descname">GenerateXMLFile</code> <span class="sig-paren">(</span>ProjectQuestionModel <em>mainModel</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.GenerateXMLFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for creating an asset file with extension .json for downloading, viewing and analyzing the asset.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.XMLParser.XMLParserController.GetDownloadFile">
+<em>public</em> HttpResponseMessage <code class="sig-name descname">GetDownloadFile</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.GetDownloadFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to download already created JSON asset file from the server.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.XMLParser.XMLParserController.DeleteDownloadedFile">
+<em>public</em> IHttpActionResult <code class="sig-name descname">DeleteDownloadedFile</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.DeleteDownloadedFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called after GetDownloadFile to delete the json asset file from the server to avoid creating numerous useless files.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.XMLParser.XMLParserController.GetAllProjects">
+<em>public</em> <em>async</em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task" title="System.Threading.Tasks.Task">Threading.Tasks.Task</a>&lt;List&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.Project" title="HiveServer.Models.Project class">HiveServer.Models.Project</a>&gt;&gt; <code class="sig-name descname">GetAllProjects</code> <span class="sig-paren">(</span>Questions <em>mainModel</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.GetAllProjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to get all existing projects from the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.XMLParser.XMLParserController.SaveAssignment">
+<em>public</em> IHttpActionResult <code class="sig-name descname">SaveAssignment</code> <span class="sig-paren">(</span>Assignment <em>assignmentModel</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.SaveAssignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for saving the submitted assignment on the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.XMLParser.XMLParserController.SaveSensorData">
+<em>public</em> IHttpActionResult <code class="sig-name descname">SaveSensorData</code> <span class="sig-paren">(</span>SensorDataModel <em>sensorDataModel</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.XMLParser.XMLParserController.SaveSensorData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to save sensors information.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="authenticationcontroller">
+<h2>AuthenticationController<a class="headerlink" href="#authenticationcontroller" title="Permalink to this headline">¶</a></h2>
+<dl class="csharp class">
+<dt id="class-XMLParser.Controllers.AuthenticationController">
+<code class="sig-name descname">class AuthenticationController</code><a class="headerlink" href="#class-XMLParser.Controllers.AuthenticationController" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="hivecontroller">
+<h2>HiveController<a class="headerlink" href="#hivecontroller" title="Permalink to this headline">¶</a></h2>
+<dl class="csharp class">
+<dt id="class-XMLParser.Controllers.HiveController">
+<code class="sig-name descname">class HiveController</code><a class="headerlink" href="#class-XMLParser.Controllers.HiveController" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Controller with methods.</p>
+<p>Here are some references to its methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.Index" title="XMLParser.Controllers.HiveController.Index method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Index</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.GetAllProjects" title="XMLParser.Controllers.HiveController.GetAllProjects method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetAllProjects</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.GetProjectsIds" title="XMLParser.Controllers.HiveController.GetProjectsIds method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetProjectsIds</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.GetAssetData" title="XMLParser.Controllers.HiveController.GetAssetData method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetAssetData</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.GetAssetsIds" title="XMLParser.Controllers.HiveController.GetAssetsIds method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetAssetsIds</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.GetUserData" title="XMLParser.Controllers.HiveController.GetUserData method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetUserData</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.GetUsersIds" title="XMLParser.Controllers.HiveController.GetUsersIds method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetUsersIds</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.GetTaskData" title="XMLParser.Controllers.HiveController.GetTaskData method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetTaskData</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.GetTasksIds" title="XMLParser.Controllers.HiveController.GetTasksIds method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetTasksIds</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.CreateAssignment" title="XMLParser.Controllers.HiveController.CreateAssignment method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateAssignment</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.CreateProject" title="XMLParser.Controllers.HiveController.CreateProject method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateProject</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HiveController.CreateTask" title="XMLParser.Controllers.HiveController.CreateTask method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateTask</span></code></a></p></li>
+</ul>
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.Index">
+<em>public</em> ActionResult <code class="sig-name descname">Index</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.Index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GenerateHiveCall">
+<em>public</em> void <code class="sig-name descname">GenerateHiveCall</code> <span class="sig-paren">(</span>ProjectQuestionModel <em>projectQuestionModel</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GenerateHiveCall" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for an Asset creation on the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GetAllProjects">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">GetAllProjects</code> <span class="sig-paren">(</span>jQueryDataTableParamModel <em>param</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GetAllProjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to get all projects from the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GetProjectsIds">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">GetProjectsIds</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GetProjectsIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to get only Project Ids of all projects that exist on the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GetAssetData">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">GetAssetData</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>assetId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GetAssetData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts project Id and an asset Id and returns the corresponding asset object after getting from the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> server.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GetAssetsIds">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">GetAssetsIds</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GetAssetsIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts a project Id and returns Ids of all assets that are associated with given project Id.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GetUserData">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">GetUserData</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>userId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GetUserData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts project ID and a user Id and returns a specific user.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GetUsersIds">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">GetUsersIds</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GetUsersIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts a project Id and returns all user Ids that are associated with given project Id.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GetTaskData">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">GetTaskData</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>taskId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GetTaskData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts project Id and a task Id and returns specific task object.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.GetTasksIds">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">GetTasksIds</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.GetTasksIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts project Id and returns all task Ids that are associated with given project Id.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.CreateAssignment">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">CreateAssignment</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>taskId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>assetId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>userIdsList</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.CreateAssignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for the creation of an assignment for single or multiple users.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.CreateProject">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">CreateProject</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectName</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectDesc</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.CreateProject" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for the creation of a Project. The project description is an optional.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HiveController.CreateTask">
+<em>public</em> <em>async</em> Task&lt;ActionResult&gt; <code class="sig-name descname">CreateTask</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>name</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>desc</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>state</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <em>total</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <em>matching</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HiveController.CreateTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for creating a task.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="homecontroller">
+<h2>HomeController<a class="headerlink" href="#homecontroller" title="Permalink to this headline">¶</a></h2>
+<dl class="csharp class">
+<dt id="class-XMLParser.Controllers.HomeController">
+<code class="sig-name descname">class HomeController</code><a class="headerlink" href="#class-XMLParser.Controllers.HomeController" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Controller with methods.</p>
+<p>Here are some references to it’s methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.Index" title="XMLParser.Controllers.HomeController.Index method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Index</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.HiveView" title="XMLParser.Controllers.HomeController.HiveView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">HiveView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.CreateProjectView" title="XMLParser.Controllers.HomeController.CreateProjectView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateProjectView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.ProjectConfiguration" title="XMLParser.Controllers.HomeController.ProjectConfiguration method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">ProjectConfiguration</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.ProjectsView" title="XMLParser.Controllers.HomeController.ProjectsView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">ProjectsView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.AssetsView" title="XMLParser.Controllers.HomeController.AssetsView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">AssetsView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.UsersView" title="XMLParser.Controllers.HomeController.UsersView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">UsersView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.TasksView" title="XMLParser.Controllers.HomeController.TasksView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">TasksView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.CreateTaskView" title="XMLParser.Controllers.HomeController.CreateTaskView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateTaskView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.CreateAssignmentView" title="XMLParser.Controllers.HomeController.CreateAssignmentView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateAssignmentView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.MyXMLParser" title="XMLParser.Controllers.HomeController.MyXMLParser method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">MyXMLParser</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.Signup" title="XMLParser.Controllers.HomeController.Signup method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Signup</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.Login" title="XMLParser.Controllers.HomeController.Login method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Login</span></code></a></p></li>
+<li><p><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">AssetCreationModeSelection</span></code></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.LogOut" title="XMLParser.Controllers.HomeController.LogOut method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">LogOut</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.serverStorageTesting" title="XMLParser.Controllers.HomeController.serverStorageTesting method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">serverStorageTesting</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.createProject" title="XMLParser.Controllers.HomeController.createProject method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">createProject</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.createTask" title="XMLParser.Controllers.HomeController.createTask method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">createTask</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.createAssignment" title="XMLParser.Controllers.HomeController.createAssignment method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">createAssignment</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.CreateTaskView" title="XMLParser.Controllers.HomeController.CreateTaskView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateTaskView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.createAsset" title="XMLParser.Controllers.HomeController.createAsset method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">createAsset</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.SaveSession" title="XMLParser.Controllers.HomeController.SaveSession method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">SaveSession</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.LoginCall" title="XMLParser.Controllers.HomeController.LoginCall method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">LoginCall</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.AssociateQuestion" title="XMLParser.Controllers.HomeController.AssociateQuestion method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">AssociateQuestion</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.RegisterCall" title="XMLParser.Controllers.HomeController.RegisterCall method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">RegisterCall</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.UploadFileView" title="XMLParser.Controllers.HomeController.UploadFileView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">UploadFileView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.EditProfile" title="XMLParser.Controllers.HomeController.EditProfile method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">EditProfile</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.UpdateProfile" title="XMLParser.Controllers.HomeController.UpdateProfile method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">UpdateProfile</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.CreateAssetMapView" title="XMLParser.Controllers.HomeController.CreateAssetMapView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateAssetMapView</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.HomeController.CreateAssetFormView" title="XMLParser.Controllers.HomeController.CreateAssetFormView method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateAssetFormView</span></code></a></p></li>
+</ul>
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.Index">
+<em>public</em> ActionResult <code class="sig-name descname">Index</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.Index" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called very first when a user reaches the site and after validating login information, it will return the user to either home view or on login view.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.HiveView">
+<em>public</em> ActionResult <code class="sig-name descname">HiveView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.HiveView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.CreateProjectView">
+<em>public</em> ActionResult <code class="sig-name descname">CreateProjectView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.CreateProjectView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.ProjectConfiguration">
+<em>public</em> ActionResult <code class="sig-name descname">ProjectConfiguration</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.ProjectConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for returning Project Configuration View On this view, a user can create a project, task, and assignment without leaving the view.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.ProjectsView">
+<em>public</em> ActionResult <code class="sig-name descname">ProjectsView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.ProjectsView" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to view the summary of all the projects in a tabular form.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.AssetsView">
+<em>public</em> ActionResult <code class="sig-name descname">AssetsView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.AssetsView" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for viewing a specific asset after selecting the project and an asset.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.UsersView">
+<em>public</em> ActionResult <code class="sig-name descname">UsersView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.UsersView" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to view specific user after selecting a project and a user.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.TasksView">
+<em>public</em> ActionResult <code class="sig-name descname">TasksView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.TasksView" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to view the specific task after selecting a project and a task.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.CreateTaskView">
+<em>public</em> ActionResult <code class="sig-name descname">CreateTaskView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.CreateTaskView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.CreateAssignmentView">
+<em>public</em> ActionResult <code class="sig-name descname">CreateAssignmentView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.CreateAssignmentView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.MyXMLParser">
+<em>public</em> ActionResult <code class="sig-name descname">MyXMLParser</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.MyXMLParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.Signup">
+<em>public</em> ActionResult <code class="sig-name descname">Signup</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.Signup" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to return the Signup view to a user so that the user can Signup.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.Login">
+<em>public</em> ActionResult <code class="sig-name descname">Login</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.Login" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to return the Login view to provide the login functionality to the user.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.LogOut">
+<em>public</em> ActionResult <code class="sig-name descname">LogOut</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.LogOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called when the session is expired or when the user clicks on logout button.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.serverStorageTesting">
+<em>public</em> ActionResult <code class="sig-name descname">serverStorageTesting</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.serverStorageTesting" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for testing server storage by automatically creating projects, task, asset etc.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.createProject">
+<em>public</em> JsonResult <code class="sig-name descname">createProject</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.createProject" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is part of the server storage testing section for the creation of the project.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.createTask">
+<em>public</em> JsonResult <code class="sig-name descname">createTask</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>number</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>state</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <em>total</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <em>matching</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.createTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is part of the server storage testing section for the creation of the task.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.createAssignment">
+<em>public</em> JsonResult <code class="sig-name descname">createAssignment</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>number</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>task_id</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>asset_ids</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>user_id</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.createAssignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is part of the server storage testing section for the creation of the Assignment.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.createAsset">
+<em>public</em> JsonResult <code class="sig-name descname">createAsset</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>number</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.createAsset" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is part of the server storage testing section for the creation of the Asset.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.SaveSession">
+<em>public</em> ActionResult <code class="sig-name descname">SaveSession</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>sessionValue</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.SaveSession" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for saving username/ email in an Http Session variable for checking login status.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.LoginCall">
+<em>public</em> JsonResult <code class="sig-name descname">LoginCall</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>email</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.LoginCall" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to verify the given credentials from the MySql DB.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.AssociateQuestion">
+<em>public</em> ActionResult <code class="sig-name descname">AssociateQuestion</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.AssociateQuestion" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to return the view for question association.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.RegisterCall">
+<em>public</em> JsonResult <code class="sig-name descname">RegisterCall</code> <span class="sig-paren">(</span>RegisterDTO <em>registerdto</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.RegisterCall" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to register a user i.e saving user credentials in DB if it does not exists already.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.UploadFileView">
+<em>public</em> ActionResult <code class="sig-name descname">UploadFileView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.UploadFileView" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to return the file uploading view so that a user can upload a manual asset file instead of creating an asset on the Map view or Form view.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.EditProfile">
+<em>public</em> ActionResult <code class="sig-name descname">EditProfile</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.EditProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to return the view for editing the profile if a user wants to update his/her information.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.UpdateProfile">
+<em>public</em> JsonResult <code class="sig-name descname">UpdateProfile</code> <span class="sig-paren">(</span>RegisterDTO <em>registerdto</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.UpdateProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to updated information of the user in MySql DB.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.CreateAssetMapView">
+<em>public</em> ActionResult <code class="sig-name descname">CreateAssetMapView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.CreateAssetMapView" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to return the view for creating Asset through Map wizard.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.HomeController.CreateAssetFormView">
+<em>public</em> ActionResult <code class="sig-name descname">CreateAssetFormView</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.HomeController.CreateAssetFormView" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to return the view for asset creation through Form wizard.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="xmlcontroller">
+<h2>XMLController<a class="headerlink" href="#xmlcontroller" title="Permalink to this headline">¶</a></h2>
+<dl class="csharp class">
+<dt id="class-XMLParser.Controllers.XMLController">
+<code class="sig-name descname">class XMLController</code><a class="headerlink" href="#class-XMLParser.Controllers.XMLController" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Controller class with methods.</p>
+<p>Here are some references to its methods:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.XMLController.HiveCall" title="XMLParser.Controllers.XMLController.HiveCall method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">HiveCall</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.XMLController.HiveCall">
+<em>public</em> IHttpActionResult <code class="sig-name descname">HiveCall</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.XMLController.HiveCall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="valuescontroller">
+<h2>ValuesController<a class="headerlink" href="#valuescontroller" title="Permalink to this headline">¶</a></h2>
+<dl class="csharp class">
+<dt id="class-XMLParser.Controllers.ValuesController">
+<code class="sig-name descname">class ValuesController</code><a class="headerlink" href="#class-XMLParser.Controllers.ValuesController" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Controller class with methods.</p>
+<p>Here are some references to it’s methods:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.ValuesController.Get" title="XMLParser.Controllers.ValuesController.Get method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Get</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.ValuesController.Get" title="XMLParser.Controllers.ValuesController.Get method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Get</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.ValuesController.Post" title="XMLParser.Controllers.ValuesController.Post method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Post</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.ValuesController.Put" title="XMLParser.Controllers.ValuesController.Put method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Put</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-XMLParser.Controllers.ValuesController.Delete" title="XMLParser.Controllers.ValuesController.Delete method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Delete</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.ValuesController.Get">
+<em>public</em> IEnumerable&lt;<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a>&gt; <code class="sig-name descname">Get</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.ValuesController.Get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt>
+<em>public</em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Get</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <em>id</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.ValuesController.Post">
+<em>public</em> void <code class="sig-name descname">Post</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.ValuesController.Post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.ValuesController.Put">
+<em>public</em> void <code class="sig-name descname">Put</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <em>id</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.ValuesController.Put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp method">
+<dt id="method-XMLParser.Controllers.ValuesController.Delete">
+<em>public</em> void <code class="sig-name descname">Delete</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#method-XMLParser.Controllers.ValuesController.Delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Client.html" class="btn btn-neutral float-right" title="Client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Views.html" class="btn btn-neutral float-left" title="Views" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Renato Kunz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+
+    :root{
+        --pink: rgb(237,225,248);
+        --purple: rgb(94,59,120);
+        --lightpurple: rgb(201, 183, 215);
+      }
+
+
+
+      /*link visited and unvisited color*/
+
+      a {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      a:visited {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      /*footer colors*/
+
+      footer{
+        color:var(--pink)
+      }
+
+      a:hover {
+        color: var(--pink);
+        text-decoration: none;
+        cursor: pointer;
+        text-decoration-color: var(--purple);
+      }
+
+     .wy-nav-side {
+
+        /*background: rgb(30,115,190);*/
+        background: var(--pink);
+        color:/**#eee;*/var(--purple);
+
+
+     }
+
+     .rst-content img{
+       border-radius:3px;
+     }
+
+     .wy-menu-vertical li.toctree-l1.current>a {
+        color: var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l2.current>a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a{
+       color: var(--purple);
+       background: var(--pink);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a:hover{
+       color: var(--pink);
+       background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover{
+         color: var(--pink);
+         background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a:hover{
+           color: var(--pink);
+           background:var(--purple);
+     }
+
+    .wy-side-nav-search {
+
+        background:var(--pink); /*rgb(30,115,190);*/
+
+    }
+
+    .wy-menu-vertical a{
+      color:var(--purple);
+      text-decoration: none;
+    }
+
+    .wy-menu-vertical li.current{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertical li{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertival a:current {
+      color:var(--pink);
+    }
+
+    .wy-menu-vertical a:hover{
+        background-color:var(--purple);
+        color:var(--pink);
+    }
+
+    .fa-home::before, .icon-home::before {
+        content:"";
+    }
+
+    a.icon-home {
+        width: 50%;
+        margin-left: -6px;
+        font-size: 0%;
+        content:url("https://smart-agora.org/wp-content/uploads/2019/09/LastoneLogoPack3.1Updated_File.png");
+    }
+
+    .wy-nav-content{
+        max-width: initial;
+        background:var(--purple);
+        color:var(--pink);
+    }
+
+    /*nav top current directory, delete link underline*/
+    .wy-breadcrumbs li a:first-child{
+      text-decoration: none;
+    }
+
+
+    /*buton colors*/
+    .btn-neutral {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+    .btn-neutral:visited {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+
+    /*codeblock color*/
+    .rst-content div[class^='highlight'] pre{
+      color:black;
+      border-radius:3px; /*rounded corners*/
+    }
+
+    /*make sure tables do no have white backgrounds*/
+    .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+      background-color:var(--purple)
+    }
+
+    /*color of table header*/
+    .rst-content table.docutils thead{
+      color:var(--pink) !important;
+    }
+
+    /*table title thick border*/
+    .rst-content table.docutils thead th{
+      border-bottom: solid 2px;
+      border-top: solid 2px;
+      border-left: solid 2px;
+      border-right: solid 2px;
+    }
+
+    /*code block line numbers*/
+    div.linenodiv pre{
+      color:var(--pink) !important;
+      border-radius:0 !important;
+    }
+
+    /*codeblock pink background*/
+    div.highlight pre{
+      background-color:var(--pink);
+    }
+
+    /*rounded corners on images*/
+    .rst-content .section>img{
+      border-radius:3px;
+    }
+
+    /*rounded corners on codeblocks*/
+    .rst-content div[class^='highlight']{
+        border-radius:3px;
+    }
+
+    /*code boxes outline*/
+    .rst-content dl:not(.docutils) dt{
+      border-top: solid 3px var(--lightpurple);
+      background: var(--pink);
+      border-radius: 3px;
+    }
+
+    /*code boxes text color*/
+    .rst-content dl:not(.docutils) code.descname{
+      color: var(--purple);
+    }
+
+    .rst-content dl:not(.docutils) code {
+      background: var(--pink);
+      font-weight: bold;
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt {
+      border-left: solid 3px var(--lightpurple);
+      background: var(--pink);
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt a{
+      color: var(--purple);
+      margin-right: 3px;
+    }
+
+    .rst-content code.xref{
+      color: var(--purple);
+      border-radius: 3px;
+      background: var(--pink);
+    }
+
+    /*side menu title color*/
+    .wy-menu-vertical p.caption{
+      color: var(--purple)
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils) .property, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .property {
+      display: contents;
+      padding-right: 8px;
+    }
+
+
+  </style>
+
+
+</body>
+</html>

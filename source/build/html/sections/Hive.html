@@ -1,0 +1,605 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hive &mdash; SmartagoraDocumentation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Troubleshooting" href="DashboardGuide/Troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SmartagoraDocumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="smart.agora.html">Smart Agora Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SmartAgoraDescription.html">SmartAgora Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dashboard.html">Dashboard Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DashboardGuide.html">Dashboard Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hive</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-hive">Building HIVE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-structure">Code Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-from-the-source-code">Building from the source code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-hive">Starting Hive</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SmartagoraDocumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Hive</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/sections/Hive.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hive">
+<h1>Hive<a class="headerlink" href="#hive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This is a special edition of HIVE software distribution designed for
+the use with Smart Agora.
+The main differences compared to the original HIVE are:</p>
+<ul class="simple">
+<li><p>the server code has been adapted to Elasticsearch 2.x and refactored</p></li>
+<li><p>the Go client API library and command line client have been added</p></li>
+<li><p>the data strcuctures and workflow have been adapted to Smart Agora requirements</p></li>
+</ul>
+<p>In the <span class="xref std std-ref">SMART AGORA Dashboard</span>, the hive server is used as a backend.
+The hive server itself again depends on some repositories and so on. In the following a short dependecy list shows all needed repositories for running Hive.</p>
+<ul class="simple">
+<li><p><a target="_blank" href="https://github.com/nytlabs/hive" target="_blank">Hive Server</a></p>
+<ul>
+<li><p><a target="_blank" href="https://github.com/jacqui/elastigo" target="_blank">Elastigo</a></p>
+<ul>
+<li><p><a target="_blank" href="https://github.com/bitly/go-hostpool" target="_blank">Go-hostpool</a</p></li>
+<li><p><a target="_blank" href="https://github.com/araddon/gou" target="_blank">Gou</a></p></li>
+</ul>
+</li>
+<li><p><a target="_blank" href="https://github.com/gorilla/mux" target="_blank">Mux</a></p></li>
+<li><p><a target="_blank" href="https://github.com/gorilla/context" target="_blank">Context</a></p></li>
+</ul>
+</li>
+</ul>
+<p>All of those dependencies have been already combined in the <a target="_blank" href="https://github.com/epournaras/Hive-Crowd-sensing/tree/master/Go_Workspace%20(Atif)" target="_blank">Hive-Crowd-Sensing</a> repository.</p>
+</div>
+<div class="section" id="building-hive">
+<h2>Building HIVE<a class="headerlink" href="#building-hive" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="code-structure">
+<h3>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h3>
+<p>The source code is kept in directory “src”. The source
+code tree has the following structure:</p>
+<ul class="simple">
+<li><p>src</p>
+<ul>
+<li><p>fragata</p>
+<ul>
+<li><p>hive</p>
+<ul>
+<li><p>client          -          HIVE client API library</p></li>
+<li><p>main</p>
+<ul>
+<li><p>command          -          main program for HIVE command line client</p></li>
+<li><p>server          -          main program for HIVE server</p></li>
+</ul>
+</li>
+<li><p>server          -          HIVE server API library</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>github.com</p>
+<ul>
+<li><p>araddon          -          required packages</p></li>
+<li><p>bitly          -          required packages</p></li>
+<li><p>gorilla          -          required packages</p></li>
+<li><p>jacqui          -          required packages</p>
+<ul>
+<li><p>elastigo          -          Go interface to Elasticsearch</p></li>
+</ul>
+</li>
+<li><p>nytlabs</p>
+<ul>
+<li><p>hive          -          original NYT version of HIVE server adapted to Elasticsearch 2.x (not used; included for reference only)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="building-from-the-source-code">
+<h3>Building from the source code<a class="headerlink" href="#building-from-the-source-code" title="Permalink to this headline">¶</a></h3>
+<p>To build the HIVE software from the source code, you will need the recent version
+of Go programming language distribution installed on your computer (refer to
+<a class="reference external" href="https://golang.org/doc/install">https://golang.org/doc/install</a> for detail.)</p>
+<p>Copy the HIVE “src” directory tree to your Go workspace directory (designated
+via $GOPATH environment variable) and build HIVE server and command line client
+executables as follows (assuming Go workspace directory as you current directory
+and sub-directory ./bin available as location of executables):</p>
+<p>go build -o ./bin/hive-server fragata/hive/main/server
+go build -o ./bin/hive-command fragata/hive/main/command</p>
+<p>Quick test:</p>
+<p>To run HIVE, you need Elasticsearch 2.x server installed and running.</p>
+</div>
+</div>
+<div class="section" id="starting-hive">
+<h2>Starting Hive<a class="headerlink" href="#starting-hive" title="Permalink to this headline">¶</a></h2>
+<p>Start HIVE server with default parameters:</p>
+<blockquote>
+<div><p>./bin/hive-server</p>
+</div></blockquote>
+<p>if Elasticsearch is running on the local host and default port and you want
+HIVE to listen port 8080 and store data in the Elasticsearch index named
+“hive”. If you want a different configuration, set respective parameters explicitly
+as described in the HIVE server user documentation.</p>
+<p>Make “test” your current directory. Specify the command line client environment
+variables as described in the command line client user documentation, e.g.:</p>
+<blockquote>
+<div><p>export HIVE_HOST=127.0.0.1
+export HIVE_PORT=8080
+export HIVE_COOKIE_DIR=./cookie</p>
+</div></blockquote>
+<p>Run the command line client with the following commands:</p>
+<blockquote>
+<div><p>../bin/hive-command admin-setup true setup01.json</p>
+</div></blockquote>
+<p>will reset the database and create a new project with an associated task and
+asset as described in “setup01.json”;</p>
+<blockquote>
+<div><p>../bin/hive-command create-user basic user01.json</p>
+</div></blockquote>
+<p>will create a new user with parameters described in “user01.json”, make
+it a current user and store respective user ID in a cookie file in “./cookie”
+sub-directory;</p>
+<blockquote>
+<div><p>../bin/hive-command user-assignment basic record &gt;assign01.json</p>
+</div></blockquote>
+<p>will generate an assignment for the current user and store it in
+“assign.json”.</p>
+<p>Then simulate the user action of “solving” the assignment by inserting the payload
+information into the assignment file; to do this, replace two properties
+“State” and “SubmittedData” in the end of “assign.json” as follows:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>code content
+ &quot;State&quot;: &quot;finished&quot;,
+ &quot;SubmittedData&quot;: {
+     &quot;record&quot;: {
+         &quot;end&quot;: &quot;2016-06-01T12:10:00Z&quot;,
+         &quot;sensors&quot;: [&quot;accelerometer&quot;],
+         &quot;start&quot;: &quot;2016-06-01T12:00:00Z&quot;,
+         &quot;step&quot;: 1000,
+         &quot;accelerometer&quot;: [
+             0.0, 1.0, 0.0, -1.0, 0.0, 1.0, 0.0
+         ]
+     }
+ }
+</pre></div>
+</div>
+<p>(see “assign_templ.json” as an example).</p>
+<p>Submit the updated assignment file “assign.json” to HIVE:</p>
+<blockquote>
+<div><p>../bin/hive-command user-create-assignment basic record assign01.json</p>
+</div></blockquote>
+<p>You can use adminstrator commands of the command line interface to inspect
+entities of your HIVE database (consult command line interface user documentation
+for details).</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="DashboardGuide/Troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Renato Kunz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+
+    :root{
+        --pink: rgb(237,225,248);
+        --purple: rgb(94,59,120);
+        --lightpurple: rgb(201, 183, 215);
+      }
+
+
+
+      /*link visited and unvisited color*/
+
+      a {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      a:visited {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      /*footer colors*/
+
+      footer{
+        color:var(--pink)
+      }
+
+      a:hover {
+        color: var(--pink);
+        text-decoration: none;
+        cursor: pointer;
+        text-decoration-color: var(--purple);
+      }
+
+     .wy-nav-side {
+
+        /*background: rgb(30,115,190);*/
+        background: var(--pink);
+        color:/**#eee;*/var(--purple);
+
+
+     }
+
+     .rst-content img{
+       border-radius:3px;
+     }
+
+     .wy-menu-vertical li.toctree-l1.current>a {
+        color: var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l2.current>a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a{
+       color: var(--purple);
+       background: var(--pink);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a:hover{
+       color: var(--pink);
+       background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover{
+         color: var(--pink);
+         background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a:hover{
+           color: var(--pink);
+           background:var(--purple);
+     }
+
+    .wy-side-nav-search {
+
+        background:var(--pink); /*rgb(30,115,190);*/
+
+    }
+
+    .wy-menu-vertical a{
+      color:var(--purple);
+      text-decoration: none;
+    }
+
+    .wy-menu-vertical li.current{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertical li{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertival a:current {
+      color:var(--pink);
+    }
+
+    .wy-menu-vertical a:hover{
+        background-color:var(--purple);
+        color:var(--pink);
+    }
+
+    .fa-home::before, .icon-home::before {
+        content:"";
+    }
+
+    a.icon-home {
+        width: 50%;
+        margin-left: -6px;
+        font-size: 0%;
+        content:url("https://smart-agora.org/wp-content/uploads/2019/09/LastoneLogoPack3.1Updated_File.png");
+    }
+
+    .wy-nav-content{
+        max-width: initial;
+        background:var(--purple);
+        color:var(--pink);
+    }
+
+    /*nav top current directory, delete link underline*/
+    .wy-breadcrumbs li a:first-child{
+      text-decoration: none;
+    }
+
+
+    /*buton colors*/
+    .btn-neutral {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+    .btn-neutral:visited {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+
+    /*codeblock color*/
+    .rst-content div[class^='highlight'] pre{
+      color:black;
+      border-radius:3px; /*rounded corners*/
+    }
+
+    /*make sure tables do no have white backgrounds*/
+    .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+      background-color:var(--purple)
+    }
+
+    /*color of table header*/
+    .rst-content table.docutils thead{
+      color:var(--pink) !important;
+    }
+
+    /*table title thick border*/
+    .rst-content table.docutils thead th{
+      border-bottom: solid 2px;
+      border-top: solid 2px;
+      border-left: solid 2px;
+      border-right: solid 2px;
+    }
+
+    /*code block line numbers*/
+    div.linenodiv pre{
+      color:var(--pink) !important;
+      border-radius:0 !important;
+    }
+
+    /*codeblock pink background*/
+    div.highlight pre{
+      background-color:var(--pink);
+    }
+
+    /*rounded corners on images*/
+    .rst-content .section>img{
+      border-radius:3px;
+    }
+
+    /*rounded corners on codeblocks*/
+    .rst-content div[class^='highlight']{
+        border-radius:3px;
+    }
+
+    /*code boxes outline*/
+    .rst-content dl:not(.docutils) dt{
+      border-top: solid 3px var(--lightpurple);
+      background: var(--pink);
+      border-radius: 3px;
+    }
+
+    /*code boxes text color*/
+    .rst-content dl:not(.docutils) code.descname{
+      color: var(--purple);
+    }
+
+    .rst-content dl:not(.docutils) code {
+      background: var(--pink);
+      font-weight: bold;
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt {
+      border-left: solid 3px var(--lightpurple);
+      background: var(--pink);
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt a{
+      color: var(--purple);
+      margin-right: 3px;
+    }
+
+    .rst-content code.xref{
+      color: var(--purple);
+      border-radius: 3px;
+      background: var(--pink);
+    }
+
+    /*side menu title color*/
+    .wy-menu-vertical p.caption{
+      color: var(--purple)
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils) .property, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .property {
+      display: contents;
+      padding-right: 8px;
+    }
+
+
+  </style>
+
+
+</body>
+</html>

@@ -1,0 +1,1646 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Models &mdash; SmartagoraDocumentation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Views" href="Views.html" />
+    <link rel="prev" title="Dashboard Documentation" href="../Dashboard.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> SmartagoraDocumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../smart.agora.html">Smart Agora Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SmartAgoraDescription.html">SmartAgora Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Dashboard.html">Dashboard Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hivemodels">HiveModels</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#answersdata">AnswersData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#asset">Asset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignmentcriteria">AssignmentCriteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#completioncriteria">CompletionCriteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#completioncriteria-count">CompletionCriteria -&gt; Count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#completioncriteria-socialexperimentxml">CompletionCriteria -&gt; SocialExperimentXML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#completioncompletioncriteria-submitteddata">CompletionCompletionCriteria -&gt; submittedData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metadata">Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metaproperty">MetaProperty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project-assignmentcount">Project -&gt; AssignmentCount</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#projectquestionmodel">ProjectQuestionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#record">Record</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submittedanswerdata">SubmittedAnswerData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitteddata">SubmittedData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task">Task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user">User</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#questionmodels">QuestionModels</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#combinationmodel">CombinationModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jquerydatatableparammodel">jQueryDataTableParamModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optionmodel">OptionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#questiondatamodel">QuestionDataModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#questions">Questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selectionquestionmodel">SelectionQuestionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sensordatamodel">SensorDataModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sensormodel">SensorModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#startanddestinationmodel">StartAndDestinationModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Client.html">Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../DashboardGuide.html">Dashboard Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Hive.html">Hive</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SmartagoraDocumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../Dashboard.html">Dashboard Documentation</a> &raquo;</li>
+        
+      <li>Models</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/sections/Dashboard/Modals.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="models">
+<h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hivemodels">
+<h2>HiveModels<a class="headerlink" href="#hivemodels" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="answersdata">
+<h3>AnswersData<a class="headerlink" href="#answersdata" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.AnswerData">
+<code class="sig-name descname">class AnswerData</code><a class="headerlink" href="#class-HiveServer.Models.AnswerData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that a AnswerData will contain.</p>
+<p>Here are references to it’s properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AnswerData.id" title="HiveServer.Models.AnswerData.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AnswerData.Answer" title="HiveServer.Models.AnswerData.Answer property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Answer</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AnswerData.Files_Name" title="HiveServer.Models.AnswerData.Files_Name property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Files_Name</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AnswerData.Latitude" title="HiveServer.Models.AnswerData.Latitude property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Latitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AnswerData.Longitude" title="HiveServer.Models.AnswerData.Longitude property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Longitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AnswerData.Question" title="HiveServer.Models.AnswerData.Question property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Question</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AnswerData.Type" title="HiveServer.Models.AnswerData.Type property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Type</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AnswerData.TimeAtAnswering" title="HiveServer.Models.AnswerData.TimeAtAnswering property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">TimeAtAnswering</span></code></a></p></li>
+</ul>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AnswerData.id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AnswerData.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the integer type Id of the answer object.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AnswerData.Answer">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Answer</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AnswerData.Answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the answer that a user provides on a given question in a survey.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AnswerData.Files_Name">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Files_Name</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AnswerData.Files_Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the name of the asset file in which the question is given.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AnswerData.Latitude">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Latitude</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AnswerData.Latitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Latitude value of the question’s position.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AnswerData.Longitude">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Longitude</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AnswerData.Longitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the longitude value of the question’s position.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AnswerData.Question">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Question</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AnswerData.Question" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Question Text that will be displayed on the survey.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AnswerData.Type">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Type</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AnswerData.Type" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the type of question. I can be a checkbox, radio, textbox or Likert scale type.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AnswerData.TimeAtAnswering">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">TimeAtAnswering</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AnswerData.TimeAtAnswering" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the time at which the user answers the given question.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="asset">
+<h3>Asset<a class="headerlink" href="#asset" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.Asset">
+<code class="sig-name descname">class Asset</code><a class="headerlink" href="#class-HiveServer.Models.Asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class Asset will contain.</p>
+<p>Here are references to it’s properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Asset.Id" title="HiveServer.Models.Asset.Id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Asset.Name" title="HiveServer.Models.Asset.Name property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Name</span></code></a></p></li>
+<li><p><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">URL</span></code></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Asset.Metadata" title="HiveServer.Models.Asset.Metadata property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Metadata</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Asset.Id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Asset.Id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the unique string type Id of an asset that is used to uniquely identify the asset.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Asset.Name">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Name</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Asset.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the name of the asset. It can be a simple, decision, dias simple or a sequence.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Asset.Url">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Url</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Asset.Url" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the URL of the asset. It is hard-coded.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Asset.Metadata">
+<a class="reference internal" href="#class-HiveServer.Models.Metadata" title="HiveServer.Models.Metadata class">Metadata</a> <code class="sig-name descname">Metadata</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Asset.Metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the main parts of the asset. It contains questions, start, destination addresses, etc.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="assignment">
+<h3>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.Assignment">
+<code class="sig-name descname">class Assignment</code><a class="headerlink" href="#class-HiveServer.Models.Assignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the Assignment class contains.</p>
+<p>Here are references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Assignment.Id" title="HiveServer.Models.Assignment.Id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Assignment.User" title="HiveServer.Models.Assignment.User property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">User</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Assignment.Project" title="HiveServer.Models.Assignment.Project property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Project</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Assignment.Task" title="HiveServer.Models.Assignment.Task property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Task</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Assignment.Asset" title="HiveServer.Models.Assignment.Asset property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Asset</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Assignment.State" title="HiveServer.Models.Assignment.State property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">State</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Assignment.SubmittedData" title="HiveServer.Models.Assignment.SubmittedData property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">SubmittedData</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Assignment.SubmittedAnswerData" title="HiveServer.Models.Assignment.SubmittedAnswerData property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">SubmittedAnswerData</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Assignment.Id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Assignment.Id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Id of an assignment. It is the unique string on the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Assignment.User">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">User</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Assignment.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Id of the associated user that is selected at the time of assignment creation.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Assignment.Project">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Project</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Assignment.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Id of the project that is selected at the time of the Assignment creation.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Assignment.Task">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Task</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Assignment.Task" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Id of the Task that is selected at the time of the Assignment creation.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Assignment.Asset">
+<a class="reference internal" href="#class-HiveServer.Models.Asset" title="HiveServer.Models.Asset class">Asset</a> <code class="sig-name descname">Asset</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Assignment.Asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Id of the Asset that is selected at the time of the Assignment creation.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Assignment.State">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">State</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Assignment.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>It indicates the status of an assignment either an assignment is finished or not.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Assignment.SubmittedData">
+<a class="reference internal" href="#class-HiveServer.Models.SubmittedData" title="HiveServer.Models.SubmittedData class">SubmittedData</a> <code class="sig-name descname">SubmittedData</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Assignment.SubmittedData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is an object that contains all data that is gotten from the android side on assignment completion and submission.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Assignment.SubmittedAnswerData">
+<a class="reference internal" href="#class-HiveServer.Models.SubmittedAnswerData" title="HiveServer.Models.SubmittedAnswerData class">SubmittedAnswerData</a> <code class="sig-name descname">SubmittedAnswerData</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Assignment.SubmittedAnswerData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is an object that contains only answer data that a user has submitted on completing a survey.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="assignmentcriteria">
+<h3>AssignmentCriteria<a class="headerlink" href="#assignmentcriteria" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.AssignmentCriteria">
+<code class="sig-name descname">class AssignmentCriteria</code><a class="headerlink" href="#class-HiveServer.Models.AssignmentCriteria" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following is the property that the class AssignmentCriteria contains.</p>
+<p>Here are references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AssignmentCriteria.SubmittedData" title="HiveServer.Models.AssignmentCriteria.SubmittedData property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">SubmittedData</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AssignmentCriteria.SubmittedData">
+<a class="reference internal" href="#class-HiveServer.Models.SubmittedData" title="HiveServer.Models.SubmittedData class">SubmittedData</a> <code class="sig-name descname">SubmittedData</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AssignmentCriteria.SubmittedData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is used to contain the data submitted by a user during the survey.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="completioncriteria">
+<h3>CompletionCriteria<a class="headerlink" href="#completioncriteria" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.CompletionCriteria">
+<code class="sig-name descname">class CompletionCriteria</code><a class="headerlink" href="#class-HiveServer.Models.CompletionCriteria" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class CompletionCriteria contains.</p>
+<p>Here are references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.CompletionCriteria.Total" title="HiveServer.Models.CompletionCriteria.Total property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Total</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.CompletionCriteria.Matching" title="HiveServer.Models.CompletionCriteria.Matching property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Matching</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.CompletionCriteria.Total">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">Total</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.CompletionCriteria.Total" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the total number of submitted assignments to mark a task as completed.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.CompletionCriteria.Matching">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">Matching</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.CompletionCriteria.Matching" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the total number of matched submitted assignments to mark a task as completed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="completioncriteria-count">
+<h3>CompletionCriteria -&gt; Count<a class="headerlink" href="#completioncriteria-count" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.Count">
+<code class="sig-name descname">class Count</code><a class="headerlink" href="#class-HiveServer.Models.Count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class Count contains.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Count.Assignments" title="HiveServer.Models.Count.Assignments property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Assignments</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Count.finished" title="HiveServer.Models.Count.finished property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">finished</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Count.skipped" title="HiveServer.Models.Count.skipped property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">skipped</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Count.unfinished" title="HiveServer.Models.Count.unfinished property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">unfinished</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Count.Assignments">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Assignments</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Count.Assignments" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the total number of assigments related to a specific project or a task etc.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Count.finished">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">finished</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Count.finished" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the total number of finished assigments related to a specific project or task etc.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Count.skipped">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">skipped</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Count.skipped" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the total number of skipped assigments related to a specific project or task etc.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Count.unfinished">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">unfinished</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Count.unfinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the total number of unfinished assigments related to a specific project or task etc.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="completioncriteria-socialexperimentxml">
+<h3>CompletionCriteria -&gt; SocialExperimentXML<a class="headerlink" href="#completioncriteria-socialexperimentxml" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.SocialExperimentXML">
+<code class="sig-name descname">class SocialExperimentXML</code><a class="headerlink" href="#class-HiveServer.Models.SocialExperimentXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class SocialExperimentXML contains.</p>
+<p>Here are references to its properties</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.SocialExperimentXML.Data" title="HiveServer.Models.SocialExperimentXML.Data property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Data</span></code></a></p></li>
+</ul>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.SocialExperimentXML.Data">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Data</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.SocialExperimentXML.Data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="completioncompletioncriteria-submitteddata">
+<h3>CompletionCompletionCriteria -&gt; submittedData<a class="headerlink" href="#completioncompletioncriteria-submitteddata" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.submittedData">
+<code class="sig-name descname">class submittedData</code><a class="headerlink" href="#class-HiveServer.Models.submittedData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class submittedData contains.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.submittedData.Data" title="HiveServer.Models.submittedData.Data property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Data</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.submittedData.Data">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Data</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.submittedData.Data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="metadata">
+<h3>Metadata<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.Metadata">
+<code class="sig-name descname">class Metadata</code><a class="headerlink" href="#class-HiveServer.Models.Metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Metadata class with properties, there is no method.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Metadata.record" title="HiveServer.Models.Metadata.record property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">record</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Metadata.record">
+Questions <code class="sig-name descname">record</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Metadata.record" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the question object that contains question, question location, question type etc.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="metaproperty">
+<h3>MetaProperty<a class="headerlink" href="#metaproperty" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.MetaProperty">
+<code class="sig-name descname">class MetaProperty</code><a class="headerlink" href="#class-HiveServer.Models.MetaProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a MetaProperty class with properties, there is no method.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.MetaProperty.Name" title="HiveServer.Models.MetaProperty.Name property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Name</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.MetaProperty.Type" title="HiveServer.Models.MetaProperty.Type property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Type</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.MetaProperty.Name">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Name</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.MetaProperty.Name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.MetaProperty.Type">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Type</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.MetaProperty.Type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="project">
+<h3>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.Project">
+<code class="sig-name descname">class Project</code><a class="headerlink" href="#class-HiveServer.Models.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the methods and properties that a project will contain on creation.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Project.Id" title="HiveServer.Models.Project.Id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Project.Name" title="HiveServer.Models.Project.Name property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Name</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Project.Description" title="HiveServer.Models.Project.Description property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Description</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Project.AssetCount" title="HiveServer.Models.Project.AssetCount property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">AssetCount</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Project.TaskCount" title="HiveServer.Models.Project.TaskCount property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">TaskCount</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Project.UserCount" title="HiveServer.Models.Project.UserCount property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">UserCount</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Project.MetaProperties" title="HiveServer.Models.Project.MetaProperties property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">MetaProperties</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Project.AssignmentCount" title="HiveServer.Models.Project.AssignmentCount property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">AssignmentCount</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Project.Id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Project.Id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the unique Id of the project. It is created automatically using a timestamp so that the newly created project has a unique Id.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Project.Name">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Name</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Project.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the name of the Project provided by the user at the time of the project creation.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Project.Description">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Description</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Project.Description" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is an optional description of the project. You can skip this one.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Project.AssetCount">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">AssetCount</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Project.AssetCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the total number of Assets associated with the specific project.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Project.TaskCount">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">TaskCount</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Project.TaskCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the total number of Tasks associated with the specific project.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Project.UserCount">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">UserCount</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Project.UserCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the total number of users associated with the specific project.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Project.MetaProperties">
+<a class="reference internal" href="#class-HiveServer.Models.MetaProperty" title="HiveServer.Models.MetaProperty class">MetaProperty</a>[] <code class="sig-name descname">MetaProperties</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Project.MetaProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Project.AssignmentCount">
+<a class="reference internal" href="#class-HiveServer.Models.AssignmentCount" title="HiveServer.Models.AssignmentCount class">AssignmentCount</a> <code class="sig-name descname">AssignmentCount</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Project.AssignmentCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the total number of Assignments associated with the specific project. It contains two values: ‘Total’ for the total assignments including finished or unfinished whereas the ‘Finished’ for the finished assignments count.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="project-assignmentcount">
+<h3>Project -&gt; AssignmentCount<a class="headerlink" href="#project-assignmentcount" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.AssignmentCount">
+<code class="sig-name descname">class AssignmentCount</code><a class="headerlink" href="#class-HiveServer.Models.AssignmentCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class AssignmentCount contains.</p>
+<p>Here are references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AssignmentCount.Total" title="HiveServer.Models.AssignmentCount.Total property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Total</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.AssignmentCount.Finished" title="HiveServer.Models.AssignmentCount.Finished property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Finished</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AssignmentCount.Total">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">Total</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AssignmentCount.Total" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the total number of assingments associated with a specific project.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.AssignmentCount.Finished">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">Finished</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.AssignmentCount.Finished" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the count of the finished assignments of a project.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="projectquestionmodel">
+<h3>ProjectQuestionModel<a class="headerlink" href="#projectquestionmodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.ProjectQuestionModel">
+<code class="sig-name descname">class ProjectQuestionModel</code><a class="headerlink" href="#class-HiveServer.Models.ProjectQuestionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a ProjectQuestionModel class with properties, there is no method.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.ProjectQuestionModel.ProjectId" title="HiveServer.Models.ProjectQuestionModel.ProjectId property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">ProjectId</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.ProjectQuestionModel.QuestionsModel" title="HiveServer.Models.ProjectQuestionModel.QuestionsModel property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">QuestionsModel</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.ProjectQuestionModel.ProjectId">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">ProjectId</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.ProjectQuestionModel.ProjectId" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Id of the project with which the question data is associated.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.ProjectQuestionModel.QuestionsModel">
+Questions <code class="sig-name descname">QuestionsModel</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.ProjectQuestionModel.QuestionsModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Questions class object that has the questions data.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="record">
+<h3>Record<a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.Record">
+<code class="sig-name descname">class Record</code><a class="headerlink" href="#class-HiveServer.Models.Record" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Record class with properties, there is no method.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Record.sensors" title="HiveServer.Models.Record.sensors property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">sensors</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Record.start" title="HiveServer.Models.Record.start property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">start</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Record.end" title="HiveServer.Models.Record.end property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">end</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Record.step" title="HiveServer.Models.Record.step property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">step</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Record.sensors">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a>[] <code class="sig-name descname">sensors</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Record.sensors" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is an array of the sensor names. Currently, there are seven sensors.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Record.start">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">start</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Record.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Record.end">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">end</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Record.end" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Record.step">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">step</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Record.step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="submittedanswerdata">
+<h3>SubmittedAnswerData<a class="headerlink" href="#submittedanswerdata" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.SubmittedAnswerData">
+<code class="sig-name descname">class SubmittedAnswerData</code><a class="headerlink" href="#class-HiveServer.Models.SubmittedAnswerData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a SubmittedAnswerData class with properties, there is no method.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.SubmittedAnswerData.SubmittedData" title="HiveServer.Models.SubmittedAnswerData.SubmittedData property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">SubmittedData</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.SubmittedAnswerData.SubmittedData">
+<em>string[]</em> List&lt;AnswersData&gt; <code class="sig-name descname">SubmittedData</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.SubmittedAnswerData.SubmittedData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the list that contains all the answers of the users corresponding to the questions.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="submitteddata">
+<h3>SubmittedData<a class="headerlink" href="#submitteddata" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.SubmittedData">
+<code class="sig-name descname">class SubmittedData</code><a class="headerlink" href="#class-HiveServer.Models.SubmittedData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a SubmittedAnswerData class with properties, there is no method.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.SubmittedData.record" title="HiveServer.Models.SubmittedData.record property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">record</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.SubmittedData.record">
+<a class="reference internal" href="#class-HiveServer.Models.Record" title="HiveServer.Models.Record class">Record</a> <code class="sig-name descname">record</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.SubmittedData.record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="task">
+<h3>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.Task">
+<code class="sig-name descname">class Task</code><a class="headerlink" href="#class-HiveServer.Models.Task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class Task will contain.</p>
+<p>Here are references to it’s properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Task.Id" title="HiveServer.Models.Task.Id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Task.Name" title="HiveServer.Models.Task.Name property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Name</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Task.Description" title="HiveServer.Models.Task.Description property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Description</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Task.CurrentState" title="HiveServer.Models.Task.CurrentState property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">CurrentState</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Task.AssignmentCriteria" title="HiveServer.Models.Task.AssignmentCriteria property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">AssignmentCriteria</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.Task.CompletionCriteria" title="HiveServer.Models.Task.CompletionCriteria property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">CompletionCriteria</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Task.Id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Task.Id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the unique Id of the Task created by the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server at the time of task creation request.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Task.Name">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Name</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Task.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the name of the Task which is provided by the user.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Task.Description">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Description</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Task.Description" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the optional description of the task.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Task.CurrentState">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">CurrentState</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Task.CurrentState" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the current state of the Task either it is available or not.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Task.AssignmentCriteria">
+<a class="reference internal" href="#class-HiveServer.Models.AssignmentCriteria" title="HiveServer.Models.AssignmentCriteria class">AssignmentCriteria</a> <code class="sig-name descname">AssignmentCriteria</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Task.AssignmentCriteria" title="Permalink to this definition">¶</a></dt>
+<dd><p>For details, you can view the AssignmentCriteria class.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.Task.CompletionCriteria">
+<a class="reference internal" href="#class-HiveServer.Models.CompletionCriteria" title="HiveServer.Models.CompletionCriteria class">CompletionCriteria</a> <code class="sig-name descname">CompletionCriteria</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.Task.CompletionCriteria" title="Permalink to this definition">¶</a></dt>
+<dd><p>For details, you can view the CompletionCriteria class.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="user">
+<h3>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-HiveServer.Models.User">
+<code class="sig-name descname">class User</code><a class="headerlink" href="#class-HiveServer.Models.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is an User class with properties, there is no method.</p>
+<p>Here are  references to its properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Models.User.Id" title="HiveServer.Models.User.Id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.User.Name" title="HiveServer.Models.User.Name property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Name</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.User.Email" title="HiveServer.Models.User.Email property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Email</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.User.Project" title="HiveServer.Models.User.Project property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Project</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Models.User.ExternalId" title="HiveServer.Models.User.ExternalId property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">ExternalId</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.User.Id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.User.Id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Id of the user i.e the unique device Id through which a user is completing an assignment.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.User.Name">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Name</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.User.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the name of the user i.e infact the name of the device.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.User.Email">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Email</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.User.Email" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the e-mail of the user. It is currently hard-coded.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.User.Project">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Project</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.User.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the project id to which a user is associated(using the android app).</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Models.User.ExternalId">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">ExternalId</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Models.User.ExternalId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="questionmodels">
+<h2>QuestionModels<a class="headerlink" href="#questionmodels" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="combinationmodel">
+<h3>CombinationModel<a class="headerlink" href="#combinationmodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-Models.QuestionModels.CombinationModel">
+<code class="sig-name descname">class CombinationModel</code><a class="headerlink" href="#class-Models.QuestionModels.CombinationModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class CombinationModel contains.</p>
+<p>Here are references to its properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.CombinationModel.id" title="Models.QuestionModels.CombinationModel.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.CombinationModel.Selected" title="Models.QuestionModels.CombinationModel.Selected property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Selected</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.CombinationModel.NextQuestion" title="Models.QuestionModels.CombinationModel.NextQuestion property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">NextQuestion</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.CombinationModel.Credits" title="Models.QuestionModels.CombinationModel.Credits property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Credits</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.CombinationModel.id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.CombinationModel.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is an autoincremented Id of the of choices i.e if user select two checkboxes then there will be two ids 1 and 2.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.CombinationModel.Selected">
+List&lt;SelectionQuestionModel&gt; <code class="sig-name descname">Selected</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.CombinationModel.Selected" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the List of the selected checkboxes.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.CombinationModel.NextQuestion">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">NextQuestion</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.CombinationModel.NextQuestion" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the question Id of the next question asked on the base of the selected checkbox in case of decision mode.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.CombinationModel.Credits">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Credits</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.CombinationModel.Credits" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the credit of the checkbox combination that will be rewarded to the user when user will select combination of checkboxes.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="jquerydatatableparammodel">
+<h3>jQueryDataTableParamModel<a class="headerlink" href="#jquerydatatableparammodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-Models.QuestionModels.jQueryDataTableParamModel">
+<code class="sig-name descname">class jQueryDataTableParamModel</code><a class="headerlink" href="#class-Models.QuestionModels.jQueryDataTableParamModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class jQueryDataTableParamModel will contain.</p>
+<p>Here are references to its properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.jQueryDataTableParamModel.sEcho" title="Models.QuestionModels.jQueryDataTableParamModel.sEcho property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">sEcho</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.jQueryDataTableParamModel.sSearch" title="Models.QuestionModels.jQueryDataTableParamModel.sSearch property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">sSearch</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.jQueryDataTableParamModel.iDisplayLength" title="Models.QuestionModels.jQueryDataTableParamModel.iDisplayLength property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">iDisplayLength</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.jQueryDataTableParamModel.iDisplayStart" title="Models.QuestionModels.jQueryDataTableParamModel.iDisplayStart property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">iDisplayStart</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.jQueryDataTableParamModel.iColumns" title="Models.QuestionModels.jQueryDataTableParamModel.iColumns property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">iColumns</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.jQueryDataTableParamModel.iSortingCols" title="Models.QuestionModels.jQueryDataTableParamModel.iSortingCols property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">iSortingCols</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.jQueryDataTableParamModel.sColumns" title="Models.QuestionModels.jQueryDataTableParamModel.sColumns property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">sColumns</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.jQueryDataTableParamModel.sEcho">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">sEcho</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.jQueryDataTableParamModel.sEcho" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.jQueryDataTableParamModel.sSearch">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">sSearch</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.jQueryDataTableParamModel.sSearch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.jQueryDataTableParamModel.iDisplayLength">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">iDisplayLength</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.jQueryDataTableParamModel.iDisplayLength" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.jQueryDataTableParamModel.iDisplayStart">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">iDisplayStart</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.jQueryDataTableParamModel.iDisplayStart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.jQueryDataTableParamModel.iColumns">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">iColumns</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.jQueryDataTableParamModel.iColumns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.jQueryDataTableParamModel.iSortingCols">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">iSortingCols</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.jQueryDataTableParamModel.iSortingCols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.jQueryDataTableParamModel.sColumns">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">sColumns</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.jQueryDataTableParamModel.sColumns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="optionmodel">
+<h3>OptionModel<a class="headerlink" href="#optionmodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-Models.QuestionModels.OptionModel">
+<code class="sig-name descname">class OptionModel</code><a class="headerlink" href="#class-Models.QuestionModels.OptionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class OptionModel will contain.</p>
+<p>Here are references to its properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.OptionModel.id" title="Models.QuestionModels.OptionModel.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.OptionModel.Name" title="Models.QuestionModels.OptionModel.Name property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Name</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.OptionModel.NextQuestion" title="Models.QuestionModels.OptionModel.NextQuestion property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">NextQuestion</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.OptionModel.Credits" title="Models.QuestionModels.OptionModel.Credits property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Credits</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.OptionModel.id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.OptionModel.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is simply the Id of the option i.e if there are two option then their Ids will be 1 and 2.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.OptionModel.Name">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Name</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.OptionModel.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the text of the option i.e. the content that will be visible to the user as the option.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.OptionModel.NextQuestion">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">NextQuestion</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.OptionModel.NextQuestion" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Id of the next question that is associated with the option if the user select option then in case of the decision mode the associated id’s question will be asked.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.OptionModel.Credits">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Credits</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.OptionModel.Credits" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the credit of the option that will be rewarded to the user when a user selects an option.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="questiondatamodel">
+<h3>QuestionDataModel<a class="headerlink" href="#questiondatamodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-Models.QuestionModels.QuestionDataModel">
+<code class="sig-name descname">class QuestionDataModel</code><a class="headerlink" href="#class-Models.QuestionModels.QuestionDataModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class QuestionDataModel contains.</p>
+<p>Here are references to its properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.id" title="Models.QuestionModels.QuestionDataModel.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Question" title="Models.QuestionModels.QuestionDataModel.Question property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Question</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Type" title="Models.QuestionModels.QuestionDataModel.Type property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Type</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Latitude" title="Models.QuestionModels.QuestionDataModel.Latitude property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Latitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Longitude" title="Models.QuestionModels.QuestionDataModel.Longitude property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Longitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Sensor" title="Models.QuestionModels.QuestionDataModel.Sensor property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Sensor</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Time" title="Models.QuestionModels.QuestionDataModel.Time property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Time</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Type" title="Models.QuestionModels.QuestionDataModel.Type property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Type</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Frequency" title="Models.QuestionModels.QuestionDataModel.Frequency property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Frequency</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Sequence" title="Models.QuestionModels.QuestionDataModel.Sequence property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Sequence</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Visibility" title="Models.QuestionModels.QuestionDataModel.Visibility property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Visibility</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Mandatory" title="Models.QuestionModels.QuestionDataModel.Mandatory property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Mandatory</span></code></a></p></li>
+<li><p><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">OPtion</span></code></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Combination" title="Models.QuestionModels.QuestionDataModel.Combination property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Combination</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.QuestionDataModel.Vicinity" title="Models.QuestionModels.QuestionDataModel.Vicinity property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Vicinity</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the id of the question i.e if there are two questions then their ids will be 1 and 2 respectively.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Question">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Question</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Question" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the text of the question that will be visible to the user on an assignment.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Type">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Type</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Type" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the type of question. It can be any one of the radio, checkbox, textbox or likertscale.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Latitude">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Latitude</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Latitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Latitude value of the question’s position on the map.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Longitude">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Longitude</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Longitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the Longitude value of the question’s position on the map.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Sensor">
+List&lt;<a class="reference internal" href="#class-Models.QuestionModels.SensorModel" title="Models.QuestionModels.SensorModel class">SensorModel</a>&gt; <code class="sig-name descname">Sensor</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is a list of the selected sensors associated with questions.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Time">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Time</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Time" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the time duration in seconds for which sensor values are recorded.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Frequency">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Frequency</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>It will set how fast a sensor’s value will be recorded.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Sequence">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Sequence</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the sequence number of the question in case of sequence mode.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Visibility">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Visibility</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Visibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is switch to toggle a question’s visibility on the map.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Mandatory">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Mandatory</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Mandatory" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is a check on the question either the question is compulsory to answer or not, for completion of the assignment.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Option">
+List&lt;<a class="reference internal" href="#class-Models.QuestionModels.OptionModel" title="Models.QuestionModels.OptionModel class">OptionModel</a>&gt; <code class="sig-name descname">Option</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Option" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the list of the options for the answer of the question.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Combination">
+List&lt;<a class="reference internal" href="#class-Models.QuestionModels.CombinationModel" title="Models.QuestionModels.CombinationModel class">CombinationModel</a>&gt; <code class="sig-name descname">Combination</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Combination" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the list of the checkboxes combination in case if the type of question is checkbox i.e if there are two checkboxes for a question then there are three possible combinations that allow a user to select either first checkbox or second or both.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.QuestionDataModel.Vicinity">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Vicinity</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.QuestionDataModel.Vicinity" title="Permalink to this definition">¶</a></dt>
+<dd><p>It allows the user to configure the vicinity or localization of the user.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="questions">
+<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-Models.QuestionModels.Questions">
+<code class="sig-name descname">class Questions</code><a class="headerlink" href="#class-Models.QuestionModels.Questions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class Questions contains.</p>
+<p>Here are references to its properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.StartAndDestinationModel" title="Models.QuestionModels.Questions.StartAndDestinationModel property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">StartAndDestinationModel</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.SampleDataModel" title="Models.QuestionModels.Questions.SampleDataModel property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">SampleDataModel</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.StartAndDestinationModel">
+<a class="reference internal" href="#class-Models.QuestionModels.StartAndDestinationModel" title="Models.QuestionModels.StartAndDestinationModel class">StartAndDestinationModel</a> <code class="sig-name descname">StartAndDestinationModel</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.StartAndDestinationModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>It conatins the start address, destination address, mode of asset and default credits.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.SampleDataModel">
+List&lt;<a class="reference internal" href="#class-Models.QuestionModels.QuestionDataModel" title="Models.QuestionModels.QuestionDataModel class">QuestionDataModel</a>&gt; <code class="sig-name descname">SampleDataModel</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.SampleDataModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the question model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="selectionquestionmodel">
+<h3>SelectionQuestionModel<a class="headerlink" href="#selectionquestionmodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt>
+<code class="sig-name descname">class Questions</code></dt>
+<dd><p>Following are the properties that the class SelectionQuestionModel contains.</p>
+<p>Here are references to its properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.id" title="Models.QuestionModels.Questions.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Order" title="Models.QuestionModels.Questions.Order property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Order</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Order">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Order</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sensordatamodel">
+<h3>SensorDataModel<a class="headerlink" href="#sensordatamodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt>
+<code class="sig-name descname">class Questions</code></dt>
+<dd><p>Following are the properties that the class SensorDataModel contains.</p>
+<p>Here are references to its properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Id" title="Models.QuestionModels.Questions.Id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Noise" title="Models.QuestionModels.Questions.Noise property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Noise</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Acceleration" title="Models.QuestionModels.Questions.Acceleration property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Acceleration</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Light" title="Models.QuestionModels.Questions.Light property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Light</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Gyroscope" title="Models.QuestionModels.Questions.Gyroscope property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Gyroscope</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Proximity" title="Models.QuestionModels.Questions.Proximity property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Proximity</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.id" title="Models.QuestionModels.Questions.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Location" title="Models.QuestionModels.Questions.Location property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Location</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Frequency" title="Models.QuestionModels.Questions.Frequency property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Frequency</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Question" title="Models.QuestionModels.Questions.Question property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Question</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.id" title="Models.QuestionModels.Questions.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.QuestionId" title="Models.QuestionModels.Questions.QuestionId property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">QuestionId</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.id" title="Models.QuestionModels.Questions.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.AssignmentId" title="Models.QuestionModels.Questions.AssignmentId property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">AssignmentId</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.id" title="Models.QuestionModels.Questions.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.TimeAtSensoring" title="Models.QuestionModels.Questions.TimeAtSensoring property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">TimeAtSensoring</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.id" title="Models.QuestionModels.Questions.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.Questions.Order" title="Models.QuestionModels.Questions.Order property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Order</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">Id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Noise">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Noise</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Noise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Acceleration">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Acceleration</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Acceleration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Light">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Light</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Light" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Gyroscope">
+<em>public</em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Gyroscope</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Gyroscope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Proximity">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Proximity</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Proximity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Location">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Location</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Location" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Frequency">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Frequency</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Frequency" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.Question">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Question</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.Question" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.QuestionId">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">QuestionId</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.QuestionId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.AssignmentId">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">AssignmentId</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.AssignmentId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.Questions.TimeAtSensoring">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">TimeAtSensoring</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.Questions.TimeAtSensoring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sensormodel">
+<h3>SensorModel<a class="headerlink" href="#sensormodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-Models.QuestionModels.SensorModel">
+<code class="sig-name descname">class SensorModel</code><a class="headerlink" href="#class-Models.QuestionModels.SensorModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class SensorModel will contain.</p>
+<p>Here are references to its properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.SensorModel.id" title="Models.QuestionModels.SensorModel.id property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">id</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.SensorModel.Name" title="Models.QuestionModels.SensorModel.Name property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Name</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.SensorModel.id">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32" title="System.Int32">Int32</a> <code class="sig-name descname">id</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.SensorModel.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is an id of the sensor. There are seven sensors that are being used.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.SensorModel.Name">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Name</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.SensorModel.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the name of the sensor.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="startanddestinationmodel">
+<h3>StartAndDestinationModel<a class="headerlink" href="#startanddestinationmodel" title="Permalink to this headline">¶</a></h3>
+<dl class="csharp class">
+<dt id="class-Models.QuestionModels.StartAndDestinationModel">
+<code class="sig-name descname">class StartAndDestinationModel</code><a class="headerlink" href="#class-Models.QuestionModels.StartAndDestinationModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that the class SensorModel will contain.</p>
+<p>Here are references to it’s properties</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.StartAndDestinationModel.StartLatitude" title="Models.QuestionModels.StartAndDestinationModel.StartLatitude property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">StartLatitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.StartAndDestinationModel.StartLongitude" title="Models.QuestionModels.StartAndDestinationModel.StartLongitude property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">StartLongitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.StartAndDestinationModel.DestinationLatitude" title="Models.QuestionModels.StartAndDestinationModel.DestinationLatitude property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">DestinationLatitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.StartAndDestinationModel.DestinationLongitude" title="Models.QuestionModels.StartAndDestinationModel.DestinationLongitude property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">DestinationLongitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.StartAndDestinationModel.Mode" title="Models.QuestionModels.StartAndDestinationModel.Mode property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">Mode</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-Models.QuestionModels.StartAndDestinationModel.DefaultCredit" title="Models.QuestionModels.StartAndDestinationModel.DefaultCredit property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">DefaultCredit</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.StartAndDestinationModel.StartLatitude">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">StartLatitude</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.StartAndDestinationModel.StartLatitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the latitude value of the start address on the map in case of sequence mode.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.StartAndDestinationModel.StartLongitude">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">StartLongitude</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.StartAndDestinationModel.StartLongitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the longitude value of the start address on the map in case of sequence mode.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.StartAndDestinationModel.DestinationLatitude">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">DestinationLatitude</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.StartAndDestinationModel.DestinationLatitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the latitude value of the destination address on the map in case of sequence mode.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.StartAndDestinationModel.DestinationLongitude">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">DestinationLongitude</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.StartAndDestinationModel.DestinationLongitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the longitude value of the destination address on the map in case of sequence mode.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.StartAndDestinationModel.Mode">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">Mode</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.StartAndDestinationModel.Mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the mode of the asset from the given four modes i.e simple, decision, sequence and dias simple.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-Models.QuestionModels.StartAndDestinationModel.DefaultCredit">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">DefaultCredit</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-Models.QuestionModels.StartAndDestinationModel.DefaultCredit" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the default credit that will be awarded in case if no credits are set explicitly while creating questions.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Views.html" class="btn btn-neutral float-right" title="Views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Dashboard.html" class="btn btn-neutral float-left" title="Dashboard Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Renato Kunz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+
+    :root{
+        --pink: rgb(237,225,248);
+        --purple: rgb(94,59,120);
+        --lightpurple: rgb(201, 183, 215);
+      }
+
+
+
+      /*link visited and unvisited color*/
+
+      a {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      a:visited {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      /*footer colors*/
+
+      footer{
+        color:var(--pink)
+      }
+
+      a:hover {
+        color: var(--pink);
+        text-decoration: none;
+        cursor: pointer;
+        text-decoration-color: var(--purple);
+      }
+
+     .wy-nav-side {
+
+        /*background: rgb(30,115,190);*/
+        background: var(--pink);
+        color:/**#eee;*/var(--purple);
+
+
+     }
+
+     .rst-content img{
+       border-radius:3px;
+     }
+
+     .wy-menu-vertical li.toctree-l1.current>a {
+        color: var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l2.current>a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a{
+       color: var(--purple);
+       background: var(--pink);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a:hover{
+       color: var(--pink);
+       background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover{
+         color: var(--pink);
+         background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a:hover{
+           color: var(--pink);
+           background:var(--purple);
+     }
+
+    .wy-side-nav-search {
+
+        background:var(--pink); /*rgb(30,115,190);*/
+
+    }
+
+    .wy-menu-vertical a{
+      color:var(--purple);
+      text-decoration: none;
+    }
+
+    .wy-menu-vertical li.current{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertical li{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertival a:current {
+      color:var(--pink);
+    }
+
+    .wy-menu-vertical a:hover{
+        background-color:var(--purple);
+        color:var(--pink);
+    }
+
+    .fa-home::before, .icon-home::before {
+        content:"";
+    }
+
+    a.icon-home {
+        width: 50%;
+        margin-left: -6px;
+        font-size: 0%;
+        content:url("https://smart-agora.org/wp-content/uploads/2019/09/LastoneLogoPack3.1Updated_File.png");
+    }
+
+    .wy-nav-content{
+        max-width: initial;
+        background:var(--purple);
+        color:var(--pink);
+    }
+
+    /*nav top current directory, delete link underline*/
+    .wy-breadcrumbs li a:first-child{
+      text-decoration: none;
+    }
+
+
+    /*buton colors*/
+    .btn-neutral {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+    .btn-neutral:visited {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+
+    /*codeblock color*/
+    .rst-content div[class^='highlight'] pre{
+      color:black;
+      border-radius:3px; /*rounded corners*/
+    }
+
+    /*make sure tables do no have white backgrounds*/
+    .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+      background-color:var(--purple)
+    }
+
+    /*color of table header*/
+    .rst-content table.docutils thead{
+      color:var(--pink) !important;
+    }
+
+    /*table title thick border*/
+    .rst-content table.docutils thead th{
+      border-bottom: solid 2px;
+      border-top: solid 2px;
+      border-left: solid 2px;
+      border-right: solid 2px;
+    }
+
+    /*code block line numbers*/
+    div.linenodiv pre{
+      color:var(--pink) !important;
+      border-radius:0 !important;
+    }
+
+    /*codeblock pink background*/
+    div.highlight pre{
+      background-color:var(--pink);
+    }
+
+    /*rounded corners on images*/
+    .rst-content .section>img{
+      border-radius:3px;
+    }
+
+    /*rounded corners on codeblocks*/
+    .rst-content div[class^='highlight']{
+        border-radius:3px;
+    }
+
+    /*code boxes outline*/
+    .rst-content dl:not(.docutils) dt{
+      border-top: solid 3px var(--lightpurple);
+      background: var(--pink);
+      border-radius: 3px;
+    }
+
+    /*code boxes text color*/
+    .rst-content dl:not(.docutils) code.descname{
+      color: var(--purple);
+    }
+
+    .rst-content dl:not(.docutils) code {
+      background: var(--pink);
+      font-weight: bold;
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt {
+      border-left: solid 3px var(--lightpurple);
+      background: var(--pink);
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt a{
+      color: var(--purple);
+      margin-right: 3px;
+    }
+
+    .rst-content code.xref{
+      color: var(--purple);
+      border-radius: 3px;
+      background: var(--pink);
+    }
+
+    /*side menu title color*/
+    .wy-menu-vertical p.caption{
+      color: var(--purple)
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils) .property, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .property {
+      display: contents;
+      padding-right: 8px;
+    }
+
+
+  </style>
+
+
+</body>
+</html>

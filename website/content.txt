@@ -1,0 +1,88 @@
+Home Page
+     - Top links: Exactly the same as EPOS
+     - Under feature image: 
+       Smart Agora
+       Participatory spatio-temporal sensing of urban environments. Designed for citizens, policy-makers and scientists.
+     - Grid with concepts:
+       Smart: Collective intelligence using augmented reality, localization and gamification elements.  
+       Agora: A digital revive of the Ancient Agora of Athens. Deliberate and testify about public matters
+     - Buttons block:
+       Higher quality data and decision-making by proving witness presence
+       Dashboard
+	Graphically design a crowd-sensing campaign without writing a single line of code.
+       Mobile App
+       	Navigate and explore urban points of interest with your smart phone.
+     - How it works section:
+       Determine coordinates with augmented data collection tasks and distribute tasks to citizens.
+       Navigate with your smart phone over points of interest with augmented information.
+       Share navigation data and contribute to science projects and policy-making.
+     - Application Example:
+       1. Public authorities require evidence for policies promoting cycling safety and minimizing accident risks.
+       2. Crowd-sourced data about risk factors are collected from point of interests: light/road condition, traffic, speed, etc.
+       3. Data form a risk map for visualizing accident risk as well as recommending safer bike routes.
+     - More Applications:
+       Public transport
+       Voting
+       Urban stress
+System
+     - Three sublinks: Dashboard, Mobile App, Distributed Analytics
+     - We need here some screenshots of the app, processed possibly with illustrator to nicely fit visually in the webpage
+     - Text: Smart Agora envisions the establishment of a cyber-physical digital agora in Smart Cities, a public arena of discourse, where ci	     tizen actively engage in collective decision-making and public matters.  Smart Agora is an advanced platform that uses digital technolo       gy such as augmented reality, gamification and the Internet of Things. It empowers citizens to improve their quality of life by witness       ing urban points of interest as well as participating in online deliberation and decision-making that can shape citizens’ public sphere       to the better.
+
+       The platform consists of a Mobile App (frontend) and a Dashboard (backend). In the frontend, a smart phone app supports the citizen to	     explore the urban environment in a gamifying way, discover points of interests that require citizens’ feedback, while continuously rece       iving augmented information about the witnessing environment. The backend system is a web dashboard that allows policy-makers and scien	 tists to create citizen science crowdsourcing campaigns in a highly visual and interactive way. Geolocated survey data, polls, sensor d       ata and other information can be collected in a privacy-preserving way using differential privacy and informational self-determination	     principles to measure the pulse of a Smart City and run advanced field tests and living-lab studies.
+
+       Application scenarios of the Smart Agora include the monitoring of urban qualities such as stress, safety, greenery and noise, real-tim	     e voting and petition, online feedback and improvement of public transportation, active participation in urban development projects and	   others. Smart Agora has been part of the Empower Polis project that won the first prize at the ETH Policy Challenge. Smart Agora can al	 so be used as an advanced educational artifact for active learning and teaching out of the class in courses related to data science [LI       NK: http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=128880&semkez=2019S&ansicht=KATALOGDATEN&lang=en], Inte	     rnet of Things, Smart Cities, industrial design, architecture and others.
+
+Dashboard
+     - The web dashboard can be used to visually design crowd-sensing campaign projects in an interactive way without writing a signle line of code. A designed crowd-sensing project consists of (i) assets, (ii) tasks and (iii) assignments. A crowd-sensing asset designs the data collection process as follows: A number of points of interest are determined in an interactive map. Each point of interest hosts a number of questions that citizens can answer on their smart phone if and only if they are localized nearby the point of interest. An ellipse with configurable size is determined around each moving citizen. Localization is performed when a point of interest falls in the ellipse, triggering an event that prompts citizens to answer questions on their smart phone based on what they witness in the public urban space they are located that moment. (ii) A task stores and manages the collected citizens’ data as defined by an asset. (iii) An assignment links together an asset and a task and launches the crowd-sensing process by selecting candidate citizens for participation.
+
+A decision-making process can be designed in three navigation modalities: (i) Arbitrary–the points of interests can be arbitrary visited by citizens. Questions are always triggered whenever citizens visit a new point of interest. (ii) Sequential–A sequence is determined for visiting the points of interests. Only the questions of the next point of interest can be triggered, imposing in this way an order. (iii) Interactive–The next point of interest is determined by the answer of the citizen in the current point of interest. The latter modality can serve more complex decision-making processes as well as gamification scenarios.
+
+The dashboard can be used by the following user groups: (i) Citizens that orchestrate collective decision-making processes for their  communities. (ii) Policy-makers that engage citizens more actively in decision-making and collect evidence from citizens for more legitimate policies. (iii) Scientists that collect data for research and engage in citizen science practices. (iv) Teachers and tutors that engage students in learning activities in public space. 
+
+Mobile App (we need here some nice screenshots. Moreover, you should consider merging the mobile app with the dashboard?)
+       - The Smart Agora mobile app is available for Android devices. Users can use it to participate in crowd-sensing assets that are assigned to them. When such an assignment is selected, the points of interest are loaded in the map together with the current location of the user and the localization area around. When the next point of interest falls into this area, it triggers the questions configured by the dashboard. The user can also select the transport mean he navigates which helps the localization accuracy of the app. When all points of interests have been visited, the task is complete and both survey and sensor data are saved in the backend.
+
+Distributed Data Analytics [Please use Figure 4 and 5 from https://arxiv.org/pdf/1907.00498.pdf, also added them in the directory of this file]
+	    -  Smart Agora can provide live collective measurements from users who are localized in points of interests. In other words, the citizens receive real-time aggregate information, e.g. average, sum, min, max, etc., of the choices that other citizens make in points of interest. The collective measurements update while citizens join or leave the points of interests, therefore, real-time aggregation measurements is a result of citizens' mobility and localization in points of interest. The update of the collective measurements can be a result of complex localization logic referred to as <italics>collective measurements maps</italics>. A <italics>one-to-many</italics> measurements map updates collective measurements each time a citizen is localized in one of the points of interest (logical disjunction OR). In constrast, a <italics>one-to-one</italics> measurements map updates colelctives measurements for each localization in a certain point of interest. Therefore, each point of interest has its own collective measurements. More complex collective measurements maps can be designed depending on the  application scenario, for instance, two map layers, one for bus and another for tram stations.
+
+Smart Agora can perform such real-time measurements in a fully decentralized fashion without relying in a central trusted third party that collects all data to perform the computations. Measurements are crowd-sourced in citizens' networked devices and are performed in a peer-to-peer fashion. These decentralized measurements are especially challenging to perform when devices join and leave the network meaning when updates of the collective measurements are subject of witness presence, i.e. localization in points of interest. To tackle such challenging computational problem, Smart Agora integrates with DIAS, the <italics>Dynamic Intelligent Aggregation Service</italics> <http://dias-net.org> that is capable of performing self-corrective operations in collective measurements when nodes join, leave or fail in the network. This is possible by using a distributed memory system based on probabilistic data structures, the Bloom filters <https://en.wikipedia.org/wiki/Bloom_filter>. More information about DIAS is available here <http://dias-net.org>.
+
+Software [I would like to make the sotware available after we have published on Smart Agora. Please prepare the pages though and we will release them in due course]
+	 - Add all github links and explain what they are, the format should be similar as the one of EPOS and DIAS.
+	 
+Tutorial [Under software]
+	 - Please move all the PDF tutorial in a web form here.
+
+Documentation [Under softwware]
+	 - Please upload the readthedocs documentation of Renato here
+	 
+Awards [Add thsi link. Can you make here a fancy page with the two related awards on Smart Agora? Please check which page type of the workspress template is the most appropriate. Use photos material from the following pages when necessry: https://coss.ethz.ch/news/news/2017/12/empower-polis-wins-the-first-prize-at-the-eth-policy-challenge.html, https://coss.ethz.ch/research/pastprojects/SmartAgora.html]
+       - Augmented Democracy Award: The paper <italics>Proof of Witness Presence: Blockchain Consensus for Augmented Democracy in Smart Cities</italics> <https://arxiv.org/abs/1907.00498> has been distinguished in the individual's category of the Augmented Democracy <https://www.peopledemocracy.com/prize> competition run by Prof. Cesar Hidalgo <https://chidalgo.com>. This work introduces a new way of participation & collective decision-making that promises citizens who actively engage in a more informed decision-making integrated in public urban space. Inspired by a digital revive of the Ancient Agora of Athens, an arena of public discourse, a Polis where citizens assemble to actively deliberate & collectively decide about public matters. At the core lies the concept of proving witness presence that makes decision-making subject of providing evidence & testifying for choices made in the physical space. It is shown how proofs of witness presence can be made using blockchain consensus, how complex crowd-sensing decision-making processes can be designed with the Smart Agora platform & how real-time collective measurements can be made decentralized & privacy-preserving. The paramount role of dynamic consensus, self-governance & ethically aligned artificial intelligence is underlined.
+       - 1st Prize at ETH Policy Challenge: The Empower Polis team of Evangelos Pournaras <http://evangelospournaras.com>, Atif Ghulamnabi, Mark Ballandies and Michael Noack has been elected the 1st team at the ETH Policy Challenge <http://www.policychallenge.ch> competition. Empower Polis envisions the re-​invention of a new cyber-​physical agora that allows policy-​makers to interact with citizens and pose questions or voting campaigns to their smart phones and perform a socially responsible data collection. Citizens can witness public happenings in an augmented and gamified way that allows them to provide real-​time, privacy-​preserving and well-​informed feedback back to policy-​makers.
+
+Applications [Add some cool graphics here]
+	- Smart Agora can be used in a broad spectrum of applications that include the following: crowd-sensing, gamification, citizen science, colelctive decision-making, governance, participatory budgeting and policy-making and other. Citizens, scientists, policy-makers and other actors can make use of Smart Agora. A few examples are given below:
+
+	  * Measuring public transport quality: Crowd-sensing of bus and tram stations can reveal important information about arrival delays, available capacity of vehicles, traffic congestion and other.
+	  * Measuring cycling safety: Crowd-sensing the factors that result in accidents in different locations, for instance, traffic, light conditions, bike lanes, etc.
+	  * Participatory budgeting: Incentivize citizens' assemblies to visit different neighborhoods to decide where the city should invest money for building, for instance, a new part or school.
+	  * Measuring waste collection quality: Crowd-sensing the available capacity and hygiene of public waste bins to orchestrate more effective waste collection strategies.
+
+Smart Agora can be also used to perform rigorous social experiment in public space that have augmented realism compared to experiments conducted in the lab. It aspires to promote new novel experimental design approaches for science.    
+
+
+Publications
+	- Danielle Griego, Varin Buff, Eric Hayoz, Izabela Moise, Evangelos Pournaras, Sensing and Mining Urban Qualities in Smart Cities,  in the proceedings of the 31st IEEE International Conference on Advanced Information Networking and Applications-AINA-2017, Taiwan, March 2017 © IEEE [Presentation] (PAPER AND PRESENTATION HERE: http://evangelospournaras.com/wordpress/wp-content/uploads/2016/12/Sensing-and-Mining-Urban-Qualities-in-Smart-Cities.pdf, http://evangelospournaras.com/wordpress/wp-content/uploads/2017/06/Sensing-and-Mining-Urban-Qualities-in-Smart-Cities.pdf]
+Contributors
+	- Myself and you. My new biography is the following:
+	Dr. Evangelos Pournaras is an Associate Professor at Distributed Systems and Services group, School of Computing, University of Leeds, UK. He is also currently research fellow in blockchain industry. He has more than 5 years experience as senior scientist and postdoctoral researcher at ETH Zurich in Switzerland after having completed his PhD studies in 2013 at Delft University of Technology and VU University Amsterdam in the Netherlands. Evangelos has also been a visiting researcher at EPFL in Switzerland and has industry experience at IBM T.J. Watson Research Center in the USA. Since 2007, he holds a MSc with distinction in Internet Computing from University of Surrey, UK and since 2006 a BSc on Technology Education and Digital Systems from University of Piraeus, Greece. Evangelos has won the Augmented Democracy Prize, the 1st prize at ETH Policy Challenge as well as 4 paper awards and honors. He has published more than 50 peer-reviewed papers in high impact journals and conferences and he is the founder of the EPOS, DIAS, SFINA and Smart Agora  projects featured at decentralized-systems.org. He has raised significant funding and has been actively involved in EU projects such as ASSET, SoBigData and FuturICT 2.0. He has supervised several PhD and MSc thesis projects, while he designed courses in the area of data science and multi-agent systems that adopt a novel pedagogical and learning approach. Evangelos' research interest focus on distributed and intelligent social computing systems with expertise in the inter-disciplinary application domains of Smart Cities and Smart Grids.
+	
+
+Contact
+	- The e-mail is mail@smart-agora.org
+
+Newsblob [Please make these 3 announcements, add some words based on the links]
+	- Keynote speech at eDemocracy 2019 [http://edemocracy2019.eu]  - Add information about the conference, the date of my talk and that I will talk about the awarded work <italics>Proof of Witness Presence: Blockchain Consensus for Augmented Democracy in Smart Cities</italics>. Add respective photo from website. 
+	- Augmented Democracy Award
+	- 1st Prize at ETH Policy Challenge

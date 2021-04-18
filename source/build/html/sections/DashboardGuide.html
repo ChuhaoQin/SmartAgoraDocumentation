@@ -1,0 +1,489 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dashboard Installation Guide &mdash; SmartagoraDocumentation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Windows Installation Guide" href="DashboardGuide/Windows.html" />
+    <link rel="prev" title="Client" href="Dashboard/Client.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SmartagoraDocumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="smart.agora.html">Smart Agora Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SmartAgoraDescription.html">SmartAgora Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dashboard.html">Dashboard Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dashboard Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html">Windows Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html">Ubuntu Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Hive.html">Hive</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SmartagoraDocumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Dashboard Installation Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/sections/DashboardGuide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dashboard-installation-guide">
+<h1>Dashboard Installation Guide<a class="headerlink" href="#dashboard-installation-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DashboardGuide/Windows.html">Windows Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#cloning-the-source-code">Cloning the Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#installing-hive-server">Installing Hive Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#executing-hive-elasticsearch-locally">Executing Hive &amp; Elasticsearch locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#installing-xampp-server">Installing XAMPP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#creating-the-database">Creating the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#installing-visual-studio">Installing Visual Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#building-the-solution-file">Building the Solution File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Windows.html#the-dashboard-welcome-screen">The Dashboard Welcome Screen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DashboardGuide/Ubuntu.html">Ubuntu Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html#installing-mono-server">Installing Mono Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html#installing-xampp-server">Installing XAMPP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html#creating-the-database">Creating the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html#resettign-the-database">Resettign the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html#cloning-source-code">Cloning Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html#running-mono-hive-servers">Running Mono &amp; Hive servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Ubuntu.html#building-the-solution-file">Building the Solution File</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DashboardGuide/Troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Troubleshooting.html#mono-server">Mono Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Troubleshooting.html#dashboard-execution-process">Dashboard execution process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Troubleshooting.html#xampp-server">XAMPP server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DashboardGuide/Troubleshooting.html#hive-server">Hive server</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DashboardGuide/Windows.html" class="btn btn-neutral float-right" title="Windows Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Dashboard/Client.html" class="btn btn-neutral float-left" title="Client" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Renato Kunz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+
+    :root{
+        --pink: rgb(237,225,248);
+        --purple: rgb(94,59,120);
+        --lightpurple: rgb(201, 183, 215);
+      }
+
+
+
+      /*link visited and unvisited color*/
+
+      a {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      a:visited {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      /*footer colors*/
+
+      footer{
+        color:var(--pink)
+      }
+
+      a:hover {
+        color: var(--pink);
+        text-decoration: none;
+        cursor: pointer;
+        text-decoration-color: var(--purple);
+      }
+
+     .wy-nav-side {
+
+        /*background: rgb(30,115,190);*/
+        background: var(--pink);
+        color:/**#eee;*/var(--purple);
+
+
+     }
+
+     .rst-content img{
+       border-radius:3px;
+     }
+
+     .wy-menu-vertical li.toctree-l1.current>a {
+        color: var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l2.current>a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a{
+       color: var(--purple);
+       background: var(--pink);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a:hover{
+       color: var(--pink);
+       background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover{
+         color: var(--pink);
+         background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a:hover{
+           color: var(--pink);
+           background:var(--purple);
+     }
+
+    .wy-side-nav-search {
+
+        background:var(--pink); /*rgb(30,115,190);*/
+
+    }
+
+    .wy-menu-vertical a{
+      color:var(--purple);
+      text-decoration: none;
+    }
+
+    .wy-menu-vertical li.current{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertical li{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertival a:current {
+      color:var(--pink);
+    }
+
+    .wy-menu-vertical a:hover{
+        background-color:var(--purple);
+        color:var(--pink);
+    }
+
+    .fa-home::before, .icon-home::before {
+        content:"";
+    }
+
+    a.icon-home {
+        width: 50%;
+        margin-left: -6px;
+        font-size: 0%;
+        content:url("https://smart-agora.org/wp-content/uploads/2019/09/LastoneLogoPack3.1Updated_File.png");
+    }
+
+    .wy-nav-content{
+        max-width: initial;
+        background:var(--purple);
+        color:var(--pink);
+    }
+
+    /*nav top current directory, delete link underline*/
+    .wy-breadcrumbs li a:first-child{
+      text-decoration: none;
+    }
+
+
+    /*buton colors*/
+    .btn-neutral {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+    .btn-neutral:visited {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+
+    /*codeblock color*/
+    .rst-content div[class^='highlight'] pre{
+      color:black;
+      border-radius:3px; /*rounded corners*/
+    }
+
+    /*make sure tables do no have white backgrounds*/
+    .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+      background-color:var(--purple)
+    }
+
+    /*color of table header*/
+    .rst-content table.docutils thead{
+      color:var(--pink) !important;
+    }
+
+    /*table title thick border*/
+    .rst-content table.docutils thead th{
+      border-bottom: solid 2px;
+      border-top: solid 2px;
+      border-left: solid 2px;
+      border-right: solid 2px;
+    }
+
+    /*code block line numbers*/
+    div.linenodiv pre{
+      color:var(--pink) !important;
+      border-radius:0 !important;
+    }
+
+    /*codeblock pink background*/
+    div.highlight pre{
+      background-color:var(--pink);
+    }
+
+    /*rounded corners on images*/
+    .rst-content .section>img{
+      border-radius:3px;
+    }
+
+    /*rounded corners on codeblocks*/
+    .rst-content div[class^='highlight']{
+        border-radius:3px;
+    }
+
+    /*code boxes outline*/
+    .rst-content dl:not(.docutils) dt{
+      border-top: solid 3px var(--lightpurple);
+      background: var(--pink);
+      border-radius: 3px;
+    }
+
+    /*code boxes text color*/
+    .rst-content dl:not(.docutils) code.descname{
+      color: var(--purple);
+    }
+
+    .rst-content dl:not(.docutils) code {
+      background: var(--pink);
+      font-weight: bold;
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt {
+      border-left: solid 3px var(--lightpurple);
+      background: var(--pink);
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt a{
+      color: var(--purple);
+      margin-right: 3px;
+    }
+
+    .rst-content code.xref{
+      color: var(--purple);
+      border-radius: 3px;
+      background: var(--pink);
+    }
+
+    /*side menu title color*/
+    .wy-menu-vertical p.caption{
+      color: var(--purple)
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils) .property, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .property {
+      display: contents;
+      padding-right: 8px;
+    }
+
+
+  </style>
+
+
+</body>
+</html>

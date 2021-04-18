@@ -1,0 +1,3470 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SmartAgora Documentation &mdash; SmartagoraDocumentation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dashboard Documentation" href="Dashboard.html" />
+    <link rel="prev" title="Smart Agora Tutorial" href="smart.agora.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SmartagoraDocumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="smart.agora.html">Smart Agora Tutorial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SmartAgora Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-case">Use case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mechanics">Mechanics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-basics">The Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gps-component">GPS component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sticky-events">Sticky Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vicinity-checking">Vicinity Checking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modes">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#servers">Servers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-parts">The parts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#homeactivity-class">HomeActivity class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oncreate">OnCreate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#animatecamerato">animateCameraTo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#buildalertmessagenogps">buildAlertMessageNoGps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connectasynctask">connectAsyncTask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datascientistid">DataScientistId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decodepoly">decodePoly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#drawcompleteroute">DrawCompleteRoute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#drawpath">drawPath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getdatafromdb">getDataFromDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initvariables">initVariables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initviews">initViews</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#makeurl">makeURL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#managedatascientistid">manageDataScientistId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mapstartposition">MapStartPosition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onactivityresult">onActivityResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onbackpressed">onBackPressed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ondestroy">onDestroy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onevent">onEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onmapready">onMapReady</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onpause">onPause</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onresume">onResume</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onsensorchanged">onSensorChanged</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onaccuracychanged">onAccuracyChanged</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onstart">onStart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onstop">onStop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placemarkers">placeMarkers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setbottomnavigationview">setBottomNavigationView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setupdrawercontent">setupDrawerContent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slidemenudata">slideMenuData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#startcheckingforquestioninradius">StartCheckingForQuestionInRadius</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#startrepeatingtask">startRepeatingTask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stoprepeatingtask">stopRepeatingTask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update">update</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#staticmodel">StaticModel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#final-fields">Final fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mutable-fields">Mutable fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modes-classes">Modes classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modefunctions">ModeFunctions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#saveanswer">saveAnswer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updatestatebar">updateStateBar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getcombinationid">getCombinationId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#showallanswers">showAllAnswers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#showskippedquestions">showSkippedQuestions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#checkendsurvey">checkEndSurvey</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sensorsinfo">SensorsInfo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savesensorsvalue">saveSensorsValue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savesensordataatintervals">saveSensorDataAtIntervals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getnoiselevel">getNoiseLevel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#roomdatabasehandler">RoomDatabaseHandler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-dao-s">the DAO’s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-entities">the entities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#databasethreads">DataBaseThreads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#activitystackmanager">ActivityStackManager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getinstance">getInstance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#startmainhomescreen">startMainHomeScreen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#startlocationservice">startLocationService</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#returnlocationflag">returnLocationFlag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stoplocationservice">stopLocationService</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#locationservice">LocationService</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">onCreate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onstartcommand">onStartCommand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">onDestroy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#locationupdateslistener-onlocationchanged">LocationUpdatesListener.onLocationChanged</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#splash-activity">Splash Activity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">onCreate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#preferenceskeys">PreferencesKeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deviceuuidfactory">DeviceUuidFactory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getdeviceuuid">getDeviceUuid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ellipse">Ellipse</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getangle">getAngle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#createellipse">createEllipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#isinellipse">IsInEllipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#drawmarkerwithellipse">drawMarkerWithEllipse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#filehandling">FileHandling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savedatatofile">saveDataToFile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#questionhandling">QuestionHandling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initvalue">initValue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getquestionnumber">getQuestionNumber</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setquestionnumber">setQuestionNumber</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setshownquestion">setShownQuestion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getroutequestions">getRouteQuestions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getmellipse">getmEllipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getdatafromsavedfile">getDataFromSavedFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getdatafromroomdb">getDataFromRoomDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#questioninellipsenew">QuestionInEllipseNew</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getcurrentquestionnew">getCurrentQuestionNew</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#addquestioninvisitedpointsnew">addQuestionInVisitedPointsNew</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#isdonenew">isDoneNew</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utils">utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#showfilechooser">showFileChooser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getdatafromfile">getDataFromFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#havenetworkconnection">haveNetworkConnection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getsensordata">getSensorData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initializeprogressdialog">initializeProgressDialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#registersensorlistener">registerSensorListener</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updateregistersensorlistener">updateRegisterSensorListener</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unregistersensorlistener">unregisterSensorListener</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">buildAlertMessageNoGps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">makeURL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getdiascheckpointleavestatus">getDiasCheckPointLeaveStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distance">distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deg2rad">deg2rad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rad2deg">rad2deg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getuniqecheckpointid">getUniqeCheckpointId</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#databasehandler">DatabaseHandler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">onCreate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savequestiondatatransition">saveQuestionDataTransition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savestartanddestinationdata">saveStartAndDestinationData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getfilesdata">getFilesData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getfilesname">getFilesName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deletefile">deleteFile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#questionsactivity">QuestionsActivity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">onCreate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choosejsonfile">chooseJsonFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">onActivityResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setjsontoclass">setJsonToClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#showquestions">showQuestions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savedatatodb">saveDataToDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">getDataFromRoomDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#populatequestions">populateQuestions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filelistsnew">FileListsNew</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-models">The models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mainmodel">MainModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optionmodel">OptionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#projectmodel">ProjectModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#questiondatamodel">QuestionDataModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sensormodel">SensorModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slidermenumodel">SliderMenuModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#startanddestinationmodel">StartAndDestinationModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#apppreferences">AppPreferences</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#savelocation">saveLocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#saveaccuracy">saveAccuracy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getaccuracy">getAccuracy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getlatitude">getLatitude</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getlongitude">getLongitude</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savedatascientistid">saveDataScientistId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getdatascientistid">getDataScientistId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savehelpforproject">saveHelpForProject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gethelp">getHelp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#saveprojectid">saveProjectId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getprojectid">getProjectId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#saveauto">saveAuto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getauto">getAuto</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#networkcallbacks">NetworkCallbacks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getallprojectsfromserver">getAllProjectsFromServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getalltasksfromserver">getAllTasksFromServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getallassetsfromserver">getAllAssetsFromServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#createuseronserver">createUserOnServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#createtaskonserver">createTaskOnServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#createassignmentonserver">createAssignmentOnServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignassignmentstousers">assignAssignmentsToUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getallassignmentsfromserver">getAllAssignmentsFromServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getassignment">getAssignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updateassignmentintask">updateAssignmentInTask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getspecifictask">getSpecificTask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignmentsubmission">AssignmentSubmission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#saveassignmentinfile">saveAssignmentInFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savedatatoroomdatabase">saveDataToRoomDatabase</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#retrofitinterface">RetrofitInterface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getallprojects">getAllProjects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gettasks">getTasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getallassetsfromspecificproject">getAllAssetsFromSpecificProject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#createuser">createUser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#admincreatetasks">adminCreateTasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignasset">assignAsset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getallusersfromspecificproject">getAllUsersFromSpecificProject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getallassignmentsfromspecificproject">getAllAssignmentsFromSpecificProject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getspecificassignment">getSpecificAssignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usercreateassignment">userCreateAssignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">getSpecificTask</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hiveservermodels">HiveServerModels</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#asset">Asset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task">Task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user">User</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#networkmodels">NetworkModels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Dashboard.html">Dashboard Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DashboardGuide.html">Dashboard Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hive.html">Hive</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SmartagoraDocumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SmartAgora Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/sections/SmartAgoraDescription.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="smartagora-documentation">
+<h1>SmartAgora Documentation<a class="headerlink" href="#smartagora-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This documentation should give an overview of the SmartAgora Android application, if one intends do extend it.</p>
+</div>
+<div class="section" id="use-case">
+<h2>Use case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To use this app, one must download and install Android Studio.
+You can find the application and how to install it <a href="https://developer.android.com/studio" target="_blank">here</a>.</p>
+<p>Then one simply imports this project as an Android Studio project.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>A documentation on how to use the Application can be found here: <a class="reference internal" href="smart.agora.html#smart-agora-tutorial"><span class="std std-ref">Smart Agora Tutorial</span></a>.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="figure1">
+<img alt="../_images/Smartagora Diagram.png" src="../_images/Smartagora Diagram.png" />
+</div>
+<p>Above you see an overview of the most important classes of the <a class="reference internal" href="#homeactivity-class"><span class="std std-ref">HomeActivity class</span></a>, and how they interact with each other.
+Note that a lot of classes are omitted, as the diagram would not be easily understandable with all of them.</p>
+</div>
+<div class="section" id="mechanics">
+<h2>Mechanics<a class="headerlink" href="#mechanics" title="Permalink to this headline">¶</a></h2>
+<p>This section explains the main mechanics of the application and how they work together.</p>
+<p>Upon starting the application, the <a class="reference internal" href="#homeactivity-class"><span class="std std-ref">HomeActivity class</span></a> is called, which initialises all visual elements, as well as the GPS component.</p>
+<div class="section" id="the-basics">
+<h3>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h3>
+<p>This application lets the user answer different questions, which then can be sent to different servers.
+There are different <a class="reference internal" href="#modes"><span class="std std-ref">Modes</span></a>, which make the questionnaire behave differently.
+In some modes, the answers to a question can generate a score, which can vary for every question and the qiven answer for it.
+The idea is, that the user should only be able to answer a specific question when he is in the vicinity of a specific checkpoint.</p>
+</div>
+<div class="section" id="gps-component">
+<h3>GPS component<a class="headerlink" href="#gps-component" title="Permalink to this headline">¶</a></h3>
+<p>The GPS component is a custom LocationListener.
+When the coordinates get updated, the new coordinates, together with the accuracy is saved via sharedPreferences.
+After this a sticky gets posted with the following message:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PreferencesKeys</span><span class="p">.</span><span class="na">LOCATION_UPDATED</span>
+</pre></div>
+</div>
+<p>Further explanation on sticky messages are found here: <a class="reference internal" href="#sticky-events"><span class="std std-ref">Sticky Events</span></a></p>
+<p>This means that on every change of the coordinates, a check whether to start the <a class="reference internal" href="#vicinity-checking"><span class="std std-ref">Vicinity Checking</span></a> is done.</p>
+</div>
+<div class="section" id="sticky-events">
+<h3>Sticky Events<a class="headerlink" href="#sticky-events" title="Permalink to this headline">¶</a></h3>
+<p>Sticky messages can used to broadcast messages to specific methods and functions, it can also be used to create listeners for specific events.
+(Reference: <a href="http://greenrobot.org/eventbus/documentation/configuration/sticky-events/" target="_blank">Sticky Events</a>)</p>
+<p>In order for a method to listen to sticky events, it needs to have the flag</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Subscribe</span><span class="p">(</span><span class="n">sticky</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="n">threadMode</span> <span class="o">=</span> <span class="n">ThreadMode</span><span class="p">.</span><span class="na">MAIN</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To poste a sticky the following code needs to be executed</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">EventBus</span><span class="p">.</span><span class="na">postSticky</span><span class="p">(</span> <span class="n">MESSAGE</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>In this application, stickies are used in one place, in which gets checked if any questions are loaded and if so, vicinity checking is launched. See more about this here: <a class="reference internal" href="#vicinity-checking"><span class="std std-ref">Vicinity Checking</span></a></p>
+</div>
+<div class="section" id="vicinity-checking">
+<h3>Vicinity Checking<a class="headerlink" href="#vicinity-checking" title="Permalink to this headline">¶</a></h3>
+<p>When vicinity checking is launched, all 9 seconds a thread is checking if the phone is in the vicinity of any POI (point of interest).</p>
+<p>If the phone is in any POI, the thread opens the corresponding question.
+For that, it first figures out which mode the current assignment is in.
+Once figured out, it creates an instance of the respective mode class and calls it’s call() method.
+The mode class then does the rest, explained in the section <a class="reference internal" href="#modes"><span class="std std-ref">Modes</span></a>.</p>
+</div>
+<div class="section" id="modes">
+<h3>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h3>
+<p>There are 4 different modes in this application:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Key Difference</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Simple</p></td>
+<td><p>In this mode, all POI’s can be visited in any order</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence</p></td>
+<td><p>In this mode, the POI’s need to be visited in a before specified order</p></td>
+</tr>
+<tr class="row-even"><td><p>Decision</p></td>
+<td><p>In this mode, future question can depend on the answers of past questions</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIASSimple</p></td>
+<td><p>This mode is the same as Simple, with the addition that all data get also
+sent to the <a class="reference internal" href="../index.html#dias"><span class="std std-ref">DIAS</span></a> server</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each of the mode classes have a constructor and a method called “call()”, which gets called as soon as the phone is in the vicinity of a POI.</p>
+<p>The constructor of all classes initialise its elements.
+The call method rechecks if the phone is in range of the POI, and if so shows the question to be answered.
+The Mode class is also responsible of the progressbar and saving of the given answers.</p>
+<p>Finally, if the mode is DIASSimple, the answered values get sent to the <a class="reference internal" href="../index.html#dias"><span class="std std-ref">DIAS</span></a> server.</p>
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<p>There are is a class called <a class="reference internal" href="#roomdatabasehandler"><span class="std std-ref">RoomDatabaseHandler</span></a>, which gets used in many different places to access the database.
+The Database is based on <a href="https://developer.android.com/reference/android/database/sqlite/package-summary.html" target="_blank">SQLite</a> and there are several queries prepared to get the following things out of it:</p>
+<ul class="simple">
+<li><p>A list of answered questions</p></li>
+<li><p>A list of the ids of the answered questions</p></li>
+<li><p>A list of the of answered questions for the current checkpoint.</p></li>
+<li><p>The previously given answer for a specific question</p></li>
+<li><p>A list of all the answers for a given assignment</p></li>
+</ul>
+</div>
+<div class="section" id="servers">
+<h3>Servers<a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h3>
+<p>There are different servers connected with this app.</p>
+<p><strong>The Dashboard:</strong>
+The dashboard is an online interface to create the assignments used in the application.</p>
+<p><strong>DIAS</strong>
+DIAS is a distributed aggregation service.
+A documentation about DIAS can be found here. TODO: add link</p>
+<p><strong>Smart Agora</strong></p>
+</div>
+</div>
+<div class="section" id="the-parts">
+<h2>The parts<a class="headerlink" href="#the-parts" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we will take a look at the parts from the diagram <code class="xref std std-numref docutils literal notranslate"><span class="pre">Figure1</span></code>.</p>
+<div class="section" id="homeactivity-class">
+<h3>HomeActivity class<a class="headerlink" href="#homeactivity-class" title="Permalink to this headline">¶</a></h3>
+<p>This Activity is the heart of this application, it is the activity, which gets launched together with the application.</p>
+<div class="section" id="oncreate">
+<h4>OnCreate<a class="headerlink" href="#oncreate" title="Permalink to this headline">¶</a></h4>
+<p>This method initialises all needed layouts and some of the objects for this activity.
+The list of initialised objects include:</p>
+<ul class="simple">
+<li><p>The view of the activity</p></li>
+<li><p>The the progressbar for an assignment</p></li>
+<li><p>The logos used on the screen</p></li>
+<li><p>The navigation bar at the bootom</p></li>
+<li><p>The actionbar at the top of the application</p></li>
+<li><p>The actionbar drawer</p></li>
+<li><p>The openStreetMap</p></li>
+<li><p>The skipped, answered and unanswered questions for the current assignment.</p></li>
+</ul>
+<p>It also calls the methods <span class="xref std std-ref">initServiceConnection</span>, <a class="reference internal" href="#initvariables"><span class="std std-ref">initVariables</span></a>, <a class="reference internal" href="#initviews"><span class="std std-ref">initViews</span></a>, <a class="reference internal" href="#setbottomnavigationview"><span class="std std-ref">setBottomNavigationView</span></a> and <a class="reference internal" href="#slidemenudata"><span class="std std-ref">slideMenuData</span></a>.</p>
+</div>
+<div class="section" id="animatecamerato">
+<h4>animateCameraTo<a class="headerlink" href="#animatecamerato" title="Permalink to this headline">¶</a></h4>
+<p>Given that the map is already loaded, this moves the map position to the given latitude/longitude</p>
+</div>
+<div class="section" id="buildalertmessagenogps">
+<h4>buildAlertMessageNoGps<a class="headerlink" href="#buildalertmessagenogps" title="Permalink to this headline">¶</a></h4>
+<p>This method shows a alertDialog to ask the user to enable gps for this application.</p>
+</div>
+<div class="section" id="connectasynctask">
+<h4>connectAsyncTask<a class="headerlink" href="#connectasynctask" title="Permalink to this headline">¶</a></h4>
+<p>This is a class used as a callback for the response from <a class="reference internal" href="#drawcompleteroute"><span class="std std-ref">DrawCompleteRoute</span></a>.
+It draws the path on the map of the response of the google api by calling the method <a class="reference internal" href="#drawpath"><span class="std std-ref">drawPath</span></a>.</p>
+</div>
+<div class="section" id="datascientistid">
+<h4>DataScientistId<a class="headerlink" href="#datascientistid" title="Permalink to this headline">¶</a></h4>
+<p>The DataScientistId is used be able to select between different sets of assignments.</p>
+</div>
+<div class="section" id="decodepoly">
+<h4>decodePoly<a class="headerlink" href="#decodepoly" title="Permalink to this headline">¶</a></h4>
+<p>The string is an encoded polygon line from Google, this method decodes the string and adds the points into an ArrayList.</p>
+</div>
+<div class="section" id="drawcompleteroute">
+<h4>DrawCompleteRoute<a class="headerlink" href="#drawcompleteroute" title="Permalink to this headline">¶</a></h4>
+<p>Draws a route on the map of all start and destionation locations saved in the database, handled in the class <a class="reference internal" href="#questionsactivity"><span class="std std-ref">QuestionsActivity</span></a>.
+Uses the class <a class="reference internal" href="#id8"><span class="std std-ref">makeURL</span></a> to create a url to query to “<a class="reference external" href="https://maps.googleapis.com/maps/api/directions/json">https://maps.googleapis.com/maps/api/directions/json</a>”. It also adds a callback called <a class="reference internal" href="#connectasynctask"><span class="std std-ref">connectAsyncTask</span></a>, which then handles the response.</p>
+</div>
+<div class="section" id="drawpath">
+<h4>drawPath<a class="headerlink" href="#drawpath" title="Permalink to this headline">¶</a></h4>
+<p>Given a json string, containing an array mapped to the the key “routes”, this function takes the first element and calls the method <a class="reference internal" href="#decodepoly"><span class="std std-ref">decodePoly</span></a> to decode the containing polygon line.
+The polygon line then gets added to open street maps. Also the method sets an onClickListener on the lines, turning them blue if they were grey and the user clicked on it.</p>
+<p>The Json string needs to contain the following elements:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nx">routes</span> <span class="o">:</span>
+  <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nx">overview_polyline</span> <span class="o">:</span>
+      <span class="p">{</span>
+        <span class="nx">points</span> <span class="o">:</span> <span class="nx">encodedString</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The string “encodedString” is encoded with google maps, the method <a class="reference internal" href="#decodepoly"><span class="std std-ref">decodePoly</span></a> can decode it into a polygon line.</p>
+</div>
+<div class="section" id="getdatafromdb">
+<h4>getDataFromDB<a class="headerlink" href="#getdatafromdb" title="Permalink to this headline">¶</a></h4>
+<p>Gets data from the database, by calling getDataFromRoomDB of the class <a class="reference internal" href="#questionhandling"><span class="std std-ref">QuestionHandling</span></a></p>
+</div>
+<div class="section" id="initvariables">
+<h4>initVariables<a class="headerlink" href="#initvariables" title="Permalink to this headline">¶</a></h4>
+<p>This method initialises all variables for this class.
+The list includes elements, which are initialised every time, and others, which are only initialised, when they were uninitialised before.</p>
+<p>Only when uninitialised:</p>
+<ul class="simple">
+<li><p>the application context</p></li>
+<li><p>the database handler</p></li>
+<li><p>the list with all used sensors</p></li>
+<li><p>the list with all names of the used sensors</p></li>
+<li><p>the hashMap with all sensor readings</p></li>
+<li><p>the list with the likertScale answers for the DIAS mode</p></li>
+<li><p>the deviceId*</p></li>
+<li><p>the <a class="reference internal" href="#questionhandling"><span class="std std-ref">QuestionHandling</span></a> instance</p></li>
+<li><p>the list for the Dias checkpoint questions</p></li>
+<li><p>the arrayList for the progressBar values</p></li>
+<li><p>the “loading…” dialog</p></li>
+<li><p>the list of all used <a class="reference internal" href="#projectmodel"><span class="std std-ref">ProjectModel</span></a></p></li>
+<li><p>the JSONObject lists called “tasks” and “tasks1”, but only if <strong>both</strong> are uninitialised.</p></li>
+</ul>
+<p>Initialised every time:</p>
+<ul class="simple">
+<li><p>the current activity (to the value ‘this’)</p></li>
+<li><p>the <a class="reference internal" href="#activitystackmanager"><span class="std std-ref">ActivityStackManager</span></a></p></li>
+<li><p>the numbers of credits (back to the value 0)</p></li>
+<li><p>the textView for showing the answered value in DIAS mode</p></li>
+<li><p>the list for the AnswerEntity, the AnswerEntity is one of <a class="reference internal" href="#the-entities"><span class="std std-ref">the entities</span></a> used for the <a class="reference internal" href="#roomdatabasehandler"><span class="std std-ref">RoomDatabaseHandler</span></a>.</p></li>
+</ul>
+</div>
+<div class="section" id="initviews">
+<h4>initViews<a class="headerlink" href="#initviews" title="Permalink to this headline">¶</a></h4>
+<p>Asks for the GPS permission for this application.</p>
+</div>
+<div class="section" id="makeurl">
+<h4>makeURL<a class="headerlink" href="#makeurl" title="Permalink to this headline">¶</a></h4>
+<p>Given the start and destination coordinates, this function creates an url drawing a line between the given points, which can be interpreted by open street maps.</p>
+</div>
+<div class="section" id="managedatascientistid">
+<h4>manageDataScientistId<a class="headerlink" href="#managedatascientistid" title="Permalink to this headline">¶</a></h4>
+<p>This method shows a window, letting the user set a new DataScientistId.</p>
+</div>
+<div class="section" id="mapstartposition">
+<h4>MapStartPosition<a class="headerlink" href="#mapstartposition" title="Permalink to this headline">¶</a></h4>
+<p>This method fisrt checks if the questions are already loaded and loads them if not already done.
+Then it initialises the <a class="reference internal" href="#staticmodel"><span class="std std-ref">StaticModel</span></a> with the new filenames of utils and the question list, clears the list with the skipped questions and the queued questions and initialises them with new ArrayLists.
+If there is a start and destination point stored in the <a class="reference internal" href="#questionsactivity"><span class="std std-ref">QuestionsActivity</span></a>, the databades is reloaded by calling <a class="reference internal" href="#getdatafromdb"><span class="std std-ref">getDataFromDB</span></a> and the loaded route is then drawn on the map by calling <a class="reference internal" href="#drawcompleteroute"><span class="std std-ref">DrawCompleteRoute</span></a>.
+If there is not start and destionation point, but the assignment mode is of Type simple or DIAS_Simple, the database is reloaded anyway.</p>
+</div>
+<div class="section" id="onactivityresult">
+<h4>onActivityResult<a class="headerlink" href="#onactivityresult" title="Permalink to this headline">¶</a></h4>
+<p>This method is called as a callback, if an Activity is called, with the intent on receiving a result.
+As it seems, this is an artefact, as no activity was started with the corresponding “startActivityForResult()” method.</p>
+</div>
+<div class="section" id="onbackpressed">
+<h4>onBackPressed<a class="headerlink" href="#onbackpressed" title="Permalink to this headline">¶</a></h4>
+<p>This method is called, when the user presses the back button on his phone.
+This method closes all open popups or drawers.
+If there is no popup or drawer opened, the method closes the application after being called twice in fice seconds.
+When closing, it calls the methods <span class="xref std std-ref">stopServiceConnection</span> and finish(), the latter actuallay closes the whole application.</p>
+</div>
+<div class="section" id="ondestroy">
+<h4>onDestroy<a class="headerlink" href="#ondestroy" title="Permalink to this headline">¶</a></h4>
+<p>This method is called, when the activity is closed.
+It disconnects from the <a class="reference internal" href="../index.html#dias"><span class="std std-ref">DIAS</span></a> server.</p>
+</div>
+<div class="section" id="onevent">
+<h4>onEvent<a class="headerlink" href="#onevent" title="Permalink to this headline">¶</a></h4>
+<p>This method is a callback, called by <a class="reference internal" href="#sticky-events"><span class="std std-ref">Sticky Events</span></a>.
+It is called when the location changes.
+It first checks if the argument is LOCATION_UPDATED (from <a class="reference internal" href="#preferenceskeys"><span class="std std-ref">PreferencesKeys</span></a>), because this method is only listening on those messages.
+Then it draws the vicinity ellipse around the user by calling <a class="reference internal" href="#drawmarkerwithellipse"><span class="std std-ref">drawMarkerWithEllipse</span></a>.
+Finally, checks if any questions are loaded and if so, it calls the method <a class="reference internal" href="#startcheckingforquestioninradius"><span class="std std-ref">StartCheckingForQuestionInRadius</span></a></p>
+</div>
+<div class="section" id="onmapready">
+<h4>onMapReady<a class="headerlink" href="#onmapready" title="Permalink to this headline">¶</a></h4>
+<p>This method is called as a callback, once open street maps is ready and the map is available.
+It initialises the map and saves it in a field for later usage.</p>
+</div>
+<div class="section" id="onpause">
+<h4>onPause<a class="headerlink" href="#onpause" title="Permalink to this headline">¶</a></h4>
+<p>This method is called, when another activity is opened.
+It stops the sensorListener and the GPS service.</p>
+</div>
+<div class="section" id="onresume">
+<h4>onResume<a class="headerlink" href="#onresume" title="Permalink to this headline">¶</a></h4>
+<p>This method is called, when the activity is reopened.
+It restarts the GPS service and sensorListener.</p>
+</div>
+<div class="section" id="onsensorchanged">
+<h4>onSensorChanged<a class="headerlink" href="#onsensorchanged" title="Permalink to this headline">¶</a></h4>
+<p>This method gets called by the Android SensorManager, when a sensor value changes.
+It saves the the reading, together with the sensor type, in the sensorReading list.</p>
+</div>
+<div class="section" id="onaccuracychanged">
+<h4>onAccuracyChanged<a class="headerlink" href="#onaccuracychanged" title="Permalink to this headline">¶</a></h4>
+<p>This method gets called by the SensorManager, when the accuracy of a sensor changes.
+It doesn’t do anything.</p>
+</div>
+<div class="section" id="onstart">
+<h4>onStart<a class="headerlink" href="#onstart" title="Permalink to this headline">¶</a></h4>
+<p>This mehthod initialises the sensor service.</p>
+</div>
+<div class="section" id="onstop">
+<h4>onStop<a class="headerlink" href="#onstop" title="Permalink to this headline">¶</a></h4>
+<p>This method is called, when the listener is stopped.</p>
+</div>
+<div class="section" id="placemarkers">
+<h4>placeMarkers<a class="headerlink" href="#placemarkers" title="Permalink to this headline">¶</a></h4>
+<p>Given an index i, it places a marker at the position, where question i is located, given question i exists.
+If the position was already visited and the question answered, the marker will be black, otherwise it will be blue.</p>
+</div>
+<div class="section" id="setbottomnavigationview">
+<h4>setBottomNavigationView<a class="headerlink" href="#setbottomnavigationview" title="Permalink to this headline">¶</a></h4>
+<p>This method sets the navigationView on the bottom of the screen and initialises all the buttons for it, such as:</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><a class="reference internal" href="#datascientistid"><span class="std std-ref">DataScientistId</span></a> :</div>
+<div class="line-block">
+<div class="line">This buttons lets the user set a new <a class="reference internal" href="#datascientistid"><span class="std std-ref">DataScientistId</span></a></div>
+</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">SelectProject:</div>
+<div class="line-block">
+<div class="line">This button lets the user select a new project from the list of available ones, connected with the selected <a class="reference internal" href="#datascientistid"><span class="std std-ref">DataScientistId</span></a></div>
+</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">GetAllAssignments:</div>
+<div class="line-block">
+<div class="line">This button lets the user select and load a new assignment of the list of available ones, connected to the selected project.</div>
+</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">completeAssignment:</div>
+<div class="line-block">
+<div class="line">This button lets the user finish and commit the current assignment to the server.</div>
+</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">help:</div>
+<div class="line-block">
+<div class="line">This button brings the user to the help screen.</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="setupdrawercontent">
+<h4>setupDrawerContent<a class="headerlink" href="#setupdrawercontent" title="Permalink to this headline">¶</a></h4>
+<p>Sets up the side menu.</p>
+</div>
+<div class="section" id="slidemenudata">
+<h4>slideMenuData<a class="headerlink" href="#slidemenudata" title="Permalink to this headline">¶</a></h4>
+<p>Sets up the data for the slide menu header and children, the items of the menu are:</p>
+<ul class="simple">
+<li><p>Transport mean</p></li>
+<li><p>Survey questions</p></li>
+<li><p>Checkpoints</p></li>
+<li><p>Visited Points</p></li>
+<li><p>Route location</p></li>
+</ul>
+<p>When clicked on an item, a dropdown list expands under the selected item, showing the answer.
+The will only be shown, if available. Which means only if an assignment is loaded, and the assignment supports the selected measure.</p>
+</div>
+<div class="section" id="startcheckingforquestioninradius">
+<h4>StartCheckingForQuestionInRadius<a class="headerlink" href="#startcheckingforquestioninradius" title="Permalink to this headline">¶</a></h4>
+<p>This method checks if any questions are loaded and if it is not interrupted.
+If everything is fine, it checks if it is in the vicinity of any nearby question.
+If so, it creates a class of the corresponding mode (explained in <a class="reference internal" href="#modes"><span class="std std-ref">Modes</span></a>) for the question and calls the method “call”.</p>
+</div>
+<div class="section" id="startrepeatingtask">
+<h4>startRepeatingTask<a class="headerlink" href="#startrepeatingtask" title="Permalink to this headline">¶</a></h4>
+<p>This method starts a runnable, which puts itself in a callback loop afterwards. It calls the method <a class="reference internal" href="#update"><span class="std std-ref">update</span></a> in each iteration.</p>
+</div>
+<div class="section" id="stoprepeatingtask">
+<h4>stopRepeatingTask<a class="headerlink" href="#stoprepeatingtask" title="Permalink to this headline">¶</a></h4>
+<p>This method stops the repeating task, launched in the method <a class="reference internal" href="#startrepeatingtask"><span class="std std-ref">startRepeatingTask</span></a>.</p>
+</div>
+<div class="section" id="update">
+<h4>update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h4>
+<p>This method gets the latest reading of the current selected sensor.</p>
+</div>
+</div>
+<div class="section" id="staticmodel">
+<h3>StaticModel<a class="headerlink" href="#staticmodel" title="Permalink to this headline">¶</a></h3>
+<p>The StaticModel class contains static values, shared over the whole project</p>
+<p>Some of them are Mutable, some of them are final.</p>
+<div class="section" id="final-fields">
+<h4>Final fields<a class="headerlink" href="#final-fields" title="Permalink to this headline">¶</a></h4>
+<p>There are fields for the overall database:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DATABASE_VERSION</p></td>
+<td><p>int</p></td>
+<td><p>contains the current version of the database</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATABASE_NAME</p></td>
+<td><p>string</p></td>
+<td><p>contains the used name for the <a href="https://developer.android.com/reference/android/database/sqlite/package-summary.html" target="_blank">SQLite</a> database</p></td>
+</tr>
+</tbody>
+</table>
+<p>There are fields for the database tables:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TABLE_QUESTIONS_DATA</p></td>
+<td><p>string</p></td>
+<td><p>name for the questions table</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_ANSWERS_DATA</p></td>
+<td><p>string</p></td>
+<td><p>name for the answers table</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_START_AND_DESTINATION</p></td>
+<td><p>string</p></td>
+<td><p>name for the start and destination table</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_SENSOR_DATA</p></td>
+<td><p>string</p></td>
+<td><p>name for the sensor data table</p></td>
+</tr>
+</tbody>
+</table>
+<p>There are fields for the table column names:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Used in table</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FILESNAME</p></td>
+<td><p>string</p></td>
+<td><p>column name for the file</p></td>
+<td><p>Question, Answer, Start And Destination, Sensor data</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASSIGNMENTSTATE</p></td>
+<td><p>string</p></td>
+<td><p>column name for the assignment state</p></td>
+<td><p>Start And Destination</p></td>
+</tr>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>string</p></td>
+<td><p>column name for the id, which is the key of the table</p></td>
+<td><p>Question, Answer, Start And Destination, Sensor data</p></td>
+</tr>
+<tr class="row-odd"><td><p>QUESTIONID</p></td>
+<td><p>string</p></td>
+<td><p>column name for question id</p></td>
+<td><p>Question, Answer, Sensor data</p></td>
+</tr>
+<tr class="row-even"><td><p>QUESTION</p></td>
+<td><p>string</p></td>
+<td><p>column name for actual question</p></td>
+<td><p>Question, Answer, Sensor data</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOISE_SENSOR</p></td>
+<td><p>string</p></td>
+<td><p>column name for noise sensor reading</p></td>
+<td><p>Question, Sensor data</p></td>
+</tr>
+<tr class="row-even"><td><p>LIGHT_SENSOR</p></td>
+<td><p>string</p></td>
+<td><p>column name for light sensor reding</p></td>
+<td><p>Question, Sensor data</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACCEL_SENSOR</p></td>
+<td><p>string</p></td>
+<td><p>column name for acceleration sensor reading</p></td>
+<td><p>Question, Sensor data</p></td>
+</tr>
+<tr class="row-even"><td><p>PROXIMITY_SENSOR</p></td>
+<td><p>string</p></td>
+<td><p>column name for proximity sensor reading</p></td>
+<td><p>Question, Sensor data</p></td>
+</tr>
+<tr class="row-odd"><td><p>GYRO_SENSOR</p></td>
+<td><p>string</p></td>
+<td><p>column name for gyroscope sensor reading</p></td>
+<td><p>Question, Sensor data</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCATION</p></td>
+<td><p>string</p></td>
+<td><p>column name for location</p></td>
+<td><p>Question, Sensor data</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME</p></td>
+<td><p>string</p></td>
+<td><p>column name for measured time</p></td>
+<td><p>Question</p></td>
+</tr>
+<tr class="row-even"><td><p>FREQUENCY</p></td>
+<td><p>string</p></td>
+<td><p>column name for measurement frequency</p></td>
+<td><p>Question, Sensor data</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>string</p></td>
+<td><p>column name for question sequence</p></td>
+<td><p>Question</p></td>
+</tr>
+<tr class="row-even"><td><p>VISIBILITY</p></td>
+<td><p>string</p></td>
+<td><p>column name for question visibility</p></td>
+<td><p>Question</p></td>
+</tr>
+<tr class="row-odd"><td><p>MANDATORY</p></td>
+<td><p>string</p></td>
+<td><p>column name for mandatoriness</p></td>
+<td><p>Question</p></td>
+</tr>
+<tr class="row-even"><td><p>VICINITY</p></td>
+<td><p>string</p></td>
+<td><p>column name for vicinity</p></td>
+<td><p>Question</p></td>
+</tr>
+<tr class="row-odd"><td><p>TYPE</p></td>
+<td><p>string</p></td>
+<td><p>column name for question type</p></td>
+<td><p>Question</p></td>
+</tr>
+<tr class="row-even"><td><p>LATITUDE</p></td>
+<td><p>string</p></td>
+<td><p>column name for latitude</p></td>
+<td><p>Question, Answer</p></td>
+</tr>
+<tr class="row-odd"><td><p>LONGITUDE</p></td>
+<td><p>string</p></td>
+<td><p>column name for latitude</p></td>
+<td><p>Question, Answer</p></td>
+</tr>
+<tr class="row-even"><td><p>OPTIONS</p></td>
+<td><p>string</p></td>
+<td><p>column name for question options</p></td>
+<td><p>Question</p></td>
+</tr>
+<tr class="row-odd"><td><p>ANSWERS</p></td>
+<td><p>string</p></td>
+<td><p>column for given answers</p></td>
+<td><p>Answer</p></td>
+</tr>
+<tr class="row-even"><td><p>START_LATITUDE</p></td>
+<td><p>string</p></td>
+<td><p>column name for the start latitude of a start-destination line</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-odd"><td><p>START_LONGITUDE</p></td>
+<td><p>string</p></td>
+<td><p>column name for the start longitude of a start-destination line</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-even"><td><p>DESTINATION_LATITUDE</p></td>
+<td><p>string</p></td>
+<td><p>column name for the destination latitude of a start-destination line</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-odd"><td><p>DESTINATION_LONGITUDE</p></td>
+<td><p>string</p></td>
+<td><p>column name for the destination longitude of a start-destination line</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-even"><td><p>CAR</p></td>
+<td><p>string</p></td>
+<td><p>column name for car</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRAIN</p></td>
+<td><p>string</p></td>
+<td><p>column name for train</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-even"><td><p>CYCLE</p></td>
+<td><p>string</p></td>
+<td><p>column name for cycle</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-odd"><td><p>WALKING</p></td>
+<td><p>string</p></td>
+<td><p>column name for walking</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-even"><td><p>MODE</p></td>
+<td><p>string</p></td>
+<td><p>column name for the used transportaion mode</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-odd"><td><p>QID</p></td>
+<td><p>string</p></td>
+<td><p>column name for question id used by notifications</p></td>
+<td><p>Question, Answer</p></td>
+</tr>
+<tr class="row-even"><td><p>STOPNAME</p></td>
+<td><p>string</p></td>
+<td><p>column name for the stop name of a question</p></td>
+<td><p>Question, Answer</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEFAULTCREDIT</p></td>
+<td><p>string</p></td>
+<td><p>the defualt credit given</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-even"><td><p>COMBINATION</p></td>
+<td><p>string</p></td>
+<td><p>column name for the question combinations</p></td>
+<td><p>Question</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASSIGNMENTID</p></td>
+<td><p>string</p></td>
+<td><p>column name for the assignment id for the start-destination line</p></td>
+<td><p>Start and Destination</p></td>
+</tr>
+<tr class="row-even"><td><p>TIMEATANSWERING</p></td>
+<td><p>string</p></td>
+<td><p>column name for measured time whilst answering the question</p></td>
+<td><p>Answer</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMEATSENSORING</p></td>
+<td><p>string</p></td>
+<td><p>measured time for given sensor recording</p></td>
+<td><p>Sensor data</p></td>
+</tr>
+<tr class="row-even"><td><p>CREDIT</p></td>
+<td><p>string</p></td>
+<td><p>column name for the actually earned credit for a given answer</p></td>
+<td><p>Answer</p></td>
+</tr>
+</tbody>
+</table>
+<p>There are also fields for the sensor measuring:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Waiting time between two measurements</p></th>
+<th class="head"><p>Measurements per second</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LOW_TIME_INTERVAL</p></td>
+<td><p>int</p></td>
+<td><p>2 seconds</p></td>
+<td><p>~0.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>MED_TIME_INTERVAL</p></td>
+<td><p>int</p></td>
+<td><p>250 ms</p></td>
+<td><p>~4</p></td>
+</tr>
+<tr class="row-even"><td><p>HIGH_TIME_INTERVAL</p></td>
+<td><p>int</p></td>
+<td><p>200 ms</p></td>
+<td><p>~5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mutable-fields">
+<h4>Mutable fields<a class="headerlink" href="#mutable-fields" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>skippedQuestions</p></td>
+<td><p>List&lt;Integer&gt;</p></td>
+<td><p>a list containing all skipped questions</p></td>
+</tr>
+<tr class="row-odd"><td><p>questionsQueue</p></td>
+<td><p>List&lt;Integer&gt;</p></td>
+<td><p>a list containing all queued questions</p></td>
+</tr>
+<tr class="row-even"><td><p>questionsSensorsQueue</p></td>
+<td><p>List&lt;Integer&gt;</p></td>
+<td><div class="line-block">
+<div class="line">a list in which the last element of shownQuestionQueue is added,</div>
+<div class="line">sometimes instead of the last element, just the size of shownQuestionQueue is added,</div>
+<div class="line">the added elements are never used, as only ever values are added</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>shownQuestionsQueue</p></td>
+<td><p>List&lt;Integer&gt;</p></td>
+<td><p>a list in which all shown questions are added, to keep track how many questions were actually already shown</p></td>
+</tr>
+<tr class="row-even"><td><p>XMLLoaded</p></td>
+<td><p>boolean</p></td>
+<td><p>shows if the XML is loaded up</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="modes-classes">
+<h3>Modes classes<a class="headerlink" href="#modes-classes" title="Permalink to this headline">¶</a></h3>
+<p>In SmartAgora, there are different modes questions can be in, explained in <a class="reference internal" href="#modes"><span class="std std-ref">Modes</span></a>.
+For each of those modes, there is a class with a method called “call”, which is used to executed the assignment.
+There are the following mode classes:</p>
+<ul class="simple">
+<li><p>SimpleMode</p></li>
+<li><p>SequenceMode</p></li>
+<li><p>DecisionMode</p></li>
+<li><p>SimpleDIASMode</p></li>
+</ul>
+<p>Also, there are two helper classes called <a class="reference internal" href="#modefunctions"><span class="std std-ref">ModeFunctions</span></a> and <a class="reference internal" href="#sensorsinfo"><span class="std std-ref">SensorsInfo</span></a>, used in all four modes.</p>
+<p>all for modes classes have a method called call.</p>
+<p>In the call method, it gets checked if the phone is in the vicinity of a POI.</p>
+<p>If so, the corresponding questions get shown to the user.
+Upon answering, all questions get saved in the database.
+Once all questions for an assignment are answered, the questions get pushed to the server, and the <a class="reference internal" href="#vicinity-checking"><span class="std std-ref">Vicinity Checking</span></a> gets stopped.
+In addition to that, in the DIASModeSimple, all answers get pushed to the DIAS server upon answering.</p>
+<p>In the following list are classes used in those 4 classes:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#modefunctions"><span class="std std-ref">ModeFunctions</span></a>, for saving answers to the database</p></li>
+<li><p><a class="reference internal" href="#sensorsinfo"><span class="std std-ref">SensorsInfo</span></a>, for saving sensor measurements to the database</p></li>
+<li><p>AnswerThread, for loading answers from the database, AnswerThread is one of the <a class="reference internal" href="#databasethreads"><span class="std std-ref">DataBaseThreads</span></a></p></li>
+<li><p><a class="reference internal" href="#questionhandling"><span class="std std-ref">QuestionHandling</span></a>, for loading questions from the database</p></li>
+<li><p>QuestionThread, for loading questions from the database in a specific sequence (only in SequenceMode), QuestionThread is one of the <a class="reference internal" href="#databasethreads"><span class="std std-ref">DataBaseThreads</span></a></p></li>
+<li><p><a href="https://github.com/kofigyan/StateProgressBar" target="_blank">StateProgressBar</a>, for showing the progress during question answering</p></li>
+<li><p>SensorManager, for measuring the sensors</p></li>
+<li><p><a class="reference internal" href="../index.html#dias"><span class="std std-ref">DIAS</span></a> Library, for sending values to the DIAS server (only in DIASmode)</p></li>
+<li><p><a class="reference internal" href="#staticmodel"><span class="std std-ref">StaticModel</span></a>, for updating the different question queues</p></li>
+</ul>
+</div>
+<div class="section" id="modefunctions">
+<h3>ModeFunctions<a class="headerlink" href="#modefunctions" title="Permalink to this headline">¶</a></h3>
+<p>This class gets used by all 4 <a class="reference internal" href="#modes-classes"><span class="std std-ref">Modes classes</span></a>, it contains some universally needed functions.</p>
+<div class="section" id="saveanswer">
+<h4>saveAnswer<a class="headerlink" href="#saveanswer" title="Permalink to this headline">¶</a></h4>
+<p>This method saves the given answer int the <a href="https://developer.android.com/reference/android/database/sqlite/package-summary.html" target="_blank">SQLite</a> answer table, using the <a class="reference internal" href="#roomdatabasehandler"><span class="std std-ref">RoomDatabaseHandler</span></a>.</p>
+</div>
+<div class="section" id="updatestatebar">
+<h4>updateStateBar<a class="headerlink" href="#updatestatebar" title="Permalink to this headline">¶</a></h4>
+<p>This method updates the progressbar, according to the amount of questions already answered, compared to the total amount of questions.</p>
+</div>
+<div class="section" id="getcombinationid">
+<h4>getCombinationId<a class="headerlink" href="#getcombinationid" title="Permalink to this headline">¶</a></h4>
+<p>Given an id list and a CombinationEntity List, this method returns the index of the latter list, which represents the idList.</p>
+</div>
+<div class="section" id="showallanswers">
+<h4>showAllAnswers<a class="headerlink" href="#showallanswers" title="Permalink to this headline">¶</a></h4>
+<p>Sets the progressbar to 100%.
+Asks if the user wants to answer the skipped questions. Calls <a class="reference internal" href="#showskippedquestions"><span class="std std-ref">showSkippedQuestions</span></a> if yes pressed.</p>
+<p>If there are unanswered question, the user gets asked to answer them in the correct POI’s.</p>
+</div>
+<div class="section" id="showskippedquestions">
+<h4>showSkippedQuestions<a class="headerlink" href="#showskippedquestions" title="Permalink to this headline">¶</a></h4>
+<p>Shows all skipped questions to answer them again.</p>
+</div>
+<div class="section" id="checkendsurvey">
+<h4>checkEndSurvey<a class="headerlink" href="#checkendsurvey" title="Permalink to this headline">¶</a></h4>
+<p>Checks if the phone is in the vicinity of the destination point.</p>
+</div>
+</div>
+<div class="section" id="sensorsinfo">
+<h3>SensorsInfo<a class="headerlink" href="#sensorsinfo" title="Permalink to this headline">¶</a></h3>
+<p>This class saves the measured sensor data.</p>
+<div class="section" id="constructor">
+<h4>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h4>
+<p>Here, all important fields are initialised, such as:</p>
+<ul class="simple">
+<li><p>context, the main activity context</p></li>
+<li><p>sensors, list of all used sensors</p></li>
+<li><p>sensorNamesList, list of the names of the sensors, in the same order as sensors</p></li>
+<li><p>mSensorReading, a hashmap with a mapping between sensor name and measurement, converted to a string, contains the most up to date value for every sensor</p></li>
+<li><p>frequency, the frequency used for the sensors.</p></li>
+</ul>
+</div>
+<div class="section" id="savesensorsvalue">
+<h4>saveSensorsValue<a class="headerlink" href="#savesensorsvalue" title="Permalink to this headline">¶</a></h4>
+<p>This method gets the index of which sensor used, matched with which value measured.
+First, the list of used sensors for the current assignment is loaded. Then, the list of the names of those sensors is remade to match the sensors list.</p>
+<p>Then, the frequency is read out and the method <a class="reference internal" href="#savesensordataatintervals"><span class="std std-ref">saveSensorDataAtIntervals</span></a> is called with the arguments of the index, the frequency and the measured value.</p>
+<p>The list of sensors, as well as the frequency is accessed from the <a class="reference internal" href="#questionsactivity"><span class="std std-ref">QuestionsActivity</span></a>, from the list element “assignmentQuestions” at given index.</p>
+</div>
+<div class="section" id="savesensordataatintervals">
+<h4>saveSensorDataAtIntervals<a class="headerlink" href="#savesensordataatintervals" title="Permalink to this headline">¶</a></h4>
+<p>This method takes a given question index, a timeinterval and a answer value.</p>
+<p>It takes the length of the measurement time from the <a class="reference internal" href="#questionsactivity"><span class="std std-ref">QuestionsActivity</span></a>’s current guestion, given by the provided index.</p>
+<p>it creates a list to store all measured sensor values as json strings and creates a <a href="https://developer.android.com/reference/android/os/CountDownTimer" target="_blank">CountDownTimer</a> with the provided length and interval length.
+With the given frequency, the timer then updates the time, location and noise level (with <a class="reference internal" href="#getnoiselevel"><span class="std std-ref">getNoiseLevel</span></a>) in the mSensorReading hashMap and backs up all current sensor values to the <a class="reference internal" href="#roomdatabasehandler"><span class="std std-ref">RoomDatabaseHandler</span></a>.
+It also creates a json of the readings and puts it in the json list evey time.</p>
+<p>When the timer finished, it takes the given answer of the user, together with all json elements of the list, and calls the method <a class="reference internal" href="#savedatatofile"><span class="std std-ref">saveDataToFile</span></a> of <a class="reference internal" href="#filehandling"><span class="std std-ref">FileHandling</span></a>, to save it into a file.</p>
+</div>
+<div class="section" id="getnoiselevel">
+<h4>getNoiseLevel<a class="headerlink" href="#getnoiselevel" title="Permalink to this headline">¶</a></h4>
+<p>This method is used internally to measure the current noise level of the environment.</p>
+</div>
+</div>
+<div class="section" id="roomdatabasehandler">
+<h3>RoomDatabaseHandler<a class="headerlink" href="#roomdatabasehandler" title="Permalink to this headline">¶</a></h3>
+<p>The RoomDatabaseHandler extends the <a href="https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase" target="_blank">RoomDatabase</a, which is a little bit more complicated than most java objects.</p>
+<p>The idea is, that this handler handles an <a href="https://developer.android.com/reference/android/database/sqlite/package-summary.html" target="_blank">SQLite</a> database. For that the programmer needs to create “data accsess objects”, or short DAO (more on them here: <a class="reference internal" href="#the-dao-s"><span class="std std-ref">the DAO’s</span></a>).
+One can create as many DAO’s, as one wants, the key is to declare them in the handler. All those DAO’s are interfaces, and for every interface, a function needs to be declared in the handler:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="o">&lt;</span><span class="n">InterfaceName</span><span class="o">&gt;</span> <span class="n">get</span><span class="o">&lt;</span><span class="n">InterfaceName</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>so the return type and everything after “get” in the function name must match the desired DAO.
+One can also create migrations.</p>
+<p>The class needs to have the following addition before the class declaration:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">All</span> <span class="n">entity</span><span class="p">.</span><span class="na">class</span> <span class="n">objects</span> <span class="n">here</span><span class="o">&gt;</span><span class="p">},</span> <span class="n">version</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">version_number</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">exportSchema</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>More on entities here: <a class="reference internal" href="#the-entities"><span class="std std-ref">the entities</span></a>.</p>
+<p>For each table, there is a DAO, an entity and a thread.</p>
+<div class="section" id="the-dao-s">
+<h4>the DAO’s<a class="headerlink" href="#the-dao-s" title="Permalink to this headline">¶</a></h4>
+<p>All the DAO’s need to have the same schema:</p>
+<p>There needs to be an insert function with a specific Entity as parameter in the following way:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Insert</span><span class="p">(</span><span class="n">onConflict</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">chosen</span> <span class="n">strategy</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="o">&lt;</span><span class="n">entity</span> <span class="n">class</span><span class="o">&gt;</span> <span class="n">element</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>possible strategies are: REPLACE, ROLLBACK, ABORT, FAIL, IGNORE.</p>
+<p>For getting values, there are two possible options, the first one is to only return one element of the database, in this case the return type is a list of the specific type in the DB:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT Question.id FROM Answer JOIN Question on (Answer.assignmentId AND Answer.questionId) = (Question.assignmentId AND Question.id) join Assignment on Question.assignmentId = Assignment.id WHERE Assignment.name=:assignmentName &quot;</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">getAnsweredQuestionIds</span><span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">assignmentName</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>As seen, the query is a normal SQL querie in a &#64;Query block before the function definition, function parameters can be used for comparison with “=:assignmentName”.</p>
+<p>The other option is to get multiple rows per element, in this case a list of entities is returned:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT Answer.id,Answer.answer ,Answer.questionId,Answer.assignmentId,Answer.credits,Answer.answeringTime, Answer.aggregateValue FROM Answer JOIN Question on Answer.questionId = Question.id and Answer.assignmentId = Question.assignmentId  join Assignment on Question.assignmentId = Assignment.id WHERE Assignment.name=:assignmentName &quot;</span><span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">AnswerEntity</span><span class="o">&gt;</span> <span class="nf">getAnsweredQuestions</span><span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">assignmentName</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-entities">
+<h4>the entities<a class="headerlink" href="#the-entities" title="Permalink to this headline">¶</a></h4>
+<p>The entities define the actual tables.</p>
+<p>in the &#64;Entity before the class definition, the table key information is defines, such as foreign keys or indices in the following way:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Entity</span><span class="p">(</span>
+  <span class="n">foreignKeys</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nd">@ForeignKey</span><span class="p">(</span>
+      <span class="n">entity</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">another</span> <span class="n">entity</span> <span class="n">class</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">parentcolumns</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">columns</span> <span class="n">from</span> <span class="n">other</span> <span class="n">class</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">childcolumns</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">columns</span> <span class="n">in</span> <span class="k">this</span> <span class="n">entity</span> <span class="n">refering</span> <span class="n">to</span> <span class="n">the</span> <span class="n">foreign</span> <span class="n">parent</span> <span class="n">columns</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">onDelete</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">action</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">onUpdate</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">action</span><span class="o">&gt;</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="n">indices</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nd">@Index</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;sensorId&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The foreign keys are keys used in other tables, that are linked with values in this table.</p>
+<p>The possible actions are: CASCADE, NO_ACTION, RESTRICT, SET_DEFAULT, SET_NULL
+If no action is defined, NO_ACTION is used.</p>
+<p>In the class, all columns need to be defined by creating private fields for each row.</p>
+<p>evey element need the following addition:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">column</span> <span class="n">name</span> <span class="n">as</span> <span class="n">a</span> <span class="n">string</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>the primary key also needs the following:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span> <span class="o">=</span> <span class="o">&lt;</span><span class="k">if</span> <span class="kc">true</span><span class="p">,</span> <span class="n">the</span> <span class="n">key</span> <span class="n">gets</span> <span class="n">created</span> <span class="n">automatically</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The fields can also have getter and setter methods, but they are not necessary.</p>
+</div>
+<div class="section" id="databasethreads">
+<h4>DataBaseThreads<a class="headerlink" href="#databasethreads" title="Permalink to this headline">¶</a></h4>
+<p>There is a class for every table in the database querying requests for the specific table, the format for every method is the same:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">normal</span> <span class="n">datatype</span> <span class="n">or</span> <span class="n">database</span> <span class="n">entity</span><span class="o">&gt;</span> <span class="nf">getSomething</span><span class="p">(</span><span class="o">&lt;</span><span class="n">arguments</span> <span class="n">used</span> <span class="k">for</span> <span class="n">querying</span><span class="o">&gt;</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">ExecutionException</span><span class="p">,</span> <span class="n">InterruptedException</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="n">databaseHandler</span><span class="p">.</span><span class="na">getAnswerDao</span><span class="p">().</span><span class="na">getSomething</span><span class="p">(</span><span class="o">&lt;</span><span class="n">arguments</span> <span class="n">used</span> <span class="k">for</span> <span class="n">querying</span><span class="o">&gt;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="activitystackmanager">
+<h3>ActivityStackManager<a class="headerlink" href="#activitystackmanager" title="Permalink to this headline">¶</a></h3>
+<p>The ActivityStackManager gets launched with the app.
+It is a singleton, which means, all classes calling <a class="reference internal" href="#getinstance"><span class="std std-ref">getInstance</span></a> get the same instance of the class.</p>
+<p>This class is responsible for launching the different activities of this application.</p>
+<div class="section" id="getinstance">
+<h4>getInstance<a class="headerlink" href="#getinstance" title="Permalink to this headline">¶</a></h4>
+<p>This method is statically typed.
+it returns the statically saved instance of this class, always returns the same instance.</p>
+</div>
+<div class="section" id="startmainhomescreen">
+<h4>startMainHomeScreen<a class="headerlink" href="#startmainhomescreen" title="Permalink to this headline">¶</a></h4>
+<p>Starts up the <a class="reference internal" href="#homeactivity-class"><span class="std std-ref">HomeActivity class</span></a>.</p>
+</div>
+<div class="section" id="startlocationservice">
+<h4>startLocationService<a class="headerlink" href="#startlocationservice" title="Permalink to this headline">¶</a></h4>
+<p>Starts the <a class="reference internal" href="#locationservice"><span class="std std-ref">LocationService</span></a>, if not already launched.</p>
+</div>
+<div class="section" id="returnlocationflag">
+<h4>returnLocationFlag<a class="headerlink" href="#returnlocationflag" title="Permalink to this headline">¶</a></h4>
+<p>Returns true, if the activity is already started.</p>
+</div>
+<div class="section" id="stoplocationservice">
+<h4>stopLocationService<a class="headerlink" href="#stoplocationservice" title="Permalink to this headline">¶</a></h4>
+<p>Stops the <a class="reference internal" href="#locationservice"><span class="std std-ref">LocationService</span></a>, if running.</p>
+</div>
+</div>
+<div class="section" id="locationservice">
+<h3>LocationService<a class="headerlink" href="#locationservice" title="Permalink to this headline">¶</a></h3>
+<p>Once started, the LocationService is listening on the gps sensor for location updates and propagates them to the correct places.</p>
+<div class="section" id="id1">
+<h4>onCreate<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>In onCreate, the application context gets set.</p>
+</div>
+<div class="section" id="onstartcommand">
+<h4>onStartCommand<a class="headerlink" href="#onstartcommand" title="Permalink to this headline">¶</a></h4>
+<p>This method gets called once the LocationService was started via the <a class="reference internal" href="#activitystackmanager"><span class="std std-ref">ActivityStackManager</span></a>.
+When this method is called the first time after it was <em>installed</em>, the user gets asked for Access to GPS and Network.
+Once granted, the LocationUpdatesListener, which is declared in this class, is started.</p>
+</div>
+<div class="section" id="id2">
+<h4>onDestroy<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>This method gets called, once the service is stopped and the object gets destroyed (either from the application or the garbage collection).
+It stops the LocationUpdatesListener from listening to the GPS sensor.</p>
+</div>
+<div class="section" id="locationupdateslistener-onlocationchanged">
+<h4>LocationUpdatesListener.onLocationChanged<a class="headerlink" href="#locationupdateslistener-onlocationchanged" title="Permalink to this headline">¶</a></h4>
+<p>The LocationUpdatesListener only has one method, which is really used: onLocationChanged(final Location location).
+The location then gets saved in Memory.
+Then, a sticky gets posted, with the key LOCATION_UPDATED. (Read more about <a class="reference internal" href="#sticky-events"><span class="std std-ref">Sticky Events</span></a>)</p>
+<p>This sticky then causes the method <a class="reference internal" href="#onevent"><span class="std std-ref">onEvent</span></a> of the HomeActivity to be called.</p>
+</div>
+</div>
+<div class="section" id="splash-activity">
+<h3>Splash Activity<a class="headerlink" href="#splash-activity" title="Permalink to this headline">¶</a></h3>
+<p>This activity gets launched together with the application.</p>
+<div class="section" id="id3">
+<h4>onCreate<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>In this method, first the bootup logo gets displayed.
+Next, the <a class="reference internal" href="#activitystackmanager"><span class="std std-ref">ActivityStackManager</span></a> gets instanciated and <a class="reference internal" href="#startlocationservice"><span class="std std-ref">startLocationService</span></a> gets called.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/app_icon.png"><img alt="../_images/app_icon.png" src="../_images/app_icon.png" style="width: 204.8px; height: 204.8px;" /></a>
+</div>
+<p>Afterwards, the <a class="reference internal" href="#homeactivity-class"><span class="std std-ref">HomeActivity class</span></a> is started, again via the <a class="reference internal" href="#activitystackmanager"><span class="std std-ref">ActivityStackManager</span></a> with the function <a class="reference internal" href="#startmainhomescreen"><span class="std std-ref">startMainHomeScreen</span></a>.</p>
+</div>
+</div>
+<div class="section" id="preferenceskeys">
+<h3>PreferencesKeys<a class="headerlink" href="#preferenceskeys" title="Permalink to this headline">¶</a></h3>
+<p>The Class contains all keys used to store data via sharedPreferences.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LATITUDE</p></td>
+<td><p>The latitude of a gps coordinate</p></td>
+</tr>
+<tr class="row-odd"><td><p>LONGITUDE</p></td>
+<td><p>The logitude of a gps</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCATION_UPDATED</p></td>
+<td><p>Used for the postSticky in <a class="reference internal" href="#locationupdateslistener-onlocationchanged"><span class="std std-ref">LocationUpdatesListener.onLocationChanged</span></a> and the callee in <a class="reference internal" href="#onevent"><span class="std std-ref">onEvent</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GPS_OFF</p></td>
+<td><p>Used for the postSticky in <a class="reference internal" href="#onstartcommand"><span class="std std-ref">onStartCommand</span></a>, if the GPS provider is offline.</p></td>
+</tr>
+<tr class="row-even"><td><p>ACCURACY</p></td>
+<td><p>The accuracy of the sampled gps points</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATA_SCIENTIST_ID</p></td>
+<td><p>The stored dataScientist id for distinguishing between different sets of assignments</p></td>
+</tr>
+<tr class="row-even"><td><p>PROJECT_ID</p></td>
+<td><p>The stored project id for distinguishing between different projects</p></td>
+</tr>
+<tr class="row-odd"><td><p>AUTO_ASSIGNMENT</p></td>
+<td><p>If the assignment should be automatically loaded.</p></td>
+</tr>
+<tr class="row-even"><td><p>HELP</p></td>
+<td><p>The help text for the current assignment</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deviceuuidfactory">
+<h3>DeviceUuidFactory<a class="headerlink" href="#deviceuuidfactory" title="Permalink to this headline">¶</a></h3>
+<p>This class is used to generate a unique user id for the phone.</p>
+<div class="section" id="id4">
+<h4>constructor<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>In this method, the UUID gets created, it is basically the Android ID.
+If the Android ID should not be available, then a random UUID gets created.</p>
+</div>
+<div class="section" id="getdeviceuuid">
+<h4>getDeviceUuid<a class="headerlink" href="#getdeviceuuid" title="Permalink to this headline">¶</a></h4>
+<p>Returns the created UUID.</p>
+</div>
+</div>
+<div class="section" id="ellipse">
+<h3>Ellipse<a class="headerlink" href="#ellipse" title="Permalink to this headline">¶</a></h3>
+<p>This class is used to create an ellipse and some basic arithmetic operations on it.</p>
+<div class="section" id="getangle">
+<h4>getAngle<a class="headerlink" href="#getangle" title="Permalink to this headline">¶</a></h4>
+<p>Returns the angle of rotation of the ellipse.</p>
+</div>
+<div class="section" id="createellipse">
+<h4>createEllipse<a class="headerlink" href="#createellipse" title="Permalink to this headline">¶</a></h4>
+<p>This method creates the ellipse.
+It creates 20 points along the ellips in the ellipsePointsList, given the radius in x and y direction and the angle.</p>
+</div>
+<div class="section" id="isinellipse">
+<h4>IsInEllipse<a class="headerlink" href="#isinellipse" title="Permalink to this headline">¶</a></h4>
+<p>This method returns true, if the given point is in the ellipse.</p>
+</div>
+<div class="section" id="drawmarkerwithellipse">
+<h4>drawMarkerWithEllipse<a class="headerlink" href="#drawmarkerwithellipse" title="Permalink to this headline">¶</a></h4>
+<p>Draws the ellips on the openStreetMap, which the user sees.</p>
+</div>
+</div>
+<div class="section" id="filehandling">
+<h3>FileHandling<a class="headerlink" href="#filehandling" title="Permalink to this headline">¶</a></h3>
+<p>This class is responsible for saving sensor data and answers for questions into a file.</p>
+<div class="section" id="id5">
+<h4>constructor<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>an instance of a class called SavingDataToFileAsync, which is declared in FileHandling, is instanciated.</p>
+</div>
+<div class="section" id="savedatatofile">
+<h4>saveDataToFile<a class="headerlink" href="#savedatatofile" title="Permalink to this headline">¶</a></h4>
+<p>Given sensor measurements, a question id and the corresponding answer, those information get saved in a file, which name is given by <a class="reference internal" href="#utils"><span class="std std-ref">utils</span></a>.filename</p>
+</div>
+</div>
+<div class="section" id="questionhandling">
+<h3>QuestionHandling<a class="headerlink" href="#questionhandling" title="Permalink to this headline">¶</a></h3>
+<p>This class handles everything with the assignment questions currently loaded.</p>
+<div class="section" id="id6">
+<h4>constructor<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>Initialises thie application context, the question number and number of shown questions (to zero) and calls <a class="reference internal" href="#initvalue"><span class="std std-ref">initValue</span></a>.</p>
+</div>
+<div class="section" id="initvalue">
+<h4>initValue<a class="headerlink" href="#initvalue" title="Permalink to this headline">¶</a></h4>
+<p>This method initialises a couple of objects used in this class, such as</p>
+<ul class="simple">
+<li><p>The currently used ellipse</p></li>
+<li><p>The <a class="reference internal" href="#databasehandler"><span class="std std-ref">DatabaseHandler</span></a></p></li>
+<li><p>A list for all loaded questions</p></li>
+<li><p>A list for the questions in order of the route</p></li>
+<li><p>A list with all visited points for the current series of questions</p></li>
+</ul>
+</div>
+<div class="section" id="getquestionnumber">
+<h4>getQuestionNumber<a class="headerlink" href="#getquestionnumber" title="Permalink to this headline">¶</a></h4>
+<p>Gets the current question number.</p>
+</div>
+<div class="section" id="setquestionnumber">
+<h4>setQuestionNumber<a class="headerlink" href="#setquestionnumber" title="Permalink to this headline">¶</a></h4>
+<p>Sets the current question number.</p>
+</div>
+<div class="section" id="setshownquestion">
+<h4>setShownQuestion<a class="headerlink" href="#setshownquestion" title="Permalink to this headline">¶</a></h4>
+<p>Sets the shownQuestion list to the given list.</p>
+</div>
+<div class="section" id="getroutequestions">
+<h4>getRouteQuestions<a class="headerlink" href="#getroutequestions" title="Permalink to this headline">¶</a></h4>
+<p>Returns the questions in the route order</p>
+</div>
+<div class="section" id="getmellipse">
+<h4>getmEllipse<a class="headerlink" href="#getmellipse" title="Permalink to this headline">¶</a></h4>
+<p>Returns the used ellipse.</p>
+</div>
+<div class="section" id="getdatafromsavedfile">
+<h4>getDataFromSavedFile<a class="headerlink" href="#getdatafromsavedfile" title="Permalink to this headline">¶</a></h4>
+<p>Gets the data from the <a class="reference internal" href="#databasehandler"><span class="std std-ref">DatabaseHandler</span></a> by calling <a class="reference internal" href="#getfilesdata"><span class="std std-ref">getFilesData</span></a> and saves them in the SampleDataModel two instances of <a class="reference internal" href="#mainmodel"><span class="std std-ref">MainModel</span></a>, one is called “questions” and one “selectedQuestions”.</p>
+</div>
+<div class="section" id="getdatafromroomdb">
+<h4>getDataFromRoomDB<a class="headerlink" href="#getdatafromroomdb" title="Permalink to this headline">¶</a></h4>
+<p>Gets the current assignment and all questions of it by the QuestionThread and AssignmentThread out of the <a class="reference internal" href="#databasethreads"><span class="std std-ref">DataBaseThreads</span></a> and loads them into the QuestionsActivity.</p>
+</div>
+<div class="section" id="questioninellipsenew">
+<h4>QuestionInEllipseNew<a class="headerlink" href="#questioninellipsenew" title="Permalink to this headline">¶</a></h4>
+<p>Returns the question of the nearest POI, if one is in range, returns -1 otherwise.</p>
+</div>
+<div class="section" id="getcurrentquestionnew">
+<h4>getCurrentQuestionNew<a class="headerlink" href="#getcurrentquestionnew" title="Permalink to this headline">¶</a></h4>
+<p>Returns the current question given by questionNumber.</p>
+</div>
+<div class="section" id="addquestioninvisitedpointsnew">
+<h4>addQuestionInVisitedPointsNew<a class="headerlink" href="#addquestioninvisitedpointsnew" title="Permalink to this headline">¶</a></h4>
+<p>Adds the question, given by the argument qNumber, to the list of visited questions.</p>
+</div>
+<div class="section" id="isdonenew">
+<h4>isDoneNew<a class="headerlink" href="#isdonenew" title="Permalink to this headline">¶</a></h4>
+<p>Returns true if the given point was already visited.</p>
+</div>
+</div>
+<div class="section" id="utils">
+<h3>utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h3>
+<p>This class handles all file storing and loading and some other utility operations.</p>
+<div class="section" id="showfilechooser">
+<h4>showFileChooser<a class="headerlink" href="#showfilechooser" title="Permalink to this headline">¶</a></h4>
+<p>Creates a Filechooser dialog on the secreen from a installed file manager.</p>
+</div>
+<div class="section" id="getdatafromfile">
+<h4>getDataFromFile<a class="headerlink" href="#getdatafromfile" title="Permalink to this headline">¶</a></h4>
+<p>Returns a string, encoded as an XML file, from the given file location.</p>
+</div>
+<div class="section" id="havenetworkconnection">
+<h4>haveNetworkConnection<a class="headerlink" href="#havenetworkconnection" title="Permalink to this headline">¶</a></h4>
+<p>Checks, if there is a working connection to the internet, returns true if so;</p>
+</div>
+<div class="section" id="getsensordata">
+<h4>getSensorData<a class="headerlink" href="#getsensordata" title="Permalink to this headline">¶</a></h4>
+<p>Returns the contents of the file given in the static field “filename”.</p>
+</div>
+<div class="section" id="initializeprogressdialog">
+<h4>initializeProgressDialog<a class="headerlink" href="#initializeprogressdialog" title="Permalink to this headline">¶</a></h4>
+<p>Initialises the progress dialog used when syncing with the server.</p>
+</div>
+<div class="section" id="registersensorlistener">
+<h4>registerSensorListener<a class="headerlink" href="#registersensorlistener" title="Permalink to this headline">¶</a></h4>
+<p>Returns a <a href="https://developer.android.com/reference/android/hardware/SensorManager" target="_blank">SensorManager</a>, with the Accelerometer, Gyroscope, Light and Proximity sensor already registered.</p>
+</div>
+<div class="section" id="updateregistersensorlistener">
+<h4>updateRegisterSensorListener<a class="headerlink" href="#updateregistersensorlistener" title="Permalink to this headline">¶</a></h4>
+<p>Registers the Accelerometer, Gyroscope, Light and Proximity sensors to the given <a href="https://developer.android.com/reference/android/hardware/SensorManager" target="_blank">SensorManager</a>.</p>
+</div>
+<div class="section" id="unregistersensorlistener">
+<h4>unregisterSensorListener<a class="headerlink" href="#unregistersensorlistener" title="Permalink to this headline">¶</a></h4>
+<p>Unregisters the Accelerometer, Gyroscope, Light and Proximity sensors from the <a href="https://developer.android.com/reference/android/hardware/SensorManager" target="_blank">SensorManager</a>.</p>
+</div>
+<div class="section" id="id7">
+<h4>buildAlertMessageNoGps<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>Creates and shows an alertDialog, telling the user to enable gps.</p>
+</div>
+<div class="section" id="id8">
+<h4>makeURL<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>Given a source, a destionation and a tavel mode, this method creates an url for querying a google API.
+The response then contains markers, which can be added the the openStreetMap.</p>
+</div>
+<div class="section" id="getdiascheckpointleavestatus">
+<h4>getDiasCheckPointLeaveStatus<a class="headerlink" href="#getdiascheckpointleavestatus" title="Permalink to this headline">¶</a></h4>
+<p>Creates and fires a timer, which periodically checks if the user is far enough away of the checkpoint.
+Once the minimum distance is reached, a flag is set in the HomeActivity, such that afterwards the device appropriately leaves from the DIAS network.</p>
+</div>
+<div class="section" id="distance">
+<h4>distance<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h4>
+<p>Calculates the distance between two given points.</p>
+</div>
+<div class="section" id="deg2rad">
+<h4>deg2rad<a class="headerlink" href="#deg2rad" title="Permalink to this headline">¶</a></h4>
+<p>Converts values from [0, 360) to values from [0, <span class="math notranslate nohighlight">\(\pi\)</span>).</p>
+</div>
+<div class="section" id="rad2deg">
+<h4>rad2deg<a class="headerlink" href="#rad2deg" title="Permalink to this headline">¶</a></h4>
+<p>Converts values from [0, <span class="math notranslate nohighlight">\(\pi\)</span>) to values from [0, 360).</p>
+</div>
+<div class="section" id="getuniqecheckpointid">
+<h4>getUniqeCheckpointId<a class="headerlink" href="#getuniqecheckpointid" title="Permalink to this headline">¶</a></h4>
+<p>Creates a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/CRC32.html" target="_blank">CRC2</a> hash from the lat and long value.</p>
+</div>
+</div>
+<div class="section" id="databasehandler">
+<h3>DatabaseHandler<a class="headerlink" href="#databasehandler" title="Permalink to this headline">¶</a></h3>
+<p>The databaseHandler is used for accessing and retrieving local data.
+It uses an <a href="https://developer.android.com/reference/android/database/sqlite/package-summary.html" target="_blank">SQLite</a> database.</p>
+<p>The used tables look like the following ones, the keys are underlined.
+All words written in caps lock are static fields from <a class="reference internal" href="#staticmodel"><span class="std std-ref">StaticModel</span></a>.</p>
+<p><strong>TABLE_QUESTIONS_DATA</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="underline">ID</span></p></th>
+<th class="head"><p>QUESTION</p></th>
+<th class="head"><p>LATITUDE</p></th>
+<th class="head"><p>LONGITUDE</p></th>
+<th class="head"><p>TYPE</p></th>
+<th class="head"><p>OPTIONS</p></th>
+<th class="head"><p>FILESNAME</p></th>
+<th class="head"><p>NOISE_SENSOR</p></th>
+<th class="head"><p>LIGHT_SENSOR</p></th>
+<th class="head"><p>ACCEL_SENSOR</p></th>
+<th class="head"><p>GYRO_SENSOR</p></th>
+<th class="head"><p>PROXIMITY_SENSOR</p></th>
+<th class="head"><p>LOCATION</p></th>
+<th class="head"><p>TIME</p></th>
+<th class="head"><p>FREQUENCY</p></th>
+<th class="head"><p>SEQUENCE</p></th>
+<th class="head"><p>VISIBILITY</p></th>
+<th class="head"><p>MANDATORY</p></th>
+<th class="head"><p>QUESTIONID</p></th>
+<th class="head"><p>QID</p></th>
+<th class="head"><p>STOPNAME</p></th>
+<th class="head"><p>COMBINATION</p></th>
+<th class="head"><p>VICINITY</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>TABLE_ANSWERS_DATA</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="underline">ID</span></p></th>
+<th class="head"><p>QUESTION</p></th>
+<th class="head"><p>LATITUDE</p></th>
+<th class="head"><p>LONGITUDE</p></th>
+<th class="head"><p>FILESNAME</p></th>
+<th class="head"><p>ANSWERS</p></th>
+<th class="head"><p>QUESTIONID</p></th>
+<th class="head"><p>CREDIT</p></th>
+<th class="head"><p>QID</p></th>
+<th class="head"><p>STOPNAME</p></th>
+<th class="head"><p>TIMEATANSWERING</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>TABLE_START_AND_DESTINATION</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="underline">ID</span></p></th>
+<th class="head"><p>START_LATITUDE</p></th>
+<th class="head"><p>START_LONGITUDE</p></th>
+<th class="head"><p>DESTINATION_LATITUDE</p></th>
+<th class="head"><p>DESTINATION_LONGITUDE</p></th>
+<th class="head"><p>CAR</p></th>
+<th class="head"><p>TRAIN</p></th>
+<th class="head"><p>CYCLE</p></th>
+<th class="head"><p>WALKING</p></th>
+<th class="head"><p>FILESNAME</p></th>
+<th class="head"><p>VACINITY</p></th>
+<th class="head"><p>MODE</p></th>
+<th class="head"><p>DEFAULTCREDIT</p></th>
+<th class="head"><p>ASSIGNMENTID</p></th>
+<th class="head"><p>ASSIGNMENTSTATE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>TABLE_START_AND_DESTINATION</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="underline">ID</span></p></th>
+<th class="head"><p>FILESNAME</p></th>
+<th class="head"><p>ACCEL_SENSOR</p></th>
+<th class="head"><p>LIGHT_SENSOR</p></th>
+<th class="head"><p>NOISE_SENSOR</p></th>
+<th class="head"><p>GYRO_SENSOR</p></th>
+<th class="head"><p>PROXIMITY_SENSOR</p></th>
+<th class="head"><p>LOCATION</p></th>
+<th class="head"><p>FREQUENCY</p></th>
+<th class="head"><p>QUESTION</p></th>
+<th class="head"><p>QUESTIONID</p></th>
+<th class="head"><p>TIMEATANSWERING</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id9">
+<h4>onCreate<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>Here, the tables get created.</p>
+</div>
+<div class="section" id="savequestiondatatransition">
+<h4>saveQuestionDataTransition<a class="headerlink" href="#savequestiondatatransition" title="Permalink to this headline">¶</a></h4>
+<p>Saves the given list of questions into the database.</p>
+</div>
+<div class="section" id="savestartanddestinationdata">
+<h4>saveStartAndDestinationData<a class="headerlink" href="#savestartanddestinationdata" title="Permalink to this headline">¶</a></h4>
+<p>Saves the given start and destionation data into the database.</p>
+</div>
+<div class="section" id="getfilesdata">
+<h4>getFilesData<a class="headerlink" href="#getfilesdata" title="Permalink to this headline">¶</a></h4>
+<p>Returns all values from TABLE_QUESTIONS_DATA matching the currently open file name.</p>
+</div>
+<div class="section" id="getfilesname">
+<h4>getFilesName<a class="headerlink" href="#getfilesname" title="Permalink to this headline">¶</a></h4>
+<p>Returns all names of all files stored in the database.</p>
+</div>
+<div class="section" id="deletefile">
+<h4>deleteFile<a class="headerlink" href="#deletefile" title="Permalink to this headline">¶</a></h4>
+<p>Delete all data from the tables TABLE_START_AND_DESTINATION and TABLE_QUESTIONS_DATA mathing the given filename.</p>
+</div>
+</div>
+<div class="section" id="questionsactivity">
+<h3>QuestionsActivity<a class="headerlink" href="#questionsactivity" title="Permalink to this headline">¶</a></h3>
+<p>The question activity is used as a popup, when the Button “Assignments” in the BottomNavigationView is pressed and the project is loaded from the server.
+It shows a list with all available assignments. There is also a button with the title “ADD FILES”, which calls the method <a class="reference internal" href="#choosejsonfile"><span class="std std-ref">chooseJsonFile</span></a></p>
+<div class="section" id="id10">
+<h4>onCreate<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>Here, the layout is initialised.
+It also loads the filelist by calling <a class="reference internal" href="#filelistsnew"><span class="std std-ref">FileListsNew</span></a> and asks for storage reading permissions.</p>
+</div>
+<div class="section" id="choosejsonfile">
+<h4>chooseJsonFile<a class="headerlink" href="#choosejsonfile" title="Permalink to this headline">¶</a></h4>
+<p>Shows a filechooser by calling :ref`showFileChooser`.</p>
+</div>
+<div class="section" id="id11">
+<h4>onActivityResult<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>This method is called by the application once the fileChooser application returns, either because a file got chosen, or because the action got cancelled.</p>
+<p>If a file got chosen, and it does not has the same name as the currently opened file, it gets loaded into the application via <a class="reference internal" href="#setjsontoclass"><span class="std std-ref">setJsonToClass</span></a>.</p>
+</div>
+<div class="section" id="setjsontoclass">
+<h4>setJsonToClass<a class="headerlink" href="#setjsontoclass" title="Permalink to this headline">¶</a></h4>
+<p>Opens the file given by the filename and stores it in internally.</p>
+</div>
+<div class="section" id="showquestions">
+<h4>showQuestions<a class="headerlink" href="#showquestions" title="Permalink to this headline">¶</a></h4>
+<p>Calls <a class="reference internal" href="#populatequestions"><span class="std std-ref">populateQuestions</span></a> to load the questions, then shows the questions on the screen.
+When clicking ok, the questions get saved to the database by calling <a class="reference internal" href="#savedatatodb"><span class="std std-ref">saveDataToDB</span></a>.
+If the button ‘cancel’ is called, the questions get discarded.</p>
+</div>
+<div class="section" id="savedatatodb">
+<h4>saveDataToDB<a class="headerlink" href="#savedatatodb" title="Permalink to this headline">¶</a></h4>
+<p>Saves the given questions into the database via the <a class="reference internal" href="#databasehandler"><span class="std std-ref">DatabaseHandler</span></a>.</p>
+</div>
+<div class="section" id="id12">
+<h4>getDataFromRoomDB<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<p>Gets the selected assignment, the according start and destination entity an the questions of the assignment from the <a class="reference internal" href="#databasethreads"><span class="std std-ref">DataBaseThreads</span></a> and starts a new QuestionsActivity.</p>
+</div>
+<div class="section" id="populatequestions">
+<h4>populateQuestions<a class="headerlink" href="#populatequestions" title="Permalink to this headline">¶</a></h4>
+<p>Loads the questions and shows them in the QuestionsActivity popup on the screen.</p>
+</div>
+<div class="section" id="filelistsnew">
+<h4>FileListsNew<a class="headerlink" href="#filelistsnew" title="Permalink to this headline">¶</a></h4>
+<p>Gets the list of of assignments from the database via one of the <a class="reference internal" href="#databasethreads"><span class="std std-ref">DataBaseThreads</span></a> and shows them on screen.
+Finished assignments are shown with a star at the end of the name.</p>
+</div>
+</div>
+<div class="section" id="the-models">
+<h3>The models<a class="headerlink" href="#the-models" title="Permalink to this headline">¶</a></h3>
+<p>There are different models, which are used for temporarily storing data, they are explained below.
+The <a class="reference internal" href="#staticmodel"><span class="std std-ref">StaticModel</span></a> was explained earlier.</p>
+<div class="section" id="mainmodel">
+<h4>MainModel<a class="headerlink" href="#mainmodel" title="Permalink to this headline">¶</a></h4>
+<p>This model is used to store the <a class="reference internal" href="#startanddestinationmodel"><span class="std std-ref">StartAndDestinationModel</span></a> and a list of instances of the <a class="reference internal" href="#questiondatamodel"><span class="std std-ref">QuestionDataModel</span></a></p>
+</div>
+<div class="section" id="optionmodel">
+<h4>OptionModel<a class="headerlink" href="#optionmodel" title="Permalink to this headline">¶</a></h4>
+<p>This model is used as an answer option for the <a class="reference internal" href="#questiondatamodel"><span class="std std-ref">QuestionDataModel</span></a>.
+It has the following fields, all of them have getter and setter methods:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>String</p></td>
+<td><p>The name of the answer option</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="projectmodel">
+<h4>ProjectModel<a class="headerlink" href="#projectmodel" title="Permalink to this headline">¶</a></h4>
+<p>This class has metadata for the current project, it contains the following fields:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>double</p></td>
+<td><p>The name of the project</p></td>
+</tr>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>String</p></td>
+<td><p>“-&amp;gt; checkbox disable, 1 -&amp;gt; checkbox enable”</p></td>
+</tr>
+<tr class="row-even"><td><p>selected</p></td>
+<td><p>boolean</p></td>
+<td><p>whether the project is currently selected</p></td>
+</tr>
+<tr class="row-odd"><td><p>autoAssignment</p></td>
+<td><p>boolean</p></td>
+<td><p>If the assignment should be automatically loaded.</p></td>
+</tr>
+<tr class="row-even"><td><p>help</p></td>
+<td><p>String</p></td>
+<td><p>The help text for the project</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="questiondatamodel">
+<h4>QuestionDataModel<a class="headerlink" href="#questiondatamodel" title="Permalink to this headline">¶</a></h4>
+<p>This model is used for storing the question data.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>String</p></td>
+<td><p>“question id {Attribute}”</p></td>
+</tr>
+<tr class="row-odd"><td><p>Question</p></td>
+<td><p>String</p></td>
+<td><p>The question</p></td>
+</tr>
+<tr class="row-even"><td><p>Latitude</p></td>
+<td><p>String</p></td>
+<td><p>Lat-location of the question</p></td>
+</tr>
+<tr class="row-odd"><td><p>Longitude</p></td>
+<td><p>String</p></td>
+<td><p>Long-location of the question</p></td>
+</tr>
+<tr class="row-even"><td><p>Sensor</p></td>
+<td><p>List&lt;SensorModel&gt;</p></td>
+<td><p>A list with the sensor names used in this Question</p></td>
+</tr>
+<tr class="row-odd"><td><p>Time</p></td>
+<td><p>String</p></td>
+<td><p>Time at answering the question</p></td>
+</tr>
+<tr class="row-even"><td><p>Frequency</p></td>
+<td><p>String</p></td>
+<td><p>The sensor measuring frequency</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence</p></td>
+<td><p>String</p></td>
+<td><p>The question sequence</p></td>
+</tr>
+<tr class="row-even"><td><p>Type</p></td>
+<td><p>String</p></td>
+<td><p>The question type (see <a class="reference internal" href="#modes"><span class="std std-ref">Modes</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Visibility</p></td>
+<td><p>String</p></td>
+<td><p>The visibility of the question</p></td>
+</tr>
+<tr class="row-even"><td><p>Mandatory</p></td>
+<td><p>String</p></td>
+<td><p>whether or not the question is mandatory</p></td>
+</tr>
+<tr class="row-odd"><td><p>Option</p></td>
+<td><p>List&lt;<a class="reference internal" href="#optionmodel"><span class="std std-ref">OptionModel</span></a>&gt;</p></td>
+<td><p>List of answer options with the corresponding credits</p></td>
+</tr>
+<tr class="row-even"><td><p>StopName</p></td>
+<td><p>String</p></td>
+<td><p>The stop text for the notification</p></td>
+</tr>
+<tr class="row-odd"><td><p>QID</p></td>
+<td><p>String</p></td>
+<td><p>The question id for the notification</p></td>
+</tr>
+<tr class="row-even"><td><p>Vicinity</p></td>
+<td><p>String</p></td>
+<td><p>The vicinity of the question</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sensormodel">
+<h4>SensorModel<a class="headerlink" href="#sensormodel" title="Permalink to this headline">¶</a></h4>
+<p>This class has a field for the sensor name.</p>
+</div>
+<div class="section" id="slidermenumodel">
+<h4>SliderMenuModel<a class="headerlink" href="#slidermenumodel" title="Permalink to this headline">¶</a></h4>
+<p>This class has a string for the icon name and an int for the recource id.</p>
+</div>
+<div class="section" id="startanddestinationmodel">
+<h4>StartAndDestinationModel<a class="headerlink" href="#startanddestinationmodel" title="Permalink to this headline">¶</a></h4>
+<p>This class contations a StartAndDestination value pair.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>StartLatitude</p></td>
+<td><p>String</p></td>
+<td><p>the lat-Position of the start point</p></td>
+</tr>
+<tr class="row-odd"><td><p>StartLongitude</p></td>
+<td><p>String</p></td>
+<td><p>the long-Position of the start point</p></td>
+</tr>
+<tr class="row-even"><td><p>DestitationLatitude</p></td>
+<td><p>String</p></td>
+<td><p>the lat-Position of the destination point</p></td>
+</tr>
+<tr class="row-odd"><td><p>DestitationLongitude</p></td>
+<td><p>String</p></td>
+<td><p>the long-Position of the destination point</p></td>
+</tr>
+<tr class="row-even"><td><p>Mode</p></td>
+<td><p>String</p></td>
+<td><p>question mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>DefaultCredit</p></td>
+<td><p>String</p></td>
+<td><p>the default amount of credits received for this question</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="apppreferences">
+<h3>AppPreferences<a class="headerlink" href="#apppreferences" title="Permalink to this headline">¶</a></h3>
+<p>This class is the <a href="https://developer.android.com/reference/android/content/SharedPreferences" target="_blank">SharedPreferences</a> handler of the application.</p>
+<div class="section" id="savelocation">
+<h4>saveLocation<a class="headerlink" href="#savelocation" title="Permalink to this headline">¶</a></h4>
+<p>Saves the users current location.</p>
+</div>
+<div class="section" id="saveaccuracy">
+<h4>saveAccuracy<a class="headerlink" href="#saveaccuracy" title="Permalink to this headline">¶</a></h4>
+<p>Saves the current measuring accuracy.</p>
+</div>
+<div class="section" id="getaccuracy">
+<h4>getAccuracy<a class="headerlink" href="#getaccuracy" title="Permalink to this headline">¶</a></h4>
+<p>Retrieves the last saved accuracy.</p>
+</div>
+<div class="section" id="getlatitude">
+<h4>getLatitude<a class="headerlink" href="#getlatitude" title="Permalink to this headline">¶</a></h4>
+<p>Gets the last saved latitude from <a class="reference internal" href="#savelocation"><span class="std std-ref">saveLocation</span></a>.</p>
+</div>
+<div class="section" id="getlongitude">
+<h4>getLongitude<a class="headerlink" href="#getlongitude" title="Permalink to this headline">¶</a></h4>
+<p>Gets the last saved longitude from <a class="reference internal" href="#savelocation"><span class="std std-ref">saveLocation</span></a>.</p>
+</div>
+<div class="section" id="savedatascientistid">
+<h4>saveDataScientistId<a class="headerlink" href="#savedatascientistid" title="Permalink to this headline">¶</a></h4>
+<p>Saves the dataScientistId.</p>
+</div>
+<div class="section" id="getdatascientistid">
+<h4>getDataScientistId<a class="headerlink" href="#getdatascientistid" title="Permalink to this headline">¶</a></h4>
+<p>Retrieves the saved dataScientistId.</p>
+</div>
+<div class="section" id="savehelpforproject">
+<h4>saveHelpForProject<a class="headerlink" href="#savehelpforproject" title="Permalink to this headline">¶</a></h4>
+<p>Saves the help message fo the current assignment, which gets shown when pressing on the help button.</p>
+</div>
+<div class="section" id="gethelp">
+<h4>getHelp<a class="headerlink" href="#gethelp" title="Permalink to this headline">¶</a></h4>
+<p>Retrieves the saved help message.</p>
+</div>
+<div class="section" id="saveprojectid">
+<h4>saveProjectId<a class="headerlink" href="#saveprojectid" title="Permalink to this headline">¶</a></h4>
+<p>Saves the current project id.</p>
+</div>
+<div class="section" id="getprojectid">
+<h4>getProjectId<a class="headerlink" href="#getprojectid" title="Permalink to this headline">¶</a></h4>
+<p>Retrieves the current project id.</p>
+</div>
+<div class="section" id="saveauto">
+<h4>saveAuto<a class="headerlink" href="#saveauto" title="Permalink to this headline">¶</a></h4>
+<p>Saves, whether the assignment should be automatically be loaded or not.</p>
+</div>
+<div class="section" id="getauto">
+<h4>getAuto<a class="headerlink" href="#getauto" title="Permalink to this headline">¶</a></h4>
+<p>Retrieves the saved automation preference.</p>
+</div>
+</div>
+<div class="section" id="networkcallbacks">
+<h3>NetworkCallbacks<a class="headerlink" href="#networkcallbacks" title="Permalink to this headline">¶</a></h3>
+<p>This class is responsible for all restful API queries with a callback event.
+It uses an interface called <a class="reference internal" href="#retrofitinterface"><span class="std std-ref">RetrofitInterface</span></a> for all GET and POST messages.</p>
+<div class="section" id="getallprojectsfromserver">
+<h4>getAllProjectsFromServer<a class="headerlink" href="#getallprojectsfromserver" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#getallprojects"><span class="std std-ref">getAllProjects</span></a> query.
+On response, it saves the response in a list of <a class="reference internal" href="#projectmodel"><span class="std std-ref">ProjectModel</span></a> of the <a class="reference internal" href="#homeactivity-class"><span class="std std-ref">HomeActivity class</span></a>.</p>
+</div>
+<div class="section" id="getalltasksfromserver">
+<h4>getAllTasksFromServer<a class="headerlink" href="#getalltasksfromserver" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#gettasks"><span class="std std-ref">getTasks</span></a> query, giving it the current project id.
+On response, it saves the response in a list of tasks of the <a class="reference internal" href="#networkcallbacks"><span class="std std-ref">NetworkCallbacks</span></a> static list ‘serverTask’.</p>
+</div>
+<div class="section" id="getallassetsfromserver">
+<h4>getAllAssetsFromServer<a class="headerlink" href="#getallassetsfromserver" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#getallassetsfromspecificproject"><span class="std std-ref">getAllAssetsFromSpecificProject</span></a> query, giving it the current project id.
+On response, it saves the response in a list of tasks of the <a class="reference internal" href="#networkcallbacks"><span class="std std-ref">NetworkCallbacks</span></a> static list ‘serverAssets’.</p>
+</div>
+<div class="section" id="createuseronserver">
+<h4>createUserOnServer<a class="headerlink" href="#createuseronserver" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#createuser"><span class="std std-ref">createUser</span></a> query, giving it the current project id and user.
+On response, it shows a toast if not successful.</p>
+</div>
+<div class="section" id="createtaskonserver">
+<h4>createTaskOnServer<a class="headerlink" href="#createtaskonserver" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#admincreatetasks"><span class="std std-ref">adminCreateTasks</span></a> query, giving it the current project id, task id and the task itself.</p>
+</div>
+<div class="section" id="createassignmentonserver">
+<h4>createAssignmentOnServer<a class="headerlink" href="#createassignmentonserver" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#assignasset"><span class="std std-ref">assignAsset</span></a> query, giving it the current project id, task id, assetId and a cookieHeader.
+The cookieHeader has the form:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">projectId</span><span class="o">&gt;</span> <span class="o">+</span> <span class="s">&quot;_user_id=&quot;</span> <span class="o">+</span> <span class="o">&lt;</span><span class="n">userId</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="assignassignmentstousers">
+<h4>assignAssignmentsToUsers<a class="headerlink" href="#assignassignmentstousers" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#getallusersfromspecificproject"><span class="std std-ref">getAllUsersFromSpecificProject</span></a> query, giving it the project id.
+On a successful response, adds all users from the response to the <a class="reference internal" href="#networkcallbacks"><span class="std std-ref">NetworkCallbacks</span></a> static list ‘serverUsers’ and calls getAssignment for all of them.</p>
+</div>
+<div class="section" id="getallassignmentsfromserver">
+<h4>getAllAssignmentsFromServer<a class="headerlink" href="#getallassignmentsfromserver" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#getallassignmentsfromspecificproject"><span class="std std-ref">getAllAssignmentsFromSpecificProject</span></a> query, giving it the project id.
+On response, it saves the response in a list of tasks of the <a class="reference internal" href="#networkcallbacks"><span class="std std-ref">NetworkCallbacks</span></a> static list ‘serverAssignments’.</p>
+</div>
+<div class="section" id="getassignment">
+<h4>getAssignment<a class="headerlink" href="#getassignment" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#getspecificassignment"><span class="std std-ref">getSpecificAssignment</span></a> query, giving it the project id and the assignment id.
+If the response code is either 500 (= internal error) or 200 and the response itself is <em>not</em> “finished”, createAssignmentOnServer is called.
+Otherwise, no action is done.</p>
+</div>
+<div class="section" id="updateassignmentintask">
+<h4>updateAssignmentInTask<a class="headerlink" href="#updateassignmentintask" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#usercreateassignment"><span class="std std-ref">userCreateAssignment</span></a> query, giving it the project id, the assignment, the task id and the cookie header.
+Then calls <a class="reference internal" href="#createtaskonserver"><span class="std std-ref">createTaskOnServer</span></a>, <a class="reference internal" href="#saveassignmentinfile"><span class="std std-ref">saveAssignmentInFile</span></a> and disables the saved assignment in the database.
+Sets the assignment submission status to true in the <a class="reference internal" href="#utils"><span class="std std-ref">utils</span></a> class.</p>
+</div>
+<div class="section" id="getspecifictask">
+<h4>getSpecificTask<a class="headerlink" href="#getspecifictask" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#id13"><span class="std std-ref">getSpecificTask</span></a> query, giving it the project id and the task id.
+Upon response, it creates a new task, sets the different fields, creates a AssignmentSubmittedData (a subclass of <a class="reference internal" href="#assignment"><span class="std std-ref">Assignment</span></a>) and sets the answers and sensor readings.
+Then calls <a class="reference internal" href="#updateassignmentintask"><span class="std std-ref">updateAssignmentInTask</span></a> with the new objects as parameters.</p>
+</div>
+<div class="section" id="assignmentsubmission">
+<h4>AssignmentSubmission<a class="headerlink" href="#assignmentsubmission" title="Permalink to this headline">¶</a></h4>
+<p>Uses the <a class="reference internal" href="#getallassignmentsfromspecificproject"><span class="std std-ref">getAllAssignmentsFromSpecificProject</span></a> query, giving it the project id.
+Upon response it iterates through all received assignments and saves the corresponding, given answers into the database.
+Also calls <a class="reference internal" href="#id13"><span class="std std-ref">getSpecificTask</span></a> for each task.</p>
+</div>
+<div class="section" id="saveassignmentinfile">
+<h4>saveAssignmentInFile<a class="headerlink" href="#saveassignmentinfile" title="Permalink to this headline">¶</a></h4>
+<p>Saves the given assignment into a file with the name givenm by the asset name.</p>
+</div>
+<div class="section" id="savedatatoroomdatabase">
+<h4>saveDataToRoomDatabase<a class="headerlink" href="#savedatatoroomdatabase" title="Permalink to this headline">¶</a></h4>
+<p>Saves the data of all assignments of the current project into the RoomDatabase with the <a class="reference internal" href="#roomdatabasehandler"><span class="std std-ref">RoomDatabaseHandler</span></a>.</p>
+</div>
+</div>
+<div class="section" id="retrofitinterface">
+<h3>RetrofitInterface<a class="headerlink" href="#retrofitinterface" title="Permalink to this headline">¶</a></h3>
+<p>The RetrofitInterface is used for specifying the queries with the restful servers.
+It uses <a href="https://square.github.io/retrofit/" target="_blank">Retrofit</a> to serialize and create the messages.
+All messagaes hav type POST or GET.</p>
+<p>The queries are defined in an interface class.
+The &#64;GET/&#64;POST parameters define the website path and the functions return values of type Call&lt;ResponseObject&gt;.
+In the following, there are all GET and POST queries.</p>
+<div class="section" id="getallprojects">
+<h4>getAllProjects<a class="headerlink" href="#getallprojects" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/admin/projects?from=0&amp;size=3000&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">ProjectModel</span><span class="o">&gt;</span> <span class="nf">getAllProjects</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gettasks">
+<h4>getTasks<a class="headerlink" href="#gettasks" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/projects/{projectId}/tasks&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">TaskModel</span><span class="o">&gt;</span> <span class="nf">getTasks</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getallassetsfromspecificproject">
+<h4>getAllAssetsFromSpecificProject<a class="headerlink" href="#getallassetsfromspecificproject" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/admin/projects/{projectId}/assets&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">AssetModel</span><span class="o">&gt;</span> <span class="nf">getAllAssetsfromSpecificProject</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="createuser">
+<h4>createUser<a class="headerlink" href="#createuser" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/projects/{projectId}/user&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">UserModel</span><span class="o">&gt;</span> <span class="nf">createUser</span><span class="p">(</span><span class="nd">@Body</span> <span class="n">User</span> <span class="n">u</span><span class="p">,</span> <span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="admincreatetasks">
+<h4>adminCreateTasks<a class="headerlink" href="#admincreatetasks" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/admin/projects/{projectId}/tasks/{taskId}&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">SingleTaskModel</span><span class="o">&gt;</span> <span class="nf">adminCreateTasks</span><span class="p">(</span><span class="nd">@Body</span> <span class="n">Task</span> <span class="n">t</span><span class="p">,</span> <span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">,</span> <span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;taskId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">taskId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="assignasset">
+<h4>assignAsset<a class="headerlink" href="#assignasset" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot; /projects/{projectId}/tasks/{taskId}/assets/{assetId}/assignments&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">AssignmentModel</span><span class="o">&gt;</span> <span class="nf">assignAsset</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">,</span> <span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;taskId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">taskId</span><span class="p">,</span> <span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;assetId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">assertId</span><span class="p">,</span> <span class="nd">@Header</span><span class="p">(</span><span class="s">&quot;Cookie&quot;</span><span class="p">)</span> <span class="n">String</span> <span class="n">userId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getallusersfromspecificproject">
+<h4>getAllUsersFromSpecificProject<a class="headerlink" href="#getallusersfromspecificproject" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/admin/projects/{projectId}/users&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">UserModel</span><span class="o">&gt;</span> <span class="nf">getAllUsersfromSpecificProject</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getallassignmentsfromspecificproject">
+<h4>getAllAssignmentsFromSpecificProject<a class="headerlink" href="#getallassignmentsfromspecificproject" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/admin/projects/{projectId}/assignments?from=0&amp;size=3000&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">AssignmentModel</span><span class="o">&gt;</span> <span class="nf">getAllAssignmentsfromSpecificProject</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getspecificassignment">
+<h4>getSpecificAssignment<a class="headerlink" href="#getspecificassignment" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot; /projects/{projectId}/assignments/{assignmentId}&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">SpecificAssignmentModel</span><span class="o">&gt;</span> <span class="nf">getSpecificAssignment</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">,</span> <span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;assignmentId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">assignmentId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usercreateassignment">
+<h4>userCreateAssignment<a class="headerlink" href="#usercreateassignment" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/projects/{projectId}/tasks/{taskId}/assignments&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">AssignmentModel</span><span class="o">&gt;</span> <span class="nf">userCreateAssignment</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">,</span> <span class="nd">@Body</span> <span class="n">Assignment</span> <span class="n">assignment</span><span class="p">,</span> <span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;taskId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">taskId</span><span class="p">,</span> <span class="nd">@Header</span><span class="p">(</span><span class="s">&quot;Cookie&quot;</span><span class="p">)</span> <span class="n">String</span> <span class="n">userId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h4>getSpecificTask<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/projects/{projectId}/tasks/{taskId}&quot;</span><span class="p">)</span>
+<span class="n">Call</span><span class="o">&lt;</span><span class="n">NetworkModels</span><span class="p">.</span><span class="na">SingleTaskModel</span><span class="o">&gt;</span> <span class="nf">getSpecificTask</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;projectId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">projectId</span><span class="p">,</span> <span class="nd">@Path</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;taskId&quot;</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="n">String</span> <span class="n">taskId</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hiveservermodels">
+<h3>HiveServerModels<a class="headerlink" href="#hiveservermodels" title="Permalink to this headline">¶</a></h3>
+<p>The hive server models are used in the <a class="reference internal" href="#networkcallbacks"><span class="std std-ref">NetworkCallbacks</span></a> as the returned objects for the server queries.
+They need to have a specific layout.
+All elementes need to have getter and setter methods, the variable scope is private and all variables need to have the followoing annotation:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="nd">@SerializedName</span><span class="p">(</span><span class="s">&quot;&lt;serialized name for variable her&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This identifier makes it possible for the <a href="https://square.github.io/retrofit/" target="_blank">Retrofit</a> library to assign values from the received Json object to the models.
+In the following, the fields of all models are specified.</p>
+<div class="section" id="asset">
+<h4>Asset<a class="headerlink" href="#asset" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>String</p></td>
+<td><p>Id</p></td>
+<td><p>The id for the asset</p></td>
+</tr>
+<tr class="row-odd"><td><p>project</p></td>
+<td><p>String</p></td>
+<td><p>Project</p></td>
+<td><p>The project for this asset</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>String</p></td>
+<td><p>Name</p></td>
+<td><p>The asset name</p></td>
+</tr>
+<tr class="row-odd"><td><p>metadata</p></td>
+<td><p>Metadata</p></td>
+<td><p>Metadata</p></td>
+<td><p>An internally defined class, more on it below this list</p></td>
+</tr>
+<tr class="row-even"><td><p>counts</p></td>
+<td><p>Counts</p></td>
+<td><p>Counts</p></td>
+<td><p>An internally defined class, more on it below this list</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Metadata</strong></p>
+<p>Metadata has the same restrictions and rules as the other <a class="reference internal" href="#hiveservermodels"><span class="std std-ref">HiveServerModels</span></a>.
+It contains a value of type Record with the serialised name “record”.</p>
+<p><strong>Counts</strong></p>
+<p>Counts is another internally defined model of <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a>.
+It contains the following 2 elements:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>unfinished</p></td>
+<td><p>int</p></td>
+<td><p>unfinished</p></td>
+<td><p>The amount of unfinished assignments</p></td>
+</tr>
+<tr class="row-odd"><td><p>finished</p></td>
+<td><p>int</p></td>
+<td><p>finished</p></td>
+<td><p>The amount of finished assignments</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Record</strong></p>
+<p>Record is another internally defined model of <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a>.
+It contains two elements:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>startAndDestinationModel</p></td>
+<td><p>StartAndDestination</p></td>
+<td><p>StartAndDestinationModel</p></td>
+<td><p>The start and destination model for the hive server, specified futher down.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampleDataModel</p></td>
+<td><p>List&lt;SampleDataModel&gt;</p></td>
+<td><p>SampleDataModel</p></td>
+<td><p>A list with all data for a question, SampleDataModel is specified further below.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>StartAndDestination</strong></p>
+<p>Record is another internally defined model of <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a>.
+It contains the following elements:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>startLatitude</p></td>
+<td><p>String</p></td>
+<td><p>StartLatitude</p></td>
+<td><p>The latitude of the starting point of a start and destination model.</p></td>
+</tr>
+<tr class="row-odd"><td><p>startLongitude</p></td>
+<td><p>String</p></td>
+<td><p>StartLongitude</p></td>
+<td><p>The longitude of the starting point of a start and destination model.</p></td>
+</tr>
+<tr class="row-even"><td><p>destinationLatitude</p></td>
+<td><p>String</p></td>
+<td><p>DestinationLatitude</p></td>
+<td><p>The latitude of the destination point of a start and destination model.</p></td>
+</tr>
+<tr class="row-odd"><td><p>destinationLongitude</p></td>
+<td><p>String</p></td>
+<td><p>DestinationLongitude</p></td>
+<td><p>The longitude of the destination point of a start and destination model.</p></td>
+</tr>
+<tr class="row-even"><td><p>mode</p></td>
+<td><p>String</p></td>
+<td><p>Mode</p></td>
+<td><p>The transportation mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>defaultCredit</p></td>
+<td><p>String</p></td>
+<td><p>DefaultCredit</p></td>
+<td><p>The deafult credit for this route.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>SampleDataModel</strong></p>
+<p>SampleDataModel is another internally defined model of <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a>.
+It contains the following elements:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>int</p></td>
+<td><p>id</p></td>
+<td><p>The question id</p></td>
+</tr>
+<tr class="row-odd"><td><p>question</p></td>
+<td><p>String</p></td>
+<td><p>Question</p></td>
+<td><p>The question itself</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>String</p></td>
+<td><p>Type</p></td>
+<td><p>The question type</p></td>
+</tr>
+<tr class="row-odd"><td><p>latitude</p></td>
+<td><p>String</p></td>
+<td><p>Latitude</p></td>
+<td><p>The latitude of the question on the map</p></td>
+</tr>
+<tr class="row-even"><td><p>longitude</p></td>
+<td><p>String</p></td>
+<td><p>Longitude</p></td>
+<td><p>The longitude of the question on the map</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sensor</p></td>
+<td><p>List&lt;Sensor&gt;</p></td>
+<td><p>Sensor</p></td>
+<td><p>The list of all used sensors. The Sensor class is defined further below</p></td>
+</tr>
+<tr class="row-even"><td><p>time</p></td>
+<td><p>String</p></td>
+<td><p>Time</p></td>
+<td><p>Time of answering the question</p></td>
+</tr>
+<tr class="row-odd"><td><p>frequency</p></td>
+<td><p>String</p></td>
+<td><p>Frequency</p></td>
+<td><p>Sensor measuring frequency</p></td>
+</tr>
+<tr class="row-even"><td><p>sequence</p></td>
+<td><p>String</p></td>
+<td><p>Sequence</p></td>
+<td><p>Question sequence</p></td>
+</tr>
+<tr class="row-odd"><td><p>visibility</p></td>
+<td><p>String</p></td>
+<td><p>Visibility</p></td>
+<td><p>Visibility of question</p></td>
+</tr>
+<tr class="row-even"><td><p>mandatory</p></td>
+<td><p>String</p></td>
+<td><p>Mandatory</p></td>
+<td><p>Whether question is mandataory or not</p></td>
+</tr>
+<tr class="row-odd"><td><p>Option</p></td>
+<td><p>List&lt;Option&gt;</p></td>
+<td><p>Option</p></td>
+<td><p>A list of available options, the Option class is defined further below.</p></td>
+</tr>
+<tr class="row-even"><td><p>combination</p></td>
+<td><p>List&lt;Combination&gt;</p></td>
+<td><p>Combination</p></td>
+<td><p>A list of combinations, the Combination class is defined further below.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vicinity</p></td>
+<td><p>String</p></td>
+<td><p>Vicinity</p></td>
+<td><p>The vicinity of the question</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Option</strong></p>
+<p>Option is another internally defined model of <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a>.
+It contains the following elements:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>int</p></td>
+<td><p>id</p></td>
+<td><p>The question id</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>String</p></td>
+<td><p>Name</p></td>
+<td><p>Text of the textbox option</p></td>
+</tr>
+<tr class="row-even"><td><p>nextQuestion</p></td>
+<td><p>String</p></td>
+<td><p>NextQuestion</p></td>
+<td><p>The question which follows after this one when this option is selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>credits</p></td>
+<td><p>String</p></td>
+<td><p>Credits</p></td>
+<td><p>The credits for this option when selected</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sensor</strong></p>
+<p>Sensor is another internally defined model of <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a>.
+It contains the following elements:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>int</p></td>
+<td><p>id</p></td>
+<td><p>The question id</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>String</p></td>
+<td><p>Name</p></td>
+<td><p>The sensor name</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Combination</strong></p>
+<p>Combination is another internally defined model of <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a>.
+It contains the following elements:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>int</p></td>
+<td><p>id</p></td>
+<td><p>Question id</p></td>
+</tr>
+<tr class="row-odd"><td><p>selected</p></td>
+<td><p>List&lt;Order&gt;</p></td>
+<td><p>Selected</p></td>
+<td><p>A list with the selected combination. Order is defined further below.</p></td>
+</tr>
+<tr class="row-even"><td><p>nextQuestion</p></td>
+<td><p>String</p></td>
+<td><p>NextQuestion</p></td>
+<td><p>The next question following after this one.</p></td>
+</tr>
+<tr class="row-odd"><td><p>credits</p></td>
+<td><p>String</p></td>
+<td><p>Credits</p></td>
+<td><p>the credits for this question</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Order</strong></p>
+<p>Order is another internally defined model of <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a>.
+It contains the following elements:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>order</p></td>
+<td><p>String</p></td>
+<td><p>Order</p></td>
+<td><p>the order itself</p></td>
+</tr>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>int</p></td>
+<td><p>id</p></td>
+<td><p>the question id</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="assignment">
+<h4>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>assignmentid</p></td>
+<td><p>String</p></td>
+<td><p>id</p></td>
+<td><p>The id of the assignment</p></td>
+</tr>
+<tr class="row-odd"><td><p>projectName</p></td>
+<td><p>String</p></td>
+<td><p>Project</p></td>
+<td><p>The name of the project</p></td>
+</tr>
+<tr class="row-even"><td><p>task</p></td>
+<td><p>String</p></td>
+<td><p>Task</p></td>
+<td><p>The task name</p></td>
+</tr>
+<tr class="row-odd"><td><p>userName</p></td>
+<td><p>String</p></td>
+<td><p>User</p></td>
+<td><p>the username</p></td>
+</tr>
+<tr class="row-even"><td><p>state</p></td>
+<td><p>String</p></td>
+<td><p>State</p></td>
+<td><p>The current state of the assignment</p></td>
+</tr>
+<tr class="row-odd"><td><p>asset</p></td>
+<td><p><a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a></p></td>
+<td><p>Asset</p></td>
+<td><p>The corresponding asset.</p></td>
+</tr>
+<tr class="row-even"><td><p>submittedData</p></td>
+<td><p>AssignmentSubmittedData</p></td>
+<td><p>SubmittedData</p></td>
+<td><p>The submitted data for this assignment, AssignmentSubmittedData is defined below.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>AssignmentSubmittedData</strong></p>
+<p>AssignmentSubmittedData is an internally defined model of <a class="reference internal" href="#assignment"><span class="std std-ref">Assignment</span></a>.
+It contains the following fields:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>answer</p></td>
+<td><p>List&lt;Answer&gt;</p></td>
+<td><p>SubmittedData</p></td>
+<td><p>The list of all submitted answers, Answer is defined below.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sensorreadings</p></td>
+<td><p>List&lt;Map&lt;String, List&lt;SensorReading&gt;&gt;&gt;</p></td>
+<td><p>SensorData</p></td>
+<td><p>A list with all readings from the sensors, SensorReading is defined futher below.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Answer</strong></p>
+<p>Answer is an internally defined model of <a class="reference internal" href="#assignment"><span class="std std-ref">Assignment</span></a>.
+It contains the following fields:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>int</p></td>
+<td><p>Id</p></td>
+<td><p>The corresponding question id</p></td>
+</tr>
+<tr class="row-odd"><td><p>answer</p></td>
+<td><p>String</p></td>
+<td><p>Answer</p></td>
+<td><p>The given answer</p></td>
+</tr>
+<tr class="row-even"><td><p>files_name</p></td>
+<td><p>String</p></td>
+<td><p>Files_name</p></td>
+<td><p>The name for the file</p></td>
+</tr>
+<tr class="row-odd"><td><p>latitude</p></td>
+<td><p>String</p></td>
+<td><p>Latitude</p></td>
+<td><p>The latitude of the phone when answering</p></td>
+</tr>
+<tr class="row-even"><td><p>longitude</p></td>
+<td><p>String</p></td>
+<td><p>Longitude</p></td>
+<td><p>The longitude of the phone when answering</p></td>
+</tr>
+<tr class="row-odd"><td><p>question</p></td>
+<td><p>String</p></td>
+<td><p>Question</p></td>
+<td><p>The question, to which the answer was given</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>String</p></td>
+<td><p>Type</p></td>
+<td><p>The question type</p></td>
+</tr>
+<tr class="row-odd"><td><p>timeAtAnswering</p></td>
+<td><p>String</p></td>
+<td><p>TimeAtAnswering</p></td>
+<td><p>The measured time when the question was ansered</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>SensorReading</strong></p>
+<p>SensorReading is an internally defined model of <a class="reference internal" href="#assignment"><span class="std std-ref">Assignment</span></a>.
+It contains the following fields:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>String</p></td>
+<td><p>Id</p></td>
+<td><p>The project id</p></td>
+</tr>
+<tr class="row-odd"><td><p>assignmentId</p></td>
+<td><p>String</p></td>
+<td><p>AssignmentId</p></td>
+<td><p>The assignment id</p></td>
+</tr>
+<tr class="row-even"><td><p>question</p></td>
+<td><p>String</p></td>
+<td><p>Question</p></td>
+<td><p>The corresponding question</p></td>
+</tr>
+<tr class="row-odd"><td><p>questionId</p></td>
+<td><p>String</p></td>
+<td><p>QuestionId</p></td>
+<td><p>The id of the corresponding question</p></td>
+</tr>
+<tr class="row-even"><td><p>timeAtSensoring</p></td>
+<td><p>String</p></td>
+<td><p>TimeAtSensoring</p></td>
+<td><p>The time measured, when the sonsor measurement was taken</p></td>
+</tr>
+<tr class="row-odd"><td><p>answerValue</p></td>
+<td><p>String</p></td>
+<td><p>Answer Value</p></td>
+<td><p>The answer, which was given to this question</p></td>
+</tr>
+<tr class="row-even"><td><p>acceleration</p></td>
+<td><p>String</p></td>
+<td><p>Acceleration</p></td>
+<td><p>The measured acceleration</p></td>
+</tr>
+<tr class="row-odd"><td><p>frequency</p></td>
+<td><p>String</p></td>
+<td><p>Frequency</p></td>
+<td><p>The measurement frequency</p></td>
+</tr>
+<tr class="row-even"><td><p>gyroscope</p></td>
+<td><p>String</p></td>
+<td><p>Gyroscope</p></td>
+<td><p>The measured gyroscope value</p></td>
+</tr>
+<tr class="row-odd"><td><p>light</p></td>
+<td><p>String</p></td>
+<td><p>Light</p></td>
+<td><p>The measured light value</p></td>
+</tr>
+<tr class="row-even"><td><p>location</p></td>
+<td><p>String</p></td>
+<td><p>Location</p></td>
+<td><p>Then measured location when answering the question</p></td>
+</tr>
+<tr class="row-odd"><td><p>noise</p></td>
+<td><p>String</p></td>
+<td><p>Noise</p></td>
+<td><p>The measured noise level when answering the question</p></td>
+</tr>
+<tr class="row-even"><td><p>proximity</p></td>
+<td><p>String</p></td>
+<td><p>Proximity</p></td>
+<td><p>The measured porximity level when ansering the phone</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="project">
+<h4>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>String</p></td>
+<td><p>Id</p></td>
+<td><p>The project id</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>String</p></td>
+<td><p>Name</p></td>
+<td><p>The project name</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>String</p></td>
+<td><p>Description</p></td>
+<td><p>The project description</p></td>
+</tr>
+<tr class="row-odd"><td><p>assetCount</p></td>
+<td><p>String</p></td>
+<td><p>AssetCount</p></td>
+<td><p>The amount of assets for this project</p></td>
+</tr>
+<tr class="row-even"><td><p>taskCount</p></td>
+<td><p>String</p></td>
+<td><p>TaskCount</p></td>
+<td><p>The amount of tasks for this project</p></td>
+</tr>
+<tr class="row-odd"><td><p>userCount</p></td>
+<td><p>String</p></td>
+<td><p>UserCount</p></td>
+<td><p>The amount of users, which have access to this task</p></td>
+</tr>
+<tr class="row-even"><td><p>assignmentCount</p></td>
+<td><p>AssignmentCount</p></td>
+<td><p>AssignmentCount</p></td>
+<td><p>The amount of assignments for this project, AssignmentCount is defined below.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>AssignmentCount</strong></p>
+<p>AssignmentCount is an internally defined model of <a class="reference internal" href="#assignment"><span class="std std-ref">Assignment</span></a>.
+It contains the following fields:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>total</p></td>
+<td><p>String</p></td>
+<td><p>Total</p></td>
+<td><p>The total amount of assignments</p></td>
+</tr>
+<tr class="row-odd"><td><p>finished</p></td>
+<td><p>String</p></td>
+<td><p>Finished</p></td>
+<td><p>The amount of finished assignments</p></td>
+</tr>
+<tr class="row-even"><td><p>unfinished</p></td>
+<td><p>String</p></td>
+<td><p>Unfinished</p></td>
+<td><p>The amount of unfinished assignments</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="task">
+<h4>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>String</p></td>
+<td><p>Id</p></td>
+<td><p>The task id</p></td>
+</tr>
+<tr class="row-odd"><td><p>project</p></td>
+<td><p>String</p></td>
+<td><p>Project</p></td>
+<td><p>The corresponding project</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>String</p></td>
+<td><p>Name</p></td>
+<td><p>The name of the task</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>String</p></td>
+<td><p>Description</p></td>
+<td><p>The description of the task</p></td>
+</tr>
+<tr class="row-even"><td><p>currentState</p></td>
+<td><p>String</p></td>
+<td><p>CurrentState</p></td>
+<td><p>The current state of the task</p></td>
+</tr>
+<tr class="row-odd"><td><p>assignmentCriteria</p></td>
+<td><p>AssignmentCriteria</p></td>
+<td><p>AssignmentCriteria</p></td>
+<td><p>The criteria for the assignment, AssignmentCriteria is defined below</p></td>
+</tr>
+<tr class="row-even"><td><p>completionCriteria</p></td>
+<td><p>CompletionCriteria</p></td>
+<td><p>CompletionCriteria</p></td>
+<td><p>The criteria for completing the task, CompletionCriteria is defined further below</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>AssignmentCriteria</strong></p>
+<p>AssignmentCriteria is an internally defined model of <a class="reference internal" href="#task"><span class="std std-ref">Task</span></a>.
+It contains one field: submittedData of the type SubmittedData defined further below.</p>
+<p><strong>CompletionCriteria</strong></p>
+<p>CompletionCriteria is an internally defined model of <a class="reference internal" href="#task"><span class="std std-ref">Task</span></a>.
+It contains two int fields: total and matching, defining how many criteria there are in total and how many of them are matching.</p>
+<p><strong>SubmittedData</strong></p>
+<p>SubmittedData is an internally defined model of <a class="reference internal" href="#task"><span class="std std-ref">Task</span></a>.
+It contains one field: assignments of the type Map&lt;String, Assignment&gt;, which stores all submitted assignments.</p>
+</div>
+<div class="section" id="user">
+<h4>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>SerializedName</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>String</p></td>
+<td><p>Id</p></td>
+<td><p>The user id</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>String</p></td>
+<td><p>Name</p></td>
+<td><p>The username</p></td>
+</tr>
+<tr class="row-even"><td><p>email</p></td>
+<td><p>String</p></td>
+<td><p>Email</p></td>
+<td><p>The email address of the user</p></td>
+</tr>
+<tr class="row-odd"><td><p>project</p></td>
+<td><p>String</p></td>
+<td><p>Project</p></td>
+<td><p>The corresponding project</p></td>
+</tr>
+<tr class="row-even"><td><p>externalId</p></td>
+<td><p>String</p></td>
+<td><p>ExternalId</p></td>
+<td><p>The external id of the user</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="networkmodels">
+<h3>NetworkModels<a class="headerlink" href="#networkmodels" title="Permalink to this headline">¶</a></h3>
+<p>The network models, like <a class="reference internal" href="#hiveservermodels"><span class="std std-ref">HiveServerModels</span></a>, are used in the <a class="reference internal" href="#networkcallbacks"><span class="std std-ref">NetworkCallbacks</span></a> as the returned objects for the server queries.
+In the following, the models are defined, all of them have just one field.</p>
+<p><strong>UserModel</strong></p>
+<p>Contains a list of type <a class="reference internal" href="#user"><span class="std std-ref">User</span></a> with the serialised name “Users”.</p>
+<p><strong>ProjectModel</strong></p>
+<p>Contains a list of type <a class="reference internal" href="#project"><span class="std std-ref">Project</span></a> with the serialised name “Projects”.</p>
+<p><strong>TaskModel</strong></p>
+<p>Contains a List of type <a class="reference internal" href="#task"><span class="std std-ref">Task</span></a> with the serialised name “Tasks”.</p>
+<p><strong>SingleTaskModel</strong></p>
+<p>Contains a single field of type <a class="reference internal" href="#task"><span class="std std-ref">Task</span></a> with the serialised name “Task”.</p>
+<p><strong>SpecificAssignmentModel</strong></p>
+<p>Contains a single field of type <a class="reference internal" href="#assignment"><span class="std std-ref">Assignment</span></a> with the serialised name “Assignment”.</p>
+<p><strong>AssignmentModel</strong></p>
+<p>Contains a list of elements of type <a class="reference internal" href="#assignment"><span class="std std-ref">Assignment</span></a> with the serialised name “Assignments”.</p>
+<p><strong>AssetModel</strong></p>
+<p>Contains a list of elements of type <a class="reference internal" href="#asset"><span class="std std-ref">Asset</span></a> with the serialised name “Assets”.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Dashboard.html" class="btn btn-neutral float-right" title="Dashboard Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="smart.agora.html" class="btn btn-neutral float-left" title="Smart Agora Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Renato Kunz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+
+    :root{
+        --pink: rgb(237,225,248);
+        --purple: rgb(94,59,120);
+        --lightpurple: rgb(201, 183, 215);
+      }
+
+
+
+      /*link visited and unvisited color*/
+
+      a {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      a:visited {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      /*footer colors*/
+
+      footer{
+        color:var(--pink)
+      }
+
+      a:hover {
+        color: var(--pink);
+        text-decoration: none;
+        cursor: pointer;
+        text-decoration-color: var(--purple);
+      }
+
+     .wy-nav-side {
+
+        /*background: rgb(30,115,190);*/
+        background: var(--pink);
+        color:/**#eee;*/var(--purple);
+
+
+     }
+
+     .rst-content img{
+       border-radius:3px;
+     }
+
+     .wy-menu-vertical li.toctree-l1.current>a {
+        color: var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l2.current>a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a{
+       color: var(--purple);
+       background: var(--pink);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a:hover{
+       color: var(--pink);
+       background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover{
+         color: var(--pink);
+         background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a:hover{
+           color: var(--pink);
+           background:var(--purple);
+     }
+
+    .wy-side-nav-search {
+
+        background:var(--pink); /*rgb(30,115,190);*/
+
+    }
+
+    .wy-menu-vertical a{
+      color:var(--purple);
+      text-decoration: none;
+    }
+
+    .wy-menu-vertical li.current{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertical li{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertival a:current {
+      color:var(--pink);
+    }
+
+    .wy-menu-vertical a:hover{
+        background-color:var(--purple);
+        color:var(--pink);
+    }
+
+    .fa-home::before, .icon-home::before {
+        content:"";
+    }
+
+    a.icon-home {
+        width: 50%;
+        margin-left: -6px;
+        font-size: 0%;
+        content:url("https://smart-agora.org/wp-content/uploads/2019/09/LastoneLogoPack3.1Updated_File.png");
+    }
+
+    .wy-nav-content{
+        max-width: initial;
+        background:var(--purple);
+        color:var(--pink);
+    }
+
+    /*nav top current directory, delete link underline*/
+    .wy-breadcrumbs li a:first-child{
+      text-decoration: none;
+    }
+
+
+    /*buton colors*/
+    .btn-neutral {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+    .btn-neutral:visited {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+
+    /*codeblock color*/
+    .rst-content div[class^='highlight'] pre{
+      color:black;
+      border-radius:3px; /*rounded corners*/
+    }
+
+    /*make sure tables do no have white backgrounds*/
+    .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+      background-color:var(--purple)
+    }
+
+    /*color of table header*/
+    .rst-content table.docutils thead{
+      color:var(--pink) !important;
+    }
+
+    /*table title thick border*/
+    .rst-content table.docutils thead th{
+      border-bottom: solid 2px;
+      border-top: solid 2px;
+      border-left: solid 2px;
+      border-right: solid 2px;
+    }
+
+    /*code block line numbers*/
+    div.linenodiv pre{
+      color:var(--pink) !important;
+      border-radius:0 !important;
+    }
+
+    /*codeblock pink background*/
+    div.highlight pre{
+      background-color:var(--pink);
+    }
+
+    /*rounded corners on images*/
+    .rst-content .section>img{
+      border-radius:3px;
+    }
+
+    /*rounded corners on codeblocks*/
+    .rst-content div[class^='highlight']{
+        border-radius:3px;
+    }
+
+    /*code boxes outline*/
+    .rst-content dl:not(.docutils) dt{
+      border-top: solid 3px var(--lightpurple);
+      background: var(--pink);
+      border-radius: 3px;
+    }
+
+    /*code boxes text color*/
+    .rst-content dl:not(.docutils) code.descname{
+      color: var(--purple);
+    }
+
+    .rst-content dl:not(.docutils) code {
+      background: var(--pink);
+      font-weight: bold;
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt {
+      border-left: solid 3px var(--lightpurple);
+      background: var(--pink);
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt a{
+      color: var(--purple);
+      margin-right: 3px;
+    }
+
+    .rst-content code.xref{
+      color: var(--purple);
+      border-radius: 3px;
+      background: var(--pink);
+    }
+
+    /*side menu title color*/
+    .wy-menu-vertical p.caption{
+      color: var(--purple)
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils) .property, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .property {
+      display: contents;
+      padding-right: 8px;
+    }
+
+
+  </style>
+
+
+</body>
+</html>

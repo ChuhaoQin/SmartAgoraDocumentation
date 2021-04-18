@@ -1,0 +1,589 @@
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Client &mdash; SmartagoraDocumentation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dashboard Installation Guide" href="../DashboardGuide.html" />
+    <link rel="prev" title="Controllers" href="Controllers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> SmartagoraDocumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../smart.agora.html">Smart Agora Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SmartAgoraDescription.html">SmartAgora Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Dashboard.html">Dashboard Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Modals.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Controllers.html">Controllers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hiveserver-client">HiveServer-&gt; Client</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../DashboardGuide.html">Dashboard Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Hive.html">Hive</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SmartagoraDocumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../Dashboard.html">Dashboard Documentation</a> &raquo;</li>
+        
+      <li>Client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/sections/Dashboard/Client.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="client">
+<h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hiveserver-client">
+<h2>HiveServer-&gt; Client<a class="headerlink" href="#hiveserver-client" title="Permalink to this headline">¶</a></h2>
+<dl class="csharp class">
+<dt id="class-HiveServer.Client">
+<code class="sig-name descname">class Client</code><a class="headerlink" href="#class-HiveServer.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Following are the properties that a Client class will contain.</p>
+<p>Here are references to it’s properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#property-HiveServer.Client.client" title="HiveServer.Client.client property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">client</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Client.host" title="HiveServer.Client.host property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">host</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Client.port" title="HiveServer.Client.port property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">port</span></code></a></p></li>
+<li><p><a class="reference internal" href="#property-HiveServer.Client.url" title="HiveServer.Client.url property"><code class="xref csharp csharp-prop docutils literal notranslate"><span class="pre">url</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="csharp property">
+<dt id="property-HiveServer.Client.client">
+HttpClient <code class="sig-name descname">client</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Client.client" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is HttpClient object for communication with the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server. It is initialized in client constructor.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Client.host">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">host</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Client.host" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the base address of the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server. It is initialized in client constructor.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Client.port">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">port</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Client.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the port number of the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server. It is initialized in client constructor.</p>
+</dd></dl>
+
+<dl class="csharp property">
+<dt id="property-HiveServer.Client.url">
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <code class="sig-name descname">url</code> { <em class="property">get; set;</em> }<a class="headerlink" href="#property-HiveServer.Client.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the url address of the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server containing host and port number. It is initialized in client constructor.</p>
+</dd></dl>
+
+<p>Here are references to it’s methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#method-HiveServer.Client.Client" title="HiveServer.Client.Client method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">Client</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.CreateAsset" title="HiveServer.Client.CreateAsset method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateAsset</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.CreateAssignment" title="HiveServer.Client.CreateAssignment method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateAssignment</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.CreateProject" title="HiveServer.Client.CreateProject method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateProject</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.CreateTask" title="HiveServer.Client.CreateTask method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">CreateTask</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.GetAllProjects" title="HiveServer.Client.GetAllProjects method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetAllProjects</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.GetAssetAsync" title="HiveServer.Client.GetAssetAsync method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetAssetAsync</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.GetAssetData" title="HiveServer.Client.GetAssetData method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetAssetData</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.GetTasks" title="HiveServer.Client.GetTasks method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetTasks</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.GetTasksData" title="HiveServer.Client.GetTasksData method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetTasksData</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.GetUserAsync" title="HiveServer.Client.GetUserAsync method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetUserAsync</span></code></a></p></li>
+<li><p><a class="reference internal" href="#method-HiveServer.Client.GetUserData" title="HiveServer.Client.GetUserData method"><code class="xref csharp csharp-meth docutils literal notranslate"><span class="pre">GetUserData</span></code></a></p></li>
+</ul>
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.Client">
+<em>public</em> <code class="sig-name descname">Client</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is the constructor of the class. It contains the initialization of the client, host, port and url variables.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.CreateAsset">
+<em>public</em> void <code class="sig-name descname">CreateAsset</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference internal" href="Modals.html#class-HiveServer.Models.Asset" title="HiveServer.Models.Asset class">Models.Asset</a>[] <em>Asset</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>userName</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.CreateAsset" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the functionality for the creation of Asset on the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server. It also creates an asset file on disk. There is a boolean for checking either the environment is Windows or Linux</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.CreateAssignment">
+<em>public</em> <em>async</em> Task&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.Assignment" title="HiveServer.Models.Assignment class">Models.Assignment</a>&gt; <code class="sig-name descname">CreateAssignment</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>taskId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>assetId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>userId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.CreateAssignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>It creates Assignment on <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server according to the provided parameters that are project Id, task Id, asset Id, and user Id.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.CreateProject">
+<em>public</em> <em>async</em> Task&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.Project" title="HiveServer.Models.Project class">Models.Project</a>&gt; <code class="sig-name descname">CreateProject</code> <span class="sig-paren">(</span><a class="reference internal" href="Modals.html#class-HiveServer.Models.Project" title="HiveServer.Models.Project class">Models.Project</a> <em>project</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.CreateProject" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for creating Project on the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server. It accepts a project object so that it can create a project.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.CreateTask">
+<em>public</em> <em>async</em> Task&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.Task" title="HiveServer.Models.Task class">Models.Task</a>&gt; <code class="sig-name descname">CreateTask</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference internal" href="Modals.html#class-HiveServer.Models.Task" title="HiveServer.Models.Task class">Models.Task</a> <em>task</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.CreateTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called for creating Task on the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server. Project Id and a task object are provided to it.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.GetAllProjects">
+<em>public</em> <em>async</em> Task&lt;List&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.Project" title="HiveServer.Models.Project class">Models.Project</a>&gt;&gt; <code class="sig-name descname">GetAllProjects</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.GetAllProjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is called to get all the projects from the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server. There are two parameters: ‘from’ and ‘size’ to set the project’s objects quantity.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.GetAssetAsync">
+<em>public</em> <em>async</em> Task&lt;List&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.Asset" title="HiveServer.Models.Asset class">Models.Asset</a>&gt;&gt; <code class="sig-name descname">GetAssetAsync</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.GetAssetAsync" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts a project Id and returns all Assets from the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server that are associated with given project Id.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.GetAssetData">
+<em>public</em> <em>async</em> Task&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.Asset" title="HiveServer.Models.Asset class">Models.Asset</a>&gt; <code class="sig-name descname">GetAssetData</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>assetId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.GetAssetData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts project Id and an assets Id and returns the asset from the <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server that contains the provided project and asset Id.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.GetTasks">
+<em>public</em> <em>async</em> Task&lt;List&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.Task" title="HiveServer.Models.Task class">Models.Task</a>&gt;&gt; <code class="sig-name descname">GetTasks</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.GetTasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts a project Id and then retrieves all tasks from <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server that are associated with provided project Id.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.GetTasksData">
+<em>public</em> <em>async</em> Task&lt;<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a>&gt; <code class="sig-name descname">GetTasksData</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>taskId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.GetTasksData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts the project Id and a task Id and returns the task object from <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server related to the given project and task Id.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.GetUserAsync">
+<em>public</em> <em>async</em> Task&lt;List&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.User" title="HiveServer.Models.User class">Models.User</a>&gt;&gt; <code class="sig-name descname">GetUserAsync</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.GetUserAsync" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts a project Id and returns all users object from <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server that are associated with this project.</p>
+</dd></dl>
+
+<dl class="csharp method">
+<dt id="method-HiveServer.Client.GetUserData">
+<em>public</em> <em>async</em> Task&lt;<a class="reference internal" href="Modals.html#class-HiveServer.Models.User" title="HiveServer.Models.User class">Models.User</a>&gt; <code class="sig-name descname">GetUserData</code> <span class="sig-paren">(</span><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>projectId</em>, <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.string" title="System.String">String</a> <em>userId</em><span class="sig-paren">)</span><a class="headerlink" href="#method-HiveServer.Client.GetUserData" title="Permalink to this definition">¶</a></dt>
+<dd><p>It accepts a project Id and a user Id and return user object from <a class="reference internal" href="../Hive.html#hive"><span class="std std-ref">Hive</span></a> Server that contain the provided project and user Id.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../DashboardGuide.html" class="btn btn-neutral float-right" title="Dashboard Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Controllers.html" class="btn btn-neutral float-left" title="Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Renato Kunz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+
+    :root{
+        --pink: rgb(237,225,248);
+        --purple: rgb(94,59,120);
+        --lightpurple: rgb(201, 183, 215);
+      }
+
+
+
+      /*link visited and unvisited color*/
+
+      a {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      a:visited {
+        color: var(--pink);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      /*footer colors*/
+
+      footer{
+        color:var(--pink)
+      }
+
+      a:hover {
+        color: var(--pink);
+        text-decoration: none;
+        cursor: pointer;
+        text-decoration-color: var(--purple);
+      }
+
+     .wy-nav-side {
+
+        /*background: rgb(30,115,190);*/
+        background: var(--pink);
+        color:/**#eee;*/var(--purple);
+
+
+     }
+
+     .rst-content img{
+       border-radius:3px;
+     }
+
+     .wy-menu-vertical li.toctree-l1.current>a {
+        color: var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l2.current>a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a{
+       color: var(--purple);
+       background: var(--pink);
+     }
+
+     .wy-menu-vertical li.toctree-l2 a:hover{
+       color: var(--pink);
+       background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover{
+         color: var(--pink);
+         background:var(--purple);
+     }
+
+     .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a:hover{
+           color: var(--pink);
+           background:var(--purple);
+     }
+
+    .wy-side-nav-search {
+
+        background:var(--pink); /*rgb(30,115,190);*/
+
+    }
+
+    .wy-menu-vertical a{
+      color:var(--purple);
+      text-decoration: none;
+    }
+
+    .wy-menu-vertical li.current{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertical li{
+        color:var(--purple);
+    }
+
+    .wy-menu-vertival a:current {
+      color:var(--pink);
+    }
+
+    .wy-menu-vertical a:hover{
+        background-color:var(--purple);
+        color:var(--pink);
+    }
+
+    .fa-home::before, .icon-home::before {
+        content:"";
+    }
+
+    a.icon-home {
+        width: 50%;
+        margin-left: -6px;
+        font-size: 0%;
+        content:url("https://smart-agora.org/wp-content/uploads/2019/09/LastoneLogoPack3.1Updated_File.png");
+    }
+
+    .wy-nav-content{
+        max-width: initial;
+        background:var(--purple);
+        color:var(--pink);
+    }
+
+    /*nav top current directory, delete link underline*/
+    .wy-breadcrumbs li a:first-child{
+      text-decoration: none;
+    }
+
+
+    /*buton colors*/
+    .btn-neutral {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+    .btn-neutral:visited {
+        color: var(--purple) !important;
+        background-color: var(--pink) !important;
+    }
+
+    /*codeblock color*/
+    .rst-content div[class^='highlight'] pre{
+      color:black;
+      border-radius:3px; /*rounded corners*/
+    }
+
+    /*make sure tables do no have white backgrounds*/
+    .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+      background-color:var(--purple)
+    }
+
+    /*color of table header*/
+    .rst-content table.docutils thead{
+      color:var(--pink) !important;
+    }
+
+    /*table title thick border*/
+    .rst-content table.docutils thead th{
+      border-bottom: solid 2px;
+      border-top: solid 2px;
+      border-left: solid 2px;
+      border-right: solid 2px;
+    }
+
+    /*code block line numbers*/
+    div.linenodiv pre{
+      color:var(--pink) !important;
+      border-radius:0 !important;
+    }
+
+    /*codeblock pink background*/
+    div.highlight pre{
+      background-color:var(--pink);
+    }
+
+    /*rounded corners on images*/
+    .rst-content .section>img{
+      border-radius:3px;
+    }
+
+    /*rounded corners on codeblocks*/
+    .rst-content div[class^='highlight']{
+        border-radius:3px;
+    }
+
+    /*code boxes outline*/
+    .rst-content dl:not(.docutils) dt{
+      border-top: solid 3px var(--lightpurple);
+      background: var(--pink);
+      border-radius: 3px;
+    }
+
+    /*code boxes text color*/
+    .rst-content dl:not(.docutils) code.descname{
+      color: var(--purple);
+    }
+
+    .rst-content dl:not(.docutils) code {
+      background: var(--pink);
+      font-weight: bold;
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt {
+      border-left: solid 3px var(--lightpurple);
+      background: var(--pink);
+      color: var(--purple);
+      border-radius: 3px;
+    }
+
+    .rst-content dl:not(.docutils) dl dt a{
+      color: var(--purple);
+      margin-right: 3px;
+    }
+
+    .rst-content code.xref{
+      color: var(--purple);
+      border-radius: 3px;
+      background: var(--pink);
+    }
+
+    /*side menu title color*/
+    .wy-menu-vertical p.caption{
+      color: var(--purple)
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils) .property, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .property {
+      display: contents;
+      padding-right: 8px;
+    }
+
+
+  </style>
+
+
+</body>
+</html>
