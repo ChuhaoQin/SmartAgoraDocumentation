@@ -19,7 +19,7 @@ The project is licensed under the GPL-2.0 license.
 Evangelos Pournaras - Proof of Witness Presence: Blockchain Consensus for Augmented Democracy in Smart Cities 
 https://arxiv.org/abs/1907.00498
 
-## References
+## References
 
 ### DIAS
 
